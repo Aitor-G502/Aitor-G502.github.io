@@ -1,0 +1,81 @@
+body {
+  /*Este hace que se vea todo negro y con ciertos espacios*/
+  background-color: black;
+  color: white;
+  padding: 7px;
+}
+
+.menu {
+  /*Este hace que se vea el menu de arriba en las tres partes con color y sin la linea de enlace abajo*/
+  font-family: Arial, Helvetica, sans-serif;
+  color: #68a6be;
+  text-decoration: none;
+  padding: 7px;
+  background-color: beige;
+}
+
+.Titulo {
+  /*Este añade color a los titulos espacios y una buena fuente*/
+  color: #68a6be;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 7px;
+}
+
+.Texto {
+  /*Añade espacios y una fuente*/
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 7px;
+}
+
+.div {
+  /*Modifica el interior del DIV como su color de fondo color de letras espacios y fuente*/
+  background-color: beige;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 7px;
+}
+
+.imagen {
+  /*Modifica bordes y espacios de las imagenes*/
+  border-width: 2px;
+  border: solid;
+  border-color: beige;
+  padding: 7px;
+}
+
+
+
+        .Tabla{  /*Modifica la tabla para que tenga espacios bordes y colores*/
+            padding: 7px;
+            border: 1px solid white;
+            color: white;
+            margin: 20px;
+            border-collapse: collapse;
+        }
+
+         td { /*Modifica el td para que tenga lineas de separacion entre celdas*/
+      border: 1px solid white; 
+      padding: 7px;           
+         }
+
+          th { /*Modifica el th para que tenga lineas de separacion entre celdas*/
+      border: 1px solid white; 
+      padding: 7px;           
+          }
+
+          .menu {
+  background-color: beige;
+  padding: 7px;
+}
+
+.menu a {
+  color:  #68a6be;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+
+
+
+       
