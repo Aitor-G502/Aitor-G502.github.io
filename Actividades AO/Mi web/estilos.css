@@ -1,0 +1,24 @@
+.menu{   /*Decoraciones del menu*/
+             font-family: Arial, Helvetica, sans-serif;
+            color:#e27f24;
+            text-decoration: none;
+             padding: 7px;
+            background-color: beige;
+        }
+
+        body {   /*Decoraciones del cuerpo de la web*/
+  background-color: black;
+  color: white;
+  padding: 7px;
+}
+
+.menu a {    /*Decoraciones del menu*/
+  color:#e27f24;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+ .logo{ /*Config logo*/
+        float: left;
+       }
