@@ -22,3 +22,7 @@
  .logo{ /*Config logo*/
         float: left;
        }
+
+.parrafo{
+  font-family: Arial, Helvetica, sans-serif;
+}
