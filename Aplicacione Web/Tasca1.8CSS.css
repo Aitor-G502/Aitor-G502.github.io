@@ -1,0 +1,23 @@
+.contenidodellibro { 
+    text-align: center; 
+}
+
+a:link {
+    color:black;
+    text-decoration: none;
+}
+
+a:hover{
+    color:rgb(144, 144, 207);
+    text-decoration: underline;
+}
+
+a:visited{
+    color:red;
+    text-decoration: none;
+}
+
+a:active{
+    color;rgb(86, 86, 230);
+    text-decoration: underline;
+}
