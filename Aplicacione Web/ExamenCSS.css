@@ -1,0 +1,61 @@
+.pie_pag{
+    color: #e27f24
+}
+
+.menu{    /* decoracion del menu*/
+    font-family: Arial, Helvetica, sans-serif;
+    
+    text-decoration: none;
+    padding: 7px;
+    background-color: beige;
+    color:  pink;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold
+    
+}
+
+a:link {
+    color:black;
+    text-decoration: none;
+}
+
+a:hover{
+    color:rgb(144, 144, 207);
+    text-decoration: underline;
+}
+
+a:visited{
+    color:#e27f24;
+    text-decoration: none;
+}
+
+a:active{
+    color;rgb(86, 86, 230);
+    text-decoration: underline;
+}
+
+.parrafo{
+     width: 56em;
+    border: 3px solid #333;
+    padding: 6px 10px;
+    background-color:beige;
+    color: #e27f24;
+    margin-top: 10px;
+    text-align: left
+}
+
+.enlace_ejercicios{
+     width: 57,999em;
+    border: 3px solid #333;
+    padding: 6px 10px;
+    background-color:beige;
+    color: #e27f24;
+    text-align: left
+}
+*{
+    background-color: beige
+}
+
+
+
