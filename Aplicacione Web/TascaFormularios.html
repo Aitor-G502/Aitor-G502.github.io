@@ -11,19 +11,19 @@
         <legend>Datos de Contacto</legend>
         Nombre:
         <br>
-        <input type="text">
+        <input  type="text">
         <br>
         Edad:
         <br>
-        <input type="number">
+        <input  type="number">
         <br>
         Telefono:
         <br>
-        <input type="text">
+        <input  type="text">
         <br>
         Direccion:
         <br>
-        <input type="number">
+        <input  type="number">
         <br>
         <br>
         <select name="Lista">
@@ -36,11 +36,39 @@
         <br>
         Google:
         <br>
-        <input type="search" name="q">
+        <input  type="search" name="q">
 
         <br><br>
-        <input type="submit" value="Buscar">
+        <input  type="submit" value="Buscar">
     </Fieldset>
     </form>
+
+    <br><br><br><br><br><br><br><br>
+
+    <form action="#" method="get">
+    <label for="fname">Nombre:</label><br>
+    <input  required type="text" id="fname" name="fname"><br>
+    <label for="lname">Apellido:</label><br>
+    <input  required type="text" id="lname" name="lname"><br>
+    <label for="email">Correo electrónico:</label><br>
+    <input required  type="email" id="email" name="email"><br>
+    <label for="birthday">Fecha de nacimiento:</label><br>
+    <input required  type="date" id="birthday" name="birthday"><br>
+    <label for="website">Sitio web:</label><br>
+    <input required  type="url" id="website" name="website"><br>
+    <label for="gender">Gernero:</label><br>
+    <input required  type="radio" id="male" name="gender" value="male">
+    <label for="male">Masculino</label><br>
+    <input required  type="radio" id="female" name="gender" value="female">
+    <label for="female">Femenino</label><br>
+    <input required  type="radio" id="other" name="gender" value="other">
+    <label for="other">Otro</label><br>
+    <label for="favcolor">Color favorito:</label><br>
+    <input required  type="color" id="favcolor" name="favcolor" value="#ff0000"><br>
+    <label for="appt">Elige una hora para la cita:</label><br>
+    <input required  type="time" id="appt" name="appt"><br>
+    <input  type="submit" value="Enviar">
+  </form>
+
 </body>
 </html>
