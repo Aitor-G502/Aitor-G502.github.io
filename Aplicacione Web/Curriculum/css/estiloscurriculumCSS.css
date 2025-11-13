@@ -1,0 +1,78 @@
+.logo{
+    
+    width: 285px;
+    height: 150px;
+    
+}
+
+.menu{
+     width: 117,1em;
+            border: 3px solid;
+            
+            padding: 8px 12px;
+            background-image: linear-gradient(180deg);
+    
+}
+
+#nombre{
+    display: inline-block;
+    margin-left: 27%;
+}
+
+nav{
+    text-align: center;
+    background-color: #e27f24;
+    color: #e27f24;
+}
+
+ a:link {
+    color:black;
+    text-decoration: none;
+    background: #e27f24;
+}
+
+a:hover{
+    color:rgb(144, 144, 207);
+    text-decoration: underline;
+    background: #e27f24;
+}
+
+a:visited{
+    color: white;
+    text-decoration:none;
+    background: #e27f24;
+}
+
+a:active{
+    color;rgb(86, 86, 230);
+    text-decoration: underline;
+    background:#e27f24;
+}
+
+
+*{
+    background-color: beige;
+    color: #e27f24 ;
+    
+    
+}
+
+
+.Formacion{
+    text-align: center;
+    float: left
+}
+
+.experiencia{
+margin-left: 38%
+
+}
+
+.idiomas{
+
+   margin-left: 77% 
+    
+}
+.footer{
+    background: beige;
+}
