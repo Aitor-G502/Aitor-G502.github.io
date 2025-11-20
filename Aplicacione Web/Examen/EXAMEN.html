@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+    <link rel="stylesheet" href="CSS/CSSEXAMEN.css">
+</head>
+<body>
+    <header>
+        <h1>Realitza la teva comanda personalitzada</h1>
+        <p>Selecciona les teves preferencies</p>
+    </header>
+    <nav>
+        <a href="#">Inici</a>
+        |
+        <a href="#">Formalitza la reserva</a>
+    </nav>
+    <br><br>
+    <main>
+        <img src="IMAGENES/libro1.jpg" alt="libro1" width="120px" height="180px">        
+        <img src="IMAGENES/libro2.jpg" alt="libro2" width="120px" height="180px">
+        
+        <img src="IMAGENES/libro3.jpg" alt="libro3" width="120px" height="180px">
+        
+        <br><br><br>
+        <form action="#" method="get">
+            <fieldset>
+            <label for="nombre">Nom:</label><br>
+            <input required type="text" id="nombre" name="nombre">
+            <br><br>
+            <label required for="producto">Producte:</label><br>
+            <select required name="lista" id="producto">
+                <option value="escoger">Escull un llibre</option>
+                <option value="opcion1">Llibre 1</option>
+                <option value="opcion2">Llibre 2</option>
+                <option value="opcion3">Llibre 3</option>
+            </select>
+            <br><br>
+            <label required for="Tamaño">Tamany:</label><br>
+            <input required type="radio" id="Tamaño" value="Petit">
+            <label for="Pequeño">Petit</label>
+            <input required type="radio" id="Tamaño" value="Mitg">
+            <label for="Mitg">Mitg</label>
+            <input required type="radio" id="Tamaño" value="Gros">
+            <label for="Gros">Gros</label>
+            <br><br>
+            <label required for="Extras">Extras:</label><br>
+            <input  type="checkbox" id="Extras" value="Web">
+            <label for="Web">Web</label>
+            <input  type="checkbox" id="Extras" value="Aplicació">
+            <label for="Aplicació">Aplicació</label>
+            <input  type="checkbox" id="Extras" value="eComerce">
+            <label for="eComerce">eCommerce</label>
+            <br><br>
+            <label for="Comentarios">Cometarios adicionales:</label><br>
+            <textarea name="Comentarios" rows="3" cols="50"></textarea>
+            <br><br><input type="submit" value="Enviar Comanda">
+
+            </fieldset>
+        </form>
+    </main>
+    <br><br><br><br><br>
+    <footer>
+        <a href="#">Avis legal</a>
+        |
+        <a href="#">Cookies</a>
+    </footer>
+</body>
+</html>
