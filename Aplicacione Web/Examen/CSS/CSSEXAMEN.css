@@ -1,0 +1,32 @@
+
+*{
+    text-align: center;
+    background-color: beige;
+    color: #e27f24;
+}
+
+a:link {
+    color:#e27f24;
+    text-decoration: none;
+}
+
+a:hover{
+    color:rgb(144, 144, 207);
+    text-decoration: underline;
+}
+
+a:visited{
+    color:#e27f24;
+    text-decoration: none;
+}
+
+a:active{
+    color;rgb(86, 86, 230);
+    text-decoration: underline;
+}
+
+header{
+    background-color: #e27f24;
+}
+
+

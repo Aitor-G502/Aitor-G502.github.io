@@ -1,0 +1,39 @@
+a:link {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+a:visited{
+    color:#e27f24;
+    text-decoration: none;
+}
+
+a:active{
+    color: red;
+    text-decoration: underline;
+}
+
+
+.Beige{
+    color: #e27f24;
+}
+
+.Red{
+    color:rgb(204 0 0);
+}
+
+*{
+    background-color: beige;
+    text-align: center;
+}
+
+img{
+    float: left;
+}
+
+
