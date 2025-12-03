@@ -110,3 +110,38 @@ elif animal in listareptiles:
 else:
     print("Tu animal no esta en nuestras listas")
 
+
+
+
+#6 Creeu un programa que calculi el cost d'enviament d’un paquet segons la distància: fins a 10 km, 10-50 km, o més de 50 km.
+
+Distancia = int(input("Distancia del paquete a tu casa en Km:"))
+
+if (Distancia <= 10):
+    print("Tu coste de envio se ha reducido un 25% ")
+
+elif (Distancia >= 10) and (Distancia <= 50):
+    print("Tu coste de envio se ha reducido al 50%")
+
+elif (Distancia >= 50):
+    print("¡Tu coste de envio ahora es GRATIS!")
+
+
+
+#7 Crea un programa que assigni una qualificació a una nota numèrica (A, B, C, D o F) en funció d’una nota numérica donada per teclat 
+# (A = entre 9 i 10 -ambdós inclosos-, B = entre 7 i 9 -incloent el 7 però no el 9- , C = entre 5 i 7 -incloent el 5 però no el 7-, F = menys de 5).
+
+
+nota = int(input("Introduce tu nota:"))
+
+if (nota <= 10) and (nota >= 9):
+    print("Tienes una A")
+
+elif (nota >=7) and (nota < 9):
+    print("Tienes una B")
+
+elif (nota >=5) and (nota < 7):
+    print("Tienes una C")
+
+elif (nota < 5):
+    print("Tienes una F")
