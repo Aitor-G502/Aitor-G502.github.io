@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script>
+        // En este sript el contenido no existe//
+    </script>
+</head>
+<body>
+    <button onclick='alerta()'>Click me </button>
+    <script>
+        function alerta(){
+            let nombre = prompt("Introduce tu nombre");
+            if (nombre !==""){
+            let ok = confirm(`¿Estas seguro de que eres ${nombre}?`);
+            if (ok) {
+                alert(`Bienvenido, ${nombre} a mi pagina web`);
+            } else{
+                alert(`No has confirmado que eres ${nombre}, repite el proceso.`);
+                alerta();
+            }
+            } else {
+                alert("No has introducido ningun nombre, repite el proceso");
+                alerta();
+            }
+        }
+        //Aqui ya se ha cargado la pagina
+    </script>
+</body>
+</html>
