@@ -29,11 +29,26 @@ a:active{
 
 *{
     background-color: beige;
-    text-align: center;
+    
 }
 
 img{
-    float: left;
+    float: right;
+    margin: 0;
 }
+
+header h1, header h2, header nav {
+    text-align: center;
+    display: inline-block;
+    margin-left: 39%;
+}
+
+fieldset{
+    border-radius: 10px;
+    color:#e27f24;
+
+}
+
+
 
 
