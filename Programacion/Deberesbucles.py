@@ -44,3 +44,62 @@ while numLin <= n:
 
 # 3 Escriure un algorisme en Python que imprimeixi els 10 primers números parells començant a 2 i imprimiu també els seus respectius cubs. Per exemple: 2 – 8; 4 – 64; 6 – 216 …
 #Modifica aquest programa perquè en comptes d’imprimir els 10 primers nombres parells, imprimeixi els primers n nombres parells on n es un enter positiu introduït per teclat.
+
+
+numpar = int(input("Introduce un numero par: "))
+
+num = 2
+
+contador = 1
+
+while contador <= numpar:
+    print(f'{num} - {num**3}')
+    num = num + 2
+    contador = contador + 1
+
+# 5 Escriure un programa que demani a l'usuari un número sencer i mostri per pantalla un triangle rectangle com el de més avall, d'alçada el número introduït. La imatge següent mostra l’exemple de la sortida del programa si introduïm el número 5.
+#* 
+#** 
+#*** 
+#**** 
+#*****
+
+nument = int(input("Introduce un numero entero: "))
+numentLin = 1
+
+while numentLin <= nument:
+    print(f'{numentLin*'*'}')
+    numentLin = numentLin + 1
+
+
+
+# 6 Escriure un programa que demani a l’usuari una paraula i la mostri per pantalla 10 vegades.
+#Modifica aquest programa perquè a l’usuari se li demani per teclat el nombre de vegades que vol repetir la paraula i la repeteixi tantes vegades com les introduïdes per l’usuari.
+
+palabra = input("Introduce una palabra: ")
+veces = int(input("Introduce las veces que quieres que se repita: ")) 
+mult = 1
+
+while mult <= veces:
+    print(f'{palabra}')
+    mult = mult + 1
+
+
+
+# 11 Imprimeix el següent patró utilitzant el bucle for, les dimensions del patró dependran d’un nombre introduït per teclat
+
+numero = int(input("Introduce un numero: "))
+
+cantidad = 1
+patron = "*"
+
+while cantidad <= 2*numero - 1:
+    if cantidad <= numero:
+        print ((patron + "")*cantidad)
+    else:
+        print((patron + "") * (2*numero - cantidad))
+    cantidad = cantidad + 1
+
+
+
+
