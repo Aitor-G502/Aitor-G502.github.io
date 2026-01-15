@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cuestionario Depresión Orientativo</title>
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  background:#0d0d15;
+  color:#e9e9f0;
+  padding:20px;
+  line-height:1.6;
+}
+h1,h2{color:#d36d91;}
+.container{
+  max-width:900px;
+  margin:0 auto;
+  background:#141427;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+button{
+  padding:8px 14px;
+  margin:4px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+  background:#d36d91;
+  color:#fff;
+}
+button:hover{background:#ff527b;}
+.question{
+  margin-bottom:20px;
+}
+#result{
+  margin-top:30px;
+  padding:20px;
+  background:#1c1c33;
+  border-radius:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Cuestionario Depresión Orientativo</h1>
+<p>Responde honestamente: <strong>Casi nunca / A veces / Con frecuencia / Muy a menudo</strong></p>
+
+<div id="quiz"></div>
+
+<div id="result"></div>
+</div>
+
+<script>
+// Preguntas orientativas de depresión
+const questions = [
+  {text:"¿Te sientes triste o vacío la mayor parte del tiempo?"},
+  {text:"¿Has perdido interés o placer en cosas que antes disfrutabas?"},
+  {text:"¿Te sientes cansado o con poca energía con frecuencia?"},
+  {text:"¿Tienes dificultades para concentrarte o tomar decisiones?"},
+  {text:"¿Sientes culpa excesiva o que no vales nada?"},
+  {text:"¿Tu apetito o peso ha cambiado notablemente?"},
+  {text:"¿Tienes problemas para dormir o duermes demasiado?"},
+  {text:"¿Notas cambios en tu actividad física o habla (más lento o inquieto)?"},
+  {text:"¿Te sientes frustrado o irritable con frecuencia?"},
+  {text:"¿Sientes que nada va a mejorar o que la vida es muy difícil?"}
+];
+
+const options = ["Casi nunca","A veces","Con frecuencia","Muy a menudo"];
+
+const quizDiv = document.getElementById("quiz");
+const resultDiv = document.getElementById("result");
+let answers = [];
+
+questions.forEach((q,i)=>{
+  const qDiv = document.createElement('div');
+  qDiv.className='question';
+  const p = document.createElement('p');
+  p.textContent = (i+1)+". "+q.text;
+  qDiv.appendChild(p);
+
+  options.forEach((opt,j)=>{
+    const btn = document.createElement('button');
+    btn.textContent = opt;
+    btn.onclick = ()=>{
+      answers[i]=j;
+      btn.style.background="#ff527b";
+      Array.from(qDiv.getElementsByTagName('button')).forEach(b=>{
+        if(b!==btn) b.style.background="#d36d91";
+      });
+      if(answers.filter(a=>a!==undefined).length===questions.length){
+        showResult();
+      }
+    };
+    qDiv.appendChild(btn);
+  });
+
+  quizDiv.appendChild(qDiv);
+});
+
+function showResult(){
+  const total = answers.reduce((a,b)=>a+b,0);
+  let interpretation = "";
+  if(total<10) interpretation="Señales leves de tristeza o desánimo. Solo observa tu estado de ánimo y emociones.";
+  else if(total<20) interpretation="Algunas señales de depresión pueden aparecer ocasionalmente. Podría ser útil hablar con un psicólogo si interfiere en tu vida.";
+  else interpretation="Varias respuestas frecuentes sugieren que podría ser útil consultar un psicólogo para evaluar tu estado de ánimo y bienestar. Esto no es un diagnóstico.";
+
+  resultDiv.innerHTML="<h2>Resumen orientativo</h2><p>"+interpretation+"</p>";
+}
+</script>
+
+</body>
+</html>

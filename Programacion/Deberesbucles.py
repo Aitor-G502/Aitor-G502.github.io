@@ -40,7 +40,7 @@ numLin = 1
 
 while numLin <= n:
     print(f'{numLin},')
-    numLin = numLin + 1
+    numLin = numLin + 2
 
 # 3 Escriure un algorisme en Python que imprimeixi els 10 primers números parells començant a 2 i imprimiu també els seus respectius cubs. Per exemple: 2 – 8; 4 – 64; 6 – 216 …
 #Modifica aquest programa perquè en comptes d’imprimir els 10 primers nombres parells, imprimeixi els primers n nombres parells on n es un enter positiu introduït per teclat.
@@ -73,6 +73,21 @@ for element in listanum4:
     i = i + 1
 print(f'Tu frase contiene {palabrasnum4} palabras')
 
+num4 = input("Escribe tu frase aqui: ")
+
+listanum4 = list(num4)
+
+palabranum4 = 1
+
+i = 1
+
+for element in listanum4:
+    if element == " ":
+        palabranum4 = palabranum4 + 1
+    i = i +1
+print(f'Tu frase tiene {palabranum4} palabras')
+
+
 # 5 Escriure un programa que demani a l'usuari un número sencer i mostri per pantalla un triangle rectangle com el de més avall, d'alçada el número introduït. 
 # La imatge següent mostra l’exemple de la sortida del programa si introduïm el número 5.
 #* 
@@ -101,6 +116,9 @@ while mult <= veces:
     print(f'{palabra}')
     mult = mult + 1
 
+# Es demanar a l'usuari que introdueixi una cadena de caràcters per teclat y el bucle for haurà de processar aquesta cadena
+# i crear-ne una de nova amb les lletres minúscules y majúscules alternades.
+deberes = input("Escribe tu cadena de caracteres aqui: ")
 
 #Es demanar a l'usuari que introdueixi una cadena de caràcters per teclat y el bucle for haurà de processar aquesta cadena
 # i crear-ne una de nova amb les lletres minúscules y majúscules alternades.
@@ -115,6 +133,14 @@ nuevadeberes = []
 
 palabradeberes = ""
 
+listadeberes = list(deberes)
+
+nuevadeberes = []
+
+palabradeberes = ""
+
+ñ = 1
+
 for letradeberes in listadeberes:
     if ñ %2 == 0:
         nuevadeberes.append(letradeberes.lower())
@@ -125,8 +151,43 @@ for letradeberes in listadeberes:
 for letradeberes2 in nuevadeberes:
     palabradeberes = palabradeberes + letradeberes2
 
+for letradeberes2 in nuevadeberes:
+    palabradeberes = palabradeberes + letradeberes2
 print(f'{palabradeberes}')
 
 
 
+cadena = input("Escribe tu cadena de caracteres: ")
 
+cadenaalt = ""
+
+ismayus = True
+
+for char in cadena:
+    if ismayus:
+        cadenaalt += char.upper()
+    else:
+        cadenaalt += char.lower()
+    ismayus = not ismayus
+
+print(f'La cadena resultante de {cadena} es:{cadenaalt}')
+
+print()
+
+cadena2 = input("Escripe tu cadena de caracteres: ")
+
+cadenaalt2 = ""
+
+ismayus2 = True
+
+indice = 0
+
+while indice <= len(cadena2) -1:
+    if ismayus2:
+        cadenaalt2 += cadena[indice].upper()
+    else:
+        cadenaalt2 += cadena[indice].lower()
+    ismayus2 = not ismayus2
+    indice += 1
+
+    print(f'La cadena resultante de {cadena2} es:{cadenaalt2}.')
