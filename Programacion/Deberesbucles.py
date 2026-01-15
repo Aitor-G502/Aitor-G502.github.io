@@ -57,7 +57,24 @@ while contador <= numpar:
     num = num + 2
     contador = contador + 1
 
-# 5 Escriure un programa que demani a l'usuari un número sencer i mostri per pantalla un triangle rectangle com el de més avall, d'alçada el número introduït. La imatge següent mostra l’exemple de la sortida del programa si introduïm el número 5.
+# 4 Realitza un programa que primer, llegeixi una frase per teclat i segón, que compti el nombre de paraules que té aquesta frase. 
+# Recorda que hauràs d’utilitzar mètodes built-in de la classe String i de la clase List a més d’utilitzar el bucle for.
+num4 = input("Escribe una frase aqui: ")
+
+listanum4 = list(num4)
+
+i = 1
+
+palabrasnum4 = 1
+
+for element in listanum4:
+    if element == " ":
+        palabrasnum4 = palabrasnum4 + 1
+    i = i + 1
+print(f'Tu frase contiene {palabrasnum4} palabras')
+
+# 5 Escriure un programa que demani a l'usuari un número sencer i mostri per pantalla un triangle rectangle com el de més avall, d'alçada el número introduït. 
+# La imatge següent mostra l’exemple de la sortida del programa si introduïm el número 5.
 #* 
 #** 
 #*** 
@@ -85,20 +102,30 @@ while mult <= veces:
     mult = mult + 1
 
 
+#Es demanar a l'usuari que introdueixi una cadena de caràcters per teclat y el bucle for haurà de processar aquesta cadena
+# i crear-ne una de nova amb les lletres minúscules y majúscules alternades.
 
-# 11 Imprimeix el següent patró utilitzant el bucle for, les dimensions del patró dependran d’un nombre introduït per teclat
+deberes = input("Escribe tu cadena de caracteres: ")
 
-numero = int(input("Introduce un numero: "))
+listadeberes = list(deberes)
 
-cantidad = 1
-patron = "*"
+nuevadeberes = []
 
-while cantidad <= 2*numero - 1:
-    if cantidad <= numero:
-        print ((patron + "")*cantidad)
+ñ = 1
+
+palabradeberes = ""
+
+for letradeberes in listadeberes:
+    if ñ %2 == 0:
+        nuevadeberes.append(letradeberes.lower())
     else:
-        print((patron + "") * (2*numero - cantidad))
-    cantidad = cantidad + 1
+        nuevadeberes.append(letradeberes.upper())
+    ñ = ñ+1
+
+for letradeberes2 in nuevadeberes:
+    palabradeberes = palabradeberes + letradeberes2
+
+print(f'{palabradeberes}')
 
 
 
