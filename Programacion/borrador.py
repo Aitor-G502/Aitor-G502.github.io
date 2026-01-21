@@ -1,21 +1,15 @@
-deberes = input("Escribe tu cadena de caracteres: ")
+#7
 
-listadeberes = list(deberes)
 
-nuevadeberes = []
+numobjetivo = int(input("Escribe un numero entero aqui: "))
 
-ñ = 1
+num = 2
 
-palabradeberes = ""
+esprimo = True 
 
-for letradeberes in listadeberes:
-    if ñ %2 == 0:
-        nuevadeberes.append(letradeberes.lower())
-    else:
-        nuevadeberes.append(letradeberes.upper())
-    ñ = ñ+1
+while numobjetivo >= num:
+    if (numobjetivo %num == 0):
+        esprimo = False
+        break
+    num += 1
 
-for letradeberes2 in nuevadeberes:
-    palabradeberes = palabradeberes + letradeberes2
-
-print(f'{palabradeberes}')

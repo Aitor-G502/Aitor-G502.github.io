@@ -197,12 +197,36 @@ while indice <= len(cadena2) -1:
 # 7 Fes un programa que llegeixi un nombre sencer per teclat i per pantalla imprimeixi tots els nombres primers des de l’1 fins al nombre introduït.
 #Modifica aquest programa per a que comprovi si el nombre introduït sigui un nombre sencer, en cas contrari s’imprimirà per pantalla el missatge 
 # ‘El nombre introduït no és un nombre sencer’.
+numobjetivo = int(input("Escribe un numero entero aqui: "))
+
+num = 2
+
+while numobjetivo >= num:
+    if (numobjetivo %num == 0) and (num != numobjetivo):
+        print(f'{numobjetivo} no es un numero primo')
+        break
+    elif (numobjetivo == num):
+        print(f'{numobjetivo} es un numero primo')
+    num += 1
+
 
 # 8 Es col·loca un capital C, a un interès I (que oscil·la entre 0 i 100),
 #  durant M anys i es vol saber quan s'hi haurà convertit aquest capital en “M” anys, sabent que és acumulatiu (se refiere al interés, es decir, 
 # que cuando se calcule el interés en un año determinado, se calculará respecto a la cantidad original más las cantidades de los intereses de los años anteriores).
 #  Crea un programa utilitzant el bucle for que ens calculi l’interés acumulat d’aquest capital. El capital C i l'interès I s'hauran d’introduir per teclat.
+capitalc = int(input("Introduce tu capital aqui: "))
+interesi = int(input("Introduce un numero de intereses que oscilen entre el 0 y el 100: "))
+años = int(input("Introduce el numero de años que quieres que se acumulen: "))
 
+contador8 = 1
+
+while contador8 <= años:
+    capitalc = capitalc + (capitalc * interesi / 100)
+    contador8 += 1
+
+print(f'Tu capital con los intereses acumulados por los años es {capitalc}')
 
 # 9 Crea un programa que calculi la suma de tots els divisors (sencers) d’un nombre sencer introduït per teclat 
 # (recorda que els divisors poden ser com a molt grans fins a la meitat del nombre introduït).
+
+
