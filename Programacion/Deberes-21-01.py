@@ -25,9 +25,9 @@ n = 1
 
 while n <=  2*num-1:
     if n <= num:
-        print("*" *n)
+        print("* " *n)
     else:
-        print("*" * (2*num-n))
+        print("* " * (2*num-n))
     n += 1
 
 
