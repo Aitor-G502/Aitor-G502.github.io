@@ -230,3 +230,5 @@ print(f'Tu capital con los intereses acumulados por los años es {capitalc}')
 # (recorda que els divisors poden ser com a molt grans fins a la meitat del nombre introduït).
 
 
+
+
