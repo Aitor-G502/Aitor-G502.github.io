@@ -1,111 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>Rei Ayanami Squares</title>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000; /* traje negro */
-    cursor: pointer;
-  }
-  canvas {
-    display: block;
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>Rei Ayanami Squares</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #000;
+      /* traje negro */
+      cursor: pointer;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
 </head>
+
 <body>
 
-<canvas id="reiCanvas"></canvas>
+  <canvas id="reiCanvas"></canvas>
 
-<script>
-const canvas = document.getElementById('reiCanvas');
-const ctx = canvas.getContext('2d');
+  <script>
+    const canvas = document.getElementById('reiCanvas');
+    const ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  initSquares();
-});
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initSquares();
+    });
 
-// Paleta de colores inspirada en Rei: pelo azul/lila y detalles
-const reiColors = ['#00BFFF', '#1E90FF', '#87CEFA', '#9370DB', '#BA55D3'];
-const grayColor = '#333';
+    // Paleta de colores inspirada en Rei: pelo azul/lila y detalles
+    const reiColors = ['#00BFFF', '#1E90FF', '#87CEFA', '#9370DB', '#BA55D3'];
+    const grayColor = '#333';
 
-class Square {
-  constructor(x, y, size){
-    this.x = x;
-    this.y = y;
-    this.size = size;
-    this.color = grayColor;
-    this.isActive = false; // está en efecto de color
-    this.timeoutId = null;
-  }
+    class Square {
+      constructor(x, y, size) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.color = grayColor;
+        this.isActive = false; // está en efecto de color
+        this.timeoutId = null;
+      }
 
-  draw(){
-    ctx.fillStyle = this.color;
-    ctx.fillRect(this.x, this.y, this.size, this.size);
-  }
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x, this.y, this.size, this.size);
+      }
 
-  activate(){
-    if(this.isActive) return; // ya está activo, no reiniciar
-    this.color = reiColors[Math.floor(Math.random() * reiColors.length)];
-    this.isActive = true;
-    
-    // Después de 500ms vuelve al gris original
-    this.timeoutId = setTimeout(() => {
-      this.color = grayColor;
-      this.isActive = false;
-      this.timeoutId = null;
-    }, 500);
-  }
+      activate() {
+        if (this.isActive) return; // ya está activo, no reiniciar
+        this.color = reiColors[Math.floor(Math.random() * reiColors.length)];
+        this.isActive = true;
 
-  checkHover(mx, my){
-    if(mx > this.x && mx < this.x + this.size &&
-       my > this.y && my < this.y + this.size){
-      this.activate();
+        // Después de 500ms vuelve al gris original
+        this.timeoutId = setTimeout(() => {
+          this.color = grayColor;
+          this.isActive = false;
+          this.timeoutId = null;
+        }, 500);
+      }
+
+      checkHover(mx, my) {
+        if (mx > this.x && mx < this.x + this.size &&
+          my > this.y && my < this.y + this.size) {
+          this.activate();
+        }
+      }
     }
-  }
-}
 
-let squares = [];
-const squareSize = 40;
+    let squares = [];
+    const squareSize = 40;
 
-function initSquares(){
-  squares = [];
-  const cols = Math.floor(canvas.width / (squareSize + 5));
-  const rows = Math.floor(canvas.height / (squareSize + 5));
+    function initSquares() {
+      squares = [];
+      const cols = Math.floor(canvas.width / (squareSize + 5));
+      const rows = Math.floor(canvas.height / (squareSize + 5));
 
-  for(let i = 0; i < cols; i++){
-    for(let j = 0; j < rows; j++){
-      const x = i * (squareSize + 5);
-      const y = j * (squareSize + 5);
-      squares.push(new Square(x, y, squareSize));
+      for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+          const x = i * (squareSize + 5);
+          const y = j * (squareSize + 5);
+          squares.push(new Square(x, y, squareSize));
+        }
+      }
     }
-  }
-}
 
-initSquares();
+    initSquares();
 
-function animate(){
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  squares.forEach(sq => sq.draw());
-  requestAnimationFrame(animate);
-}
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      squares.forEach(sq => sq.draw());
+      requestAnimationFrame(animate);
+    }
 
-animate();
+    animate();
 
-canvas.addEventListener('mousemove', (e) => {
-  const mx = e.clientX;
-  const my = e.clientY;
-  squares.forEach(sq => sq.checkHover(mx, my));
-});
-</script>
+    canvas.addEventListener('mousemove', (e) => {
+      const mx = e.clientX;
+      const my = e.clientY;
+      squares.forEach(sq => sq.checkHover(mx, my));
+    });
+
+  </script>
 
 </body>
+
 </html>
