@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Formulario</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 400px;
+            margin: 40px auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            /* Transición suave para el cambio de color del borde */
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* --- NUEVOS ESTILOS PARA VALIDACIÓN --- */
+
+        /* Estilo para el input cuando es INVÁLIDO */
+        .is-invalid {
+            border-color: red;
+
+        }
+
+        /* Estilo para el input cuando es VÁLIDO */
+        .is-valid {
+            border-color: green;
+        }
+
+        /* Estilo para los pequeños mensajes de error debajo de cada input */
+        .error-mensaje {
+            color: red;
+            font-size: 0.8em;
+            /* Estará oculto hasta que tenga texto */
+            min-height: 1.2em;
+        }
+
+        /* Estilo para el mensaje de éxito/error general */
+        #mensaje {
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Formulario de Contacto</h1>
+
+    <form id="formulario" novalidate>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Escribe tu nombre">
+        <!-- Contenedor para el error del nombre -->
+        <div class="error-mensaje" id="nombre-error"></div>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" placeholder="Escribe tu correo">
+        <!-- Contenedor para el error del correo -->
+        <div class="error-mensaje" id="correo-error"></div>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p id="mensaje"></p>
+
+    <!-- Enlazamos nuestro archivo JavaScript al final del body -->
+    <script>
+        // 1. Seleccionar los elementos del DOM que vamos a necesitar
+        const formulario = document.getElementById("formulario");
+        const nombreInput = document.getElementById("nombre");
+        const correoInput = document.getElementById("correo");
+        const mensajeP = document.getElementById("mensaje");
+
+        // 2. Definir las funciones de validación
+        function validarNombre() {
+            const nombre = nombreInput.value.trim(); // .trim() elimina espacios en blanco al inicio y final
+            const errorDiv = document.getElementById("nombre-error");
+
+            if (nombre.length < 3) {
+                // Si el nombre es muy corto, marcamos error
+                nombreInput.classList.add("is-invalid");
+                nombreInput.classList.remove("is-valid");
+                errorDiv.textContent = "El nombre debe tener al menos 3 caracteres.";
+                return false;
+            } else {
+                // Si es válido, quitamos la clase de error y mostramos la de éxito
+                nombreInput.classList.remove("is-invalid");
+                nombreInput.classList.add("is-valid");
+                errorDiv.textContent = ""; // Limpiamos el mensaje de error
+                return true;
+            }
+        }
+
+        function validarCorreo() {
+            const correo = correoInput.value.trim();
+            const errorDiv = document.getElementById("correo-error");
+
+            // Expresión regular simple para validar el formato del correo
+            const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!regexCorreo.test(correo)) {
+                // Si el correo no cumple el formato, marcamos error
+                correoInput.classList.add("is-invalid");
+                correoInput.classList.remove("is-valid");
+                errorDiv.textContent = "Por favor, introduce un correo electrónico válido.";
+                return false;
+            } else {
+                // Si es válido
+                correoInput.classList.remove("is-invalid");
+                correoInput.classList.add("is-valid");
+                errorDiv.textContent = "";
+                return true;
+            }
+        }
+
+        // 3. Añadir Event Listeners para validar mientras el usuario escribe
+        // 'input' se dispara cada vez que el valor del input cambia
+        nombreInput.addEventListener("input", validarNombre);
+        correoInput.addEventListener("input", validarCorreo);
+
+        // 4. Añadir Event Listener para el envío del formulario
+        formulario.addEventListener("submit", function (evento) {
+            // Prevenimos que el formulario se envíe de forma tradicional (recargando la página)
+            evento.preventDefault();
+
+            // Ejecutamos las validaciones una última vez antes de enviar
+            const esNombreValido = validarNombre();
+            const esCorreoValido = validarCorreo();
+
+            // Si ambos son válidos, mostramos el mensaje de éxito
+            if (esNombreValido && esCorreoValido) {
+                mensajeP.textContent = "¡Formulario enviado con éxito!";
+                mensajeP.style.color = "green";
+                // Aquí podrías enviar los datos a un servidor
+                // formulario.submit(); // Descomentar si quieres enviar el formulario
+            } else {
+                // Si hay errores, mostramos un mensaje general
+                mensajeP.textContent = "Por favor, corrige los errores antes de enviar.";
+                mensajeP.style.color = "red";
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
