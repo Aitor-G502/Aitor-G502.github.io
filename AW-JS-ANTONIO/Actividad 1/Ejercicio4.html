@@ -16,18 +16,26 @@
 
     <!-- Cada botón llama a la misma función, pero le pasa un color diferente como argumento -->
     <button onclick="cambiarColor()">Cambia el color</button>
+    <button onclick="cambiarColorFondo()">Cambia el color del fondo del parrafo</button>
 
 
     <script>
         // La función acepta un parámetro, 'colorSeleccionado', que cambiará
         // dependiendo del botón que se pulse.
         function cambiarColor() {
-            let cambiarColor = prompt("Introduce un color");
+            let cambiarColor = prompt("Introduce un color en ingles");
             // 1. Seleccionamos el párrafo por su ID
             const parrafo = document.getElementById("textoEjemplo");
 
             // 2. Accedemos a sus estilos (style) y cambiamos la propiedad 'color'
             parrafo.style.color = cambiarColor;
+        }
+        function cambiarColorFondo() {
+            let cambiarColor = prompt("Introduce un color en ingles");
+            
+            const parrafo = document.getElementById("textoEjemplo");
+            
+            parrafo.style.backgroundColor = cambiarColor;
         }
     </script>
 </body>
