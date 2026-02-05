@@ -77,13 +77,23 @@
 
 
     <script>
-        //Cambiar el título: El título actual es "Producto Genérico". Cámbialo por "Increíble Teclado Mecánico".
-        //Actualizar el precio: El precio es "0,00 €". Actualízalo a "99,99 €".
-        //Aplicar un estilo de oferta: Para que el nuevo precio llame la atención, cambia su color a verde (green) y ponlo en negrita.//
-        //Cambiar la imagen del producto: La imagen actual es un placeholder. Cambia la imagen por una de un teclado. Usa esta URL: https://via.placeholder.com/400x300.png/0000FF/FFFFFF?Text=Teclado//
-        //Hacer el botón interactivo: Cuando un usuario haga clic en el botón "Comprar", su texto debe cambiar a "¡Añadido al carrito!", y el botón debe deshabilitarse para que no se pueda volver a pulsar.//
+        
+        const comprar = document.getElementById("boton-comprar");
+        comprar.addEventListener("click", function () {
+            comprar.textContent = "¡Añadido al carrito!";
+            comprar.disabled = true;
+        }) //cambia el texto del boton comprar y lo deshabilita.
 
+        const titulo = document.getElementById("producto-titulo");
+        titulo.textContent = "Increíble Teclado Mecánico"; // cambia el titulo del producto a uno nuevo.
 
+        const precio = document.getElementById("producto-precio");
+        precio.textContent = "99,99 €";
+        precio.style.color = "green";
+        precio.style.fontWeight = "bold"; // cambia el precio al producto y le cambia los colores.
+
+        const imagen = document.getElementById("producto-imagen");
+        imagen.src = "https://via.placeholder.com/400x300.png/0000FF/FFFFFF?Text=Teclado"; // cambia la imagen del producto.
 
 
     </script>
