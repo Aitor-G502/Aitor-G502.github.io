@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body onload="saludarUsuario()">
+    <p id="mensajeBienvenida"></p>
+    <script>
+        function saludarUsuario(){
+            const nombre = prompt("Por favor, introduce tu nombre:");
+            const parrafo = document.getElementById("mensajeBienvenida");
+            let ok = confirm ('¿Seguro que deseas continuar?')
+            if (ok){
+                parrafo.innerText = `¡Hola ${nombre}, ¡gracias por visitar nuestra página web!`;
+            } else {
+                alert("No has confirmado que deseas continuar, repite el proceso");
+                saludarUsuario();
+            }
+        }
+    </script>
+</body>
+</html>
