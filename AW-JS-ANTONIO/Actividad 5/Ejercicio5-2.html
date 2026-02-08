@@ -52,52 +52,31 @@
     <script>
         const div = document.getElementById("contenedor"); // crea una variable llamada div y despues busca elementos por su id
         generarDiv();
-        /* 
-         const input = document.createElement("input");
-         input.value = "Insertar div";
-         input.type = "button";
-         input.onclick = "generarDiv()";
-         div.appendChild(input); */
-
-        function generarDiv() {                                             // crea una funcion llamada generar div
-            const cantDiv = parseInt(prompt("¿Cuantos divs quieres?"));   // crea una variable para despues hacer "casting" a un prompt para escribir por pantalla 
-            const div = document.getElementById("contenedor");    // crea una variable y busca elemenentos por su ID
-            for (let i = 0; i < cantDiv; i++) {                     // bucle 
-                const nuevoDiv = document.createElement("div");     // crea variable para crear un elemento llamado DIV
-                nuevoDiv.classList.add("square");           //añade la clase a la nueva variable
-                nuevoDiv.textContent = "contenedor" + i;   //añade texto a la  nueva variable
-                div.appendChild(nuevoDiv);             //junta dos variables
-            }
-        }
-
-        function cambiarColor() { // llama al boton antes creado
-            debugger
-            let div = prompt("A que div le quieres cambiar el color entre el 1 y el " + cajas.length); //Crea una variable llamada div  y pone por pantalla un texto
-
-            if (div === "") {    //condicional
-                alert("No puedes dejar este cuadro vacio"); // crea una aletra 
-                cambiarColor();
-            } else if (isNan(parseInt(div))) {
-                alert("Tiene que ser un numero")
-                cambiarColor();
-            } else if (div >= 1 && div <= cajas.length) {
-                cajas[div - 1].style.backgroundColor = generarColorAleatorio(); // una vez que hayamos puesto el numero, cambia el color del div que hemos puesto -1 para que cuadre
-            } // llama a cajas, y se posiciona el el primer dif para cambiar el color de fondo a un color aleatorio
-
-            else {
-                alert("Los numeros tienen que ser entre el 1 y el " + cajas.length) // crea una alerta y despues cambia el color con la funcion anteriormente creada
-                cambiarColor();
-            }
-        }
-        function cambiarColorDivs(){
-            cambiarColorDivs.mouseover = function(){
-                this.style.backgroundColor = generarColorAleatorio();
-            }
-            cambiarColorDivs.mouseout = function(){
-                this.style.backgroundColor = "#1d1d1d";
-            }    
-        }    
         
+
+
+function generarDiv() {
+    const cantDiv = parseInt(prompt("¿Cuantos divs quieres?"));
+    const contenedor = document.getElementById("contenedor");
+
+    for (let i = 0; i < cantDiv; i++) {
+        const nuevoDiv = document.createElement("div");
+        nuevoDiv.classList.add("square");
+        nuevoDiv.textContent = i + 1;
+
+        // EVENTOS 👇
+        nuevoDiv.addEventListener("mouseover", () => {
+            nuevoDiv.style.backgroundColor = generarColorAleatorio();
+        });
+
+        nuevoDiv.addEventListener("mouseout", () => {
+            nuevoDiv.style.backgroundColor = "#1d1d1d";
+        });
+
+        contenedor.appendChild(nuevoDiv);
+    }
+}
+
         //Validar
         // 1 - 5 si pone un 6 tiene que darle un mensaje diciendo 
 
