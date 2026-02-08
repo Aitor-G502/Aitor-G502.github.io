@@ -89,7 +89,15 @@
                 cambiarColor();
             }
         }
-
+        function cambiarColorDivs(){
+            cambiarColorDivs.mouseover = function(){
+                this.style.backgroundColor = generarColorAleatorio();
+            }
+            cambiarColorDivs.mouseout = function(){
+                this.style.backgroundColor = "#1d1d1d";
+            }    
+        }    
+        
         //Validar
         // 1 - 5 si pone un 6 tiene que darle un mensaje diciendo 
 
