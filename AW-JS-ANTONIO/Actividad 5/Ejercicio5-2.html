@@ -52,6 +52,7 @@
     <script>
         const div = document.getElementById("contenedor"); // crea una variable llamada div y despues busca elementos por su id
         generarDiv();
+<<<<<<< HEAD
         /* 
          const input = document.createElement("input");
          input.value = "Insertar div";
@@ -102,7 +103,34 @@
 
 
         
+=======
+>>>>>>> afcb9f75c26c5e57835bb77d9fa118a2bf3d1530
         
+
+        
+
+function generarDiv() {
+    const cantDiv = parseInt(prompt("¿Cuantos divs quieres?"));
+    const contenedor = document.getElementById("contenedor");
+
+    for (let i = 0; i < cantDiv; i++) {
+        const nuevoDiv = document.createElement("div");
+        nuevoDiv.classList.add("square");
+        nuevoDiv.textContent = i + 1;
+
+        // EVENTOS 👇
+        nuevoDiv.addEventListener("mouseover", () => {
+            nuevoDiv.style.backgroundColor = generarColorAleatorio();
+        });
+
+        nuevoDiv.addEventListener("mouseout", () => {
+            nuevoDiv.style.backgroundColor = "#1d1d1d";
+        });
+
+        contenedor.appendChild(nuevoDiv);
+    }
+}
+
         //Validar
         // 1 - 5 si pone un 6 tiene que darle un mensaje diciendo 
 
