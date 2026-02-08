@@ -158,12 +158,83 @@ textoEjemplo.style.backgroundColor = "white";
 textoEjemplo.textContent = "Este texto será modificado cuando hagas clic.";  // 
 }
 
+//SECTOR 2//
+const ejemplo = document.querySelectorAll(".ejemplo");
+function cambiarColorClases(){
+    for (let i = 0; i < ejemplo.length; i++) {
+        ejemplo[i].style.backgroundColor = "beige";
+    }
+}
+
+function restaurarClases(){
+    for (let i = 0; i < ejemplo.length; i++) {
+        ejemplo[i].style.backgroundColor = "white";
+    }
+}
+
+// SECTOR 3 //
+const contenedorDivs = document.getElementById("contenedorDivs");
+function crearDiv(){
+    const nuevoDiv = document.createElement("div");
+    nuevoDiv.classList.add("contenedorDivs");
+    nuevoDiv.textContent = "square" + i;
+    contenedorDivs.appendChild(nuevoDiv);
+}
+function cambiarColorDivs(){
+    const divs = document.querySelectorAll(".contenedorDivs");
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].style.backgroundColor = generarColorAleatorio();
+    }
+}
+function limpiarDivs(){
+    const divs = document.querySelectorAll(".contenedorDivs");
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].remove();
+    }
+}
+function crear5Divs(){
+    for (let i = 0; i < 5; i++) {
+        crearDiv();
+    }
+}
+    
+    
+
+
+
+
 // SECTOR 4 //
 
 const nuevoItem = document.getElementById("nuevoItem") // crea una nueva variable llamada nuevoItem y busca los elementos que tengan la ID nuevoItem
 
+const input = document.getElementById("nuevoItem");
+if (input.value === "") {
+    alert("No puedes dejar este cuadro vacio");
+    cambiarColor();
+}
+
+function agregarItem(){
+   const listaElementos = document.getElementById("listaElementos");
+   const li = document.createElement("li");
+   li.textContent = input.value;
+   listaElementos.appendChild(li);
+   li.appendChild(emojiAleatorio);
+   input.value = "";
+}
+
+function eliminarItem(){
+    const listaElementos = document.getElementById("listaElementos");
+    const li = document.createElement("li");
+    listaElementos.removeChild(li[1]);
+}
+
 // listaElementos.removeChild(li[100000])
 
+function eliminarUltimo(){
+    const listaElementos = document.getElementById("listaElementos");
+    const li = document.createElement("li");
+    listaElementos.removeChild(li[li.length - 1]);
+}
 
 // SECTOR 5 //
 
@@ -180,6 +251,14 @@ document.querySelectorAll('.caja').forEach(caja => {       // Busca todos los el
 });
 
 
+
+
+
+
+// emoji //
+
+const emojis = ['🍎', '🍌', '🍊', '🍇', '🍓', '🍉', '🥭', '🍍'];
+const emojiAleatorio = emojis[Math.floor(Math.random() * emojis.length)];
 
 
 // color aleatorio //
