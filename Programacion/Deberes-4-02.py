@@ -89,7 +89,7 @@ suma = 0
 
 while numeroactual <= numero2:
     suma += numeroactual
-    numeroactual += 1
+    numeroactual += 2
 
 print(f'La suma de los numeros enteros entre {numero1} y {numero2} es de {suma}')
 
@@ -128,11 +128,17 @@ while True:
 # (és a dir, els elements repetits de llista 1 + els elements repetits de llista 2), però no s'ha de repetir cap element a la nova llista. 
 # Les dues llistes que utilitzaràs són (no utilitzeu el tipus set()):
 
-lista1 = [1,1,2,3,4,5,5,6,7,7,8,9,9,1,11,12,13,14,15,16,15,1,2]
-lista2 = [1,2,2,3,3,4,5,6,7,7,8,8,9,9]
+#lista1 = [1,1,2,3,4,5,5,6,7,7,8,9,9,1,11,12,13,14,15,16,15,1,2]
+#lista2 = [1,2,2,3,3,4,5,6,7,7,8,8,9,9]
 
-lista3 = []
+#listarep1 = []
 
-contador = 1
+#listarep2 = []
 
-while contador < 
+#listarepdev = []
+
+
+
+#contador = 1
+
+# while contador < 
