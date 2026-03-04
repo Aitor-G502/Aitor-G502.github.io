@@ -12,5 +12,21 @@ while contador < len(frase):
     contador += 1
 
 while contador2 < len(fraseinv):
-    print(" ".join(frase[contador2:]))
+    print(" ".join(fraseinv[::contador2+1]))
     contador2 += 1
+
+
+#3 
+
+num = int(input("Introduce la cantidad del patron: "))
+
+numcontador = 1
+
+numlinea = ""
+
+while num > numcontador: 
+    print(numcontador)
+    print("*"*numcontador)
+    numcontador += 1
+
+
