@@ -77,7 +77,7 @@
             if (div === "") {    //condicional
                 alert("No puedes dejar este cuadro vacio"); // crea una aletra 
                 cambiarColor();
-            } else if (isNaN(parseInt(div))) {
+            } else if (isNan(parseInt(div))) {
                 alert("Tiene que ser un numero")
                 cambiarColor();
             } else if (div >= 1 && div <= cajas.length) {
@@ -93,41 +93,11 @@
             cambiarColorDivs.mouseover = function(){
                 this.style.backgroundColor = generarColorAleatorio();
             }
-              
-        }   
-        
-        cambiarColorDivs.mouseout = function(){
+            cambiarColorDivs.mouseout = function(){
                 this.style.backgroundColor = "#1d1d1d";
-            }  
-
-
+            }    
+        }    
         
-        
-
-        
-
-function generarDiv() {
-    const cantDiv = parseInt(prompt("¿Cuantos divs quieres?"));
-    const contenedor = document.getElementById("contenedor");
-
-    for (let i = 0; i < cantDiv; i++) {
-        const nuevoDiv = document.createElement("div");
-        nuevoDiv.classList.add("square");
-        nuevoDiv.textContent = i + 1;
-
-        
-        nuevoDiv.addEventListener("mouseover", () => {
-            nuevoDiv.style.backgroundColor = generarColorAleatorio();
-        });
-
-        nuevoDiv.addEventListener("mouseout", () => {
-            nuevoDiv.style.backgroundColor = "#1d1d1d";
-        });
-
-        contenedor.appendChild(nuevoDiv);
-    }
-}
-
         //Validar
         // 1 - 5 si pone un 6 tiene que darle un mensaje diciendo 
 

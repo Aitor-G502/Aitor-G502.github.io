@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robot</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+  text-align: center;
+}
+h1 { margin-bottom: 20px; }
+
+#tokenContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+#buttonsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #d3aaff;
+  color: white;
+  cursor: pointer;
+}
+button:hover { background: #A8C5DC; }
+
+pre {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  max-height: 300px;
+  overflow: auto;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+img { margin-top: 20px; max-width: 200px; }
+</style>
+</head>
+<body>
+
+<div id="tokenContainer">
+  <button id="getTokenBtn">Actualizar Token</button>
+</div>
+
+<h1>Robot</h1>
+
+<div id="buttonsContainer">
+  <!-- Botones generados automáticamente -->
+</div> 
+
+<pre id="output">Aquí aparecerá la respuesta...</pre>
+
+<img src="sticker-removebg-preview.png" alt="https://www.youtube.com/watch?v=lsIJMVg4c1w&list=RDlsIJMVg4c1w&start_radio=1">
+
+<script src="robot.jsxs">
+let token = ''; // Token global
+
+// Datos fijos
+const URL_ENDPOINT = 'https://es.robotkeenon.com/api/open/scene/v1/robot/call/task';
+const STORE_ID = 'C00001185';
+
+// Array con uuid y pointId por botón
+const endpoints = [
+    { name: 'Uredi', uuid: 'bcba6e7206707ef0d79bb5d467ab40ea', pointId: '4' },
+    { name: 'Stolovi', uuid: 'a09184ff12e5f5122069263507956287', pointId: '5' },
+    { name: 'Devs', uuid: 'cb31d7e7f1d724726d65c972e9739706', pointId: '15' },
+    { name: 'New guys', uuid: 'f30e8650b6c6799d260cfc36d9a63765', pointId: '16' },
+
+];
+
+// Crear botones automáticamente
+const buttonsContainer = document.getElementById('buttonsContainer');
+endpoints.forEach((ep, index) => {
+    const btn = document.createElement('button');
+    btn.textContent = ep.name;
+    btn.addEventListener('click', () => fetchData(index));
+    buttonsContainer.appendChild(btn);
+});
+
+// Función para actualizar token usando POST OAuth
+async function updateToken() {
+    const output = document.getElementById('output');
+    output.textContent = 'Obteniendo token...';
+
+    try {
+        const res = await fetch('https://es.robotkeenon.com/api/open/oauth/token', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                client_id: 'MFPPuu0GtJUIDpwX',
+                client_secret: 'XRxN2SV2RPJfWW3n',
+                grant_type: 'client_credentials'
+            })
+        });
+
+        if (!res.ok) throw new Error('HTTP error ' + res.status);
+
+        const data = await res.json();
+        token = data.access_token;
+        output.textContent = 'Token actualizado: ' + token;
+    } catch (err) {
+        output.textContent = 'Error al obtener token: ' + err.message;
+    }
+}
+
+document.getElementById('getTokenBtn').addEventListener('click', updateToken);
+
+// Función fetchData que usa token global y los datos específicos de cada botón
+async function fetchData(index) {
+    const output = document.getElementById('output');
+    const ep = endpoints[index];
+
+    if (!token) {
+        output.textContent = 'Primero actualiza el token';
+        return;
+    }
+
+    const headers = { 'Authorization': 'Bearer ' + token };
+    const formData = new FormData();
+    formData.append('uuid', ep.uuid);
+    formData.append('pointId', ep.pointId);
+    formData.append('storeId', STORE_ID);
+
+    output.textContent = 'Cargando ' + ep.name + '...';
+
+    try {
+        const res = await fetch(URL_ENDPOINT, {
+            method: 'POST',
+            headers: headers,
+            body: formData
+        });
+
+        if (!res.ok) throw new Error('HTTP error ' + res.status);
+        const data = await res.json();
+        output.textContent = JSON.stringify(data, null, 2);
+    } catch (err) {
+        output.textContent = 'Error en ' + ep.name + ': ' + err.message;
+    }
+}
+
+</script>
+
+</body>
+</html>

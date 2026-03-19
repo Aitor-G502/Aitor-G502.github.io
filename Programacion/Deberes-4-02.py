@@ -128,11 +128,9 @@ while True:
 # (és a dir, els elements repetits de llista 1 + els elements repetits de llista 2), però no s'ha de repetir cap element a la nova llista. 
 # Les dues llistes que utilitzaràs són (no utilitzeu el tipus set()):
 
-lista1 = [1,1,2,3,4,5,5,6,7,7,8,9,9,1,11,12,13,14,15,16,15,1,2]
-lista2 = [1,2,2,3,3,4,5,6,7,7,8,8,9,9]
+#lista1 = [1,1,2,3,4,5,5,6,7,7,8,9,9,1,11,12,13,14,15,16,15,1,2]
+#lista2 = [1,2,2,3,3,4,5,6,7,7,8,8,9,9]
 
-lista3 = []
+#lista3 = []
 
-contador = 1
-
-while contador < 
+#contador = 1
