@@ -61,13 +61,13 @@ img { margin-top: 20px; max-width: 200px; }
 
 <div id="buttonsContainer">
   <!-- Botones generados automáticamente -->
-</div> 
+</div>
 
 <pre id="output">Aquí aparecerá la respuesta...</pre>
 
 <img src="sticker-removebg-preview.png" alt="https://www.youtube.com/watch?v=lsIJMVg4c1w&list=RDlsIJMVg4c1w&start_radio=1">
 
-<script src="robot.jsxs">
+<script>
 let token = ''; // Token global
 
 // Datos fijos
@@ -152,7 +152,6 @@ async function fetchData(index) {
         output.textContent = 'Error en ' + ep.name + ': ' + err.message;
     }
 }
-
 </script>
 
 </body>
