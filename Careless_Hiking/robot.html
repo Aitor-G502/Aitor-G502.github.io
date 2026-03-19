@@ -11,11 +11,10 @@ body {
   background: #f5f5f5;
   text-align: center;
 }
-h1 { margin-bottom: 20px; }
+h1 { margin-bottom: 10px; }
 
-#tokenContainer {
-  display: flex;
-  justify-content: flex-start;
+#tokenTimer {
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
@@ -53,11 +52,9 @@ img { margin-top: 20px; max-width: 200px; }
 </head>
 <body>
 
-<div id="tokenContainer">
-  <button id="getTokenBtn">Actualizar Token</button>
-</div>
-
 <h1>Robot</h1>
+
+<div id="tokenTimer">Obteniendo token...</div>
 
 <div id="buttonsContainer">
   <!-- Botones generados automáticamente -->
@@ -65,37 +62,44 @@ img { margin-top: 20px; max-width: 200px; }
 
 <pre id="output">Aquí aparecerá la respuesta...</pre>
 
-<img src="sticker-removebg-preview.png" alt="https://www.youtube.com/watch?v=lsIJMVg4c1w&list=RDlsIJMVg4c1w&start_radio=1">
+<img src="sticker-removebg-preview.png" alt="sticker">
 
 <script>
 let token = ''; // Token global
+let tokenExpiry = 0; // Timestamp de expiración
+let countdownInterval = null;
 
-// Datos fijos
 const URL_ENDPOINT = 'https://es.robotkeenon.com/api/open/scene/v1/robot/call/task';
 const STORE_ID = 'C00001185';
 
-// Array con uuid y pointId por botón
-const endpoints = [
-    { name: 'Uredi', uuid: 'bcba6e7206707ef0d79bb5d467ab40ea', pointId: '4' },
-    { name: 'Stolovi', uuid: 'a09184ff12e5f5122069263507956287', pointId: '5' },
-    { name: 'Devs', uuid: 'cb31d7e7f1d724726d65c972e9739706', pointId: '15' },
-    { name: 'New guys', uuid: 'f30e8650b6c6799d260cfc36d9a63765', pointId: '16' },
-
-];
-
-// Crear botones automáticamente
+// Elementos HTML
 const buttonsContainer = document.getElementById('buttonsContainer');
-endpoints.forEach((ep, index) => {
-    const btn = document.createElement('button');
-    btn.textContent = ep.name;
-    btn.addEventListener('click', () => fetchData(index));
-    buttonsContainer.appendChild(btn);
-});
+const output = document.getElementById('output');
+const tokenTimer = document.getElementById('tokenTimer');
 
-// Función para actualizar token usando POST OAuth
+// Cargar endpoints desde la base de datos
+async function loadEndpoints() {
+    try {
+        const res = await fetch('get_endpoints.php');
+        const data = await res.json();
+
+        buttonsContainer.innerHTML = '';
+
+        data.forEach((ep) => {
+            const btn = document.createElement('button');
+            btn.textContent = ep.name;
+            btn.addEventListener('click', () => fetchData(ep));
+            buttonsContainer.appendChild(btn);
+        });
+
+    } catch (err) {
+        output.textContent = 'Error cargando botones: ' + err.message;
+    }
+}
+
+// Función para actualizar token según expires_in del servidor
 async function updateToken() {
-    const output = document.getElementById('output');
-    output.textContent = 'Obteniendo token...';
+    tokenTimer.textContent = 'Obteniendo token...';
 
     try {
         const res = await fetch('https://es.robotkeenon.com/api/open/oauth/token', {
@@ -112,21 +116,41 @@ async function updateToken() {
 
         const data = await res.json();
         token = data.access_token;
-        output.textContent = 'Token actualizado: ' + token;
+        tokenExpiry = Date.now() + data.expires_in * 1000;
+
+        console.log('Token actualizado:', token);
+
+        startTokenCountdown();
+
+        // Programar próxima actualización 5s antes de expirar
+        const refreshTime = data.expires_in * 1000 - 5000;
+        setTimeout(updateToken, refreshTime);
+
     } catch (err) {
-        output.textContent = 'Error al obtener token: ' + err.message;
+        tokenTimer.textContent = 'Error al obtener token, reintentando...';
+        console.error(err);
+        setTimeout(updateToken, 10000); // reintentar en 10s si falla
     }
 }
 
-document.getElementById('getTokenBtn').addEventListener('click', updateToken);
+// Contador visual del token
+function startTokenCountdown() {
+    if (countdownInterval) clearInterval(countdownInterval);
 
-// Función fetchData que usa token global y los datos específicos de cada botón
-async function fetchData(index) {
-    const output = document.getElementById('output');
-    const ep = endpoints[index];
+    countdownInterval = setInterval(() => {
+        const remaining = Math.max(0, tokenExpiry - Date.now());
+        const minutes = Math.floor(remaining / 60000);
+        const seconds = Math.floor((remaining % 60000) / 1000);
+        tokenTimer.textContent = `Token válido. Próxima actualización en ${minutes}m ${seconds}s`;
 
+        if (remaining <= 0) clearInterval(countdownInterval);
+    }, 1000);
+}
+
+// Función para usar el endpoint
+async function fetchData(ep) {
     if (!token) {
-        output.textContent = 'Primero actualiza el token';
+        output.textContent = 'Esperando token...';
         return;
     }
 
@@ -152,6 +176,10 @@ async function fetchData(index) {
         output.textContent = 'Error en ' + ep.name + ': ' + err.message;
     }
 }
+
+// Iniciar token y cargar endpoints al cargar la página
+updateToken();
+loadEndpoints();
 </script>
 
 </body>
