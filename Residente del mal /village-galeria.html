@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>RE Village — Galería</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='47' fill='%231a0608' stroke='%23c8a840' stroke-width='3'/%3E%3Cpolygon points='50,28 55,44 72,50 55,56 50,72 45,56 28,50 45,44' fill='%23c8a840' opacity='0.88'/%3E%3Cline x1='50' y1='4' x2='50' y2='96' stroke='%23c8a840' stroke-width='1.5' opacity='0.45'/%3E%3Cline x1='4' y1='50' x2='96' y2='50' stroke='%23c8a840' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E"><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Special+Elite&family=Share+Tech+Mono&display=swap" rel="stylesheet"><style>:root{--w:#1e0a0c;--wm:#2a1012;--wl:#361418;--cr:#8b1a1a;--cm:#f0e6c8;--cd:#c8a868;--ck:#886840;--go:#c8a840;--gd:#7a6220;--bg:rgba(200,168,64,0.22);--sb:262px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:"Special Elite",serif;display:flex;min-height:100vh;overflow-x:hidden;background-color:#160a0c;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90'%3E%3Crect x='1' y='1' width='118' height='43' fill='rgba(35,10,12,0.5)' stroke='rgba(100,30,30,0.2)' stroke-width='1'/%3E%3Crect x='61' y='46' width='58' height='43' fill='rgba(30,8,10,0.45)' stroke='rgba(90,25,25,0.18)' stroke-width='1'/%3E%3Crect x='1' y='46' width='58' height='43' fill='rgba(32,9,11,0.48)' stroke='rgba(95,27,27,0.18)' stroke-width='1'/%3E%3C/svg%3E"),radial-gradient(ellipse 130% 50% at 50% 0%,rgba(180,80,20,0.05) 0%,transparent 55%),linear-gradient(160deg,#1e0c0e 0%,#160a0c 50%,#1c0c10 100%);color:var(--cd);}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 50% 40% at 12% 10%,rgba(200,90,20,0.12) 0%,transparent 52%),radial-gradient(ellipse 45% 35% at 88% 12%,rgba(160,40,20,0.1) 0%,transparent 48%),radial-gradient(ellipse 100% 100% at 50% 50%,transparent 30%,rgba(0,0,0,0.68) 100%);pointer-events:none;z-index:9998;}
+body::after{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.022'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.sidebar{width:var(--sb);position:fixed;top:0;left:0;height:100vh;display:flex;flex-direction:column;z-index:100;background-color:#120608;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90'%3E%3Crect x='1' y='1' width='118' height='43' fill='none' stroke='rgba(100,30,30,0.22)' stroke-width='1'/%3E%3Crect x='1' y='46' width='118' height='43' fill='none' stroke='rgba(90,25,25,0.18)' stroke-width='1'/%3E%3C/svg%3E"),linear-gradient(90deg,#0e0406 0%,#1c0a0c 45%,#140608 100%);border-right:1px solid var(--bg);box-shadow:3px 0 0 rgba(200,168,64,0.06),5px 0 22px rgba(0,0,0,0.85),inset -3px 0 10px rgba(0,0,0,0.5);}
+.sidebar::before{content:"";position:absolute;top:0;left:0;right:0;height:42%;background:radial-gradient(ellipse 88% 72% at 50% 0%,rgba(180,60,20,0.28) 0%,transparent 65%);pointer-events:none;}
+.sidebar::after{content:"";position:absolute;bottom:0;left:0;right:0;height:38%;background:radial-gradient(ellipse 90% 72% at 50% 100%,rgba(6,2,3,0.75) 0%,transparent 68%);pointer-events:none;}
+.game-switcher{display:flex;border-bottom:1px solid rgba(200,168,64,0.2);}
+.game-switcher a{flex:1;padding:10px 6px;font-family:"Share Tech Mono",monospace;font-size:0.56em;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;text-align:center;transition:all 0.25s;}
+.game-switcher a.re7{color:var(--ck);border-bottom:2px solid transparent;}
+.game-switcher a.re7:hover{color:var(--go);}
+.game-switcher a.re8{color:var(--go);background:rgba(200,168,64,0.08);border-bottom:2px solid var(--go);}
+.sidebar-logo{padding:16px 22px 14px;border-bottom:1px solid rgba(200,168,64,0.2);}
+.crw{display:flex;justify-content:center;margin-bottom:10px;}
+.ltxt{font-family:"Cinzel",serif;font-weight:700;font-size:0.96em;color:var(--go);letter-spacing:0.1em;line-height:1.45;text-transform:uppercase;text-align:center;text-shadow:0 0 28px rgba(200,168,64,0.42),0 2px 8px rgba(0,0,0,0.9);}
+.lsub{font-family:"Share Tech Mono",monospace;font-size:0.54em;color:var(--ck);letter-spacing:0.28em;margin-top:4px;opacity:0.58;text-align:center;}
+.menu{padding:14px 0;flex:1;}
+.menu a{display:flex;align-items:center;color:var(--ck);text-decoration:none;font-family:"Share Tech Mono",monospace;font-size:0.67em;letter-spacing:0.14em;text-transform:uppercase;padding:11px 22px;border-left:3px solid transparent;transition:all 0.28s;}
+.menu a::before{content:attr(data-num);font-size:0.66em;color:rgba(200,168,64,0.28);margin-right:9px;}
+.menu a:hover,.menu a.active{color:var(--cm);border-left-color:var(--go);background:linear-gradient(90deg,rgba(200,168,64,0.09),transparent);padding-left:28px;}
+.menu a:hover::before,.menu a.active::before{color:var(--go);}
+.sf{padding:13px 22px;border-top:1px solid rgba(200,168,64,0.15);font-family:"Share Tech Mono",monospace;font-size:0.49em;color:var(--ck);opacity:0.5;text-align:center;}
+.content{margin-left:var(--sb);width:calc(100% - var(--sb));min-height:100vh;}
+.ph{padding:60px 68px 46px;border-bottom:1px solid var(--bg);background:linear-gradient(160deg,#2a1010 0%,#320e12 30%,#1e0c0e 65%,#28101a 100%);position:relative;overflow:hidden;}
+.ph::before{content:"";position:absolute;top:-80px;left:-60px;width:520px;height:440px;background:radial-gradient(ellipse at 22% 28%,rgba(200,90,20,0.2) 0%,transparent 52%);pointer-events:none;}
+.ph::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent 0%,rgba(200,168,64,0.6) 15%,rgba(200,168,64,0.35) 50%,rgba(200,168,64,0.6) 85%,transparent 100%);}
+.ph .ey{font-family:"Share Tech Mono",monospace;font-size:0.61em;letter-spacing:0.36em;color:var(--ck);text-transform:uppercase;margin-bottom:20px;opacity:0.72;}
+.ph h1{font-family:"Cinzel",serif;font-weight:700;font-size:clamp(2.6em,5.5vw,5em);color:var(--cm);line-height:1.05;letter-spacing:0.08em;text-transform:uppercase;text-shadow:3px 4px 0 rgba(0,0,0,0.92),0 0 60px rgba(160,30,20,0.18);position:relative;z-index:1;}
+section{padding:62px 68px;border-bottom:1px solid rgba(110,28,28,0.28);position:relative;}
+section::before{content:"";position:absolute;top:0;left:0;width:220px;height:140px;background:radial-gradient(ellipse at 0% 0%,rgba(120,20,22,0.1) 0%,transparent 65%);pointer-events:none;}
+section::after{content:"";position:absolute;bottom:0;right:0;width:240px;height:150px;background:radial-gradient(ellipse at 100% 100%,rgba(90,15,18,0.1) 0%,transparent 65%);pointer-events:none;}
+.sh{display:flex;align-items:center;gap:16px;margin-bottom:44px;padding-bottom:14px;border-bottom:1px solid var(--bg);position:relative;}
+.sh::before{content:"⚜";font-size:0.78em;color:rgba(200,168,64,0.3);position:absolute;left:-4px;bottom:-12px;}
+.sn{font-family:"Share Tech Mono",monospace;font-size:0.58em;color:var(--ck);letter-spacing:0.2em;opacity:0.6;}
+.st{font-family:"Cinzel",serif;font-weight:700;font-size:1.8em;color:var(--cm);letter-spacing:0.1em;text-transform:uppercase;text-shadow:2px 2px 0 rgba(0,0,0,0.8);}
+.sl{flex:1;height:1px;background:linear-gradient(90deg,var(--gd) 0%,rgba(200,168,64,0.1) 55%,transparent 100%);}
+footer{padding:20px 68px;display:flex;justify-content:space-between;align-items:center;font-family:"Share Tech Mono",monospace;font-size:0.53em;letter-spacing:0.14em;color:var(--ck);border-top:1px solid var(--bg);background:linear-gradient(160deg,#100608,#1c0a0c);opacity:0.82;}
+footer .fr{color:var(--gd);}
+.gg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;}
+.gi{aspect-ratio:4/3;background:linear-gradient(160deg,var(--wm),var(--w));border:1px solid rgba(120,30,30,0.35);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;box-shadow:inset 0 0 30px rgba(0,0,0,0.4);}
+.gi::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 90% 90%,rgba(139,26,26,0.2) 0%,transparent 58%),radial-gradient(ellipse 35% 30% at 5% 8%,rgba(60,10,12,0.22) 0%,transparent 55%);pointer-events:none;}
+.gi::after{content:"";position:absolute;bottom:0;left:0;width:0;height:2px;background:linear-gradient(90deg,rgba(160,30,20,0.7),rgba(200,168,64,0.6),transparent);transition:width 0.5s;}
+.gi:hover{background:linear-gradient(160deg,var(--wl),var(--wm));}
+.gi:hover::after{width:100%;}
+.gi:nth-child(1){grid-column:span 2;}
+.gi:nth-child(4){grid-column:span 2;}
+.gt{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(200,168,64,0.22),transparent);}
+.gcap{font-family:"Share Tech Mono",monospace;font-size:0.6em;letter-spacing:0.2em;text-transform:uppercase;color:var(--ck);text-align:center;opacity:0;transform:translateY(8px);transition:all 0.3s;position:relative;z-index:1;}
+.gi:hover .gcap{opacity:1;transform:translateY(0);}
+.gnote{margin-top:20px;padding:16px 20px;background:linear-gradient(160deg,var(--wm),var(--w));border:1px solid rgba(120,30,30,0.28);font-family:"Share Tech Mono",monospace;font-size:0.62em;letter-spacing:0.1em;color:var(--ck);}</style></head><body><nav class="sidebar"><div class="game-switcher"><a href="index.html" class="re7">RE7 · Biohazard</a><a href="village-index.html" class="re8">RE8 · Village</a></div><div class="sidebar-logo">
+    <div class="crw"><img src="https://www.creativeuncut.com/gallery-40/art/rev-crests-of-the-four-lords.jpg" alt="Four Houses Crest" style="width:72px;height:auto;opacity:0.88;filter:sepia(0.2) saturate(1.2) brightness(0.95);display:block;border-radius:2px;" loading="lazy" onerror="this.style.display='none'"/></div>
+    <div class="ltxt">Resident Evil<br>Village</div>
+    <div class="lsub">Fan Archive</div>
+  </div>
+  <div class="menu"><a href="village-index.html" data-num="01">Inicio</a><a href="village-historia.html" data-num="02">Historia</a><a href="village-armas.html" data-num="03">Arsenal</a><a href="village-galeria.html" data-num="04" class="active">Galería</a></div><div class="sf">CAPCOM &#169; 2021 &middot; FAN PAGE</div></nav><main class="content"><div class="ph"><svg style="position:absolute;top:-15px;right:60px;opacity:0.07;pointer-events:none;" width="130" height="210" viewBox="0 0 130 210" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 210 L10 80 Q10 10 65 10 Q120 10 120 80 L120 210" stroke="rgba(200,168,64,1)" stroke-width="2" fill="none"/><path d="M28 210 L28 90 Q28 40 65 40 Q102 40 102 90 L102 210" stroke="rgba(200,168,64,0.45)" stroke-width="1" fill="none"/><path d="M38 65 Q65 35 92 65 Q65 55 38 65Z" stroke="rgba(200,168,64,0.65)" stroke-width="1" fill="rgba(200,168,64,0.04)"/><circle cx="65" cy="56" r="12" stroke="rgba(200,168,64,0.5)" stroke-width="1" fill="none"/></svg><div class="ey">// Escenarios &middot; Localizaciones</div><h1>Galería</h1></div>
+<section style="padding:52px 68px;">
+<div class="gg">
+  <div class="gi"><div class="gt"></div><span class="gcap">Castillo Dimitrescu &mdash; Exterior</span></div>
+  <div class="gi"><div class="gt"></div><span class="gcap">Gran Salón del Castillo</span></div>
+  <div class="gi"><div class="gt"></div><span class="gcap">Casa Beneviento</span></div>
+  <div class="gi"><div class="gt"></div><span class="gcap">Embalse de Moreau</span></div>
+  <div class="gi"><div class="gt"></div><span class="gcap">Fábrica de Heisenberg</span></div>
+  <div class="gi"><div class="gt"></div><span class="gcap">El Pueblo &mdash; Vista general</span></div>
+</div>
+<div class="gnote">// Para añadir imágenes: reemplaza cada div.gi con &lt;img src="ruta.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"&gt; junto a un &lt;span class="gcap"&gt;</div>
+</section><footer><span>Resident Evil Village &middot; Fan Page &middot; Non-Commercial</span><span class="fr">Capcom &copy; 2021</span></footer></main></body></html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE7 &amp; Village — Extras</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='47' fill='%231a0608' stroke='%23c8a840' stroke-width='3'/%3E%3Cpolygon points='50,28 55,44 72,50 55,56 50,72 45,56 28,50 45,44' fill='%23c8a840' opacity='0.88'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Special+Elite&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--w:#1e0a0c;--wm:#2a1012;--wl:#361418;--cm:#f0e6c8;--cd:#c8a868;--ck:#886840;--go:#c8a840;--gd:#7a6220;--bg:rgba(200,168,64,0.22);--a:#c8721a;--pd:#8a6a35;--sb:262px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:"Special Elite",serif;display:flex;min-height:100vh;overflow-x:hidden;background-color:#120608;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90'%3E%3Crect x='1' y='1' width='118' height='43' fill='rgba(32,9,11,0.45)' stroke='rgba(90,25,25,0.18)' stroke-width='1'/%3E%3Crect x='1' y='46' width='118' height='43' fill='rgba(28,7,9,0.42)' stroke='rgba(80,22,22,0.15)' stroke-width='1'/%3E%3C/svg%3E"),linear-gradient(160deg,#1e0c0e 0%,#120608 50%,#1a1006 100%);color:var(--cd);}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 50% 40% at 10% 10%,rgba(200,90,20,0.1) 0%,transparent 52%),radial-gradient(ellipse 50% 40% at 90% 12%,rgba(160,40,20,0.1) 0%,transparent 50%),radial-gradient(ellipse 100% 100% at 50% 50%,transparent 30%,rgba(0,0,0,0.7) 100%);pointer-events:none;z-index:9998;}
+body::after{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.02'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.sidebar{width:var(--sb);position:fixed;top:0;left:0;height:100vh;display:flex;flex-direction:column;z-index:100;background-color:#100608;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90'%3E%3Crect x='1' y='1' width='118' height='43' fill='none' stroke='rgba(90,25,25,0.22)' stroke-width='1'/%3E%3Crect x='1' y='46' width='118' height='43' fill='none' stroke='rgba(80,20,20,0.18)' stroke-width='1'/%3E%3C/svg%3E"),linear-gradient(90deg,#0c0406 0%,#180a0c 45%,#100608 100%);border-right:1px solid var(--bg);box-shadow:3px 0 0 rgba(200,168,64,0.05),5px 0 20px rgba(0,0,0,0.85);}
+.sidebar::before{content:"";position:absolute;top:0;left:0;right:0;height:42%;background:radial-gradient(ellipse 88% 72% at 50% 0%,rgba(180,60,20,0.25) 0%,transparent 65%);pointer-events:none;}
+.sidebar::after{content:"";position:absolute;bottom:0;left:0;right:0;height:38%;background:radial-gradient(ellipse 90% 72% at 50% 100%,rgba(6,2,3,0.7) 0%,transparent 65%);pointer-events:none;}
+.game-switcher{display:flex;border-bottom:1px solid rgba(200,168,64,0.2);}
+.game-switcher a{flex:1;padding:10px 6px;font-family:"Share Tech Mono",monospace;font-size:0.56em;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;text-align:center;transition:all 0.25s;}
+.game-switcher a.re7{color:var(--a);border-bottom:2px solid transparent;}
+.game-switcher a.re7:hover{color:var(--cm);}
+.game-switcher a.re8{color:var(--go);border-bottom:2px solid transparent;}
+.game-switcher a.re8:hover{color:var(--cm);}
+.sidebar-logo{padding:18px 22px 14px;border-bottom:1px solid rgba(200,168,64,0.18);text-align:center;}
+.logo-dual{display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:10px;}
+.logo-sep{font-family:"Cinzel",serif;font-size:1.1em;color:var(--go);opacity:0.4;}
+.ltxt{font-family:"Cinzel",serif;font-weight:700;font-size:0.88em;color:var(--go);letter-spacing:0.08em;line-height:1.5;text-transform:uppercase;text-shadow:0 0 24px rgba(200,168,64,0.35);}
+.lsub{font-family:"Share Tech Mono",monospace;font-size:0.52em;color:var(--ck);letter-spacing:0.28em;margin-top:4px;opacity:0.55;}
+.menu{padding:14px 0;flex:1;}
+.msec{font-family:"Share Tech Mono",monospace;font-size:0.5em;letter-spacing:0.28em;text-transform:uppercase;color:var(--ck);padding:10px 22px 4px;opacity:0.5;}
+.menu a{display:flex;align-items:center;color:var(--ck);text-decoration:none;font-family:"Share Tech Mono",monospace;font-size:0.65em;letter-spacing:0.12em;text-transform:uppercase;padding:9px 22px;border-left:3px solid transparent;transition:all 0.28s;}
+.menu a::before{content:attr(data-num);font-size:0.66em;color:rgba(200,168,64,0.28);margin-right:9px;}
+.menu a:hover,.menu a.active{color:var(--cm);border-left-color:var(--go);background:linear-gradient(90deg,rgba(200,168,64,0.09),transparent);padding-left:28px;}
+.menu a:hover::before,.menu a.active::before{color:var(--go);}
+.sf{padding:13px 22px;border-top:1px solid rgba(200,168,64,0.15);font-family:"Share Tech Mono",monospace;font-size:0.49em;color:var(--ck);opacity:0.5;text-align:center;}
+.content{margin-left:var(--sb);width:calc(100% - var(--sb));min-height:100vh;}
+.ph{padding:60px 68px 50px;border-bottom:1px solid var(--bg);background:linear-gradient(160deg,#2a1010 0%,#1e1208 40%,#1a0c0e 70%,#240e08 100%);position:relative;overflow:hidden;}
+.ph::before{content:"";position:absolute;top:-60px;left:-40px;width:500px;height:400px;background:radial-gradient(ellipse at 25% 25%,rgba(200,90,20,0.15) 0%,transparent 52%);pointer-events:none;}
+.ph::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,rgba(200,114,26,0.4) 0%,rgba(200,168,64,0.6) 50%,rgba(200,114,26,0.4) 100%);}
+.ph .ey{font-family:"Share Tech Mono",monospace;font-size:0.61em;letter-spacing:0.36em;color:var(--ck);text-transform:uppercase;margin-bottom:20px;opacity:0.72;}
+.ph h1{font-family:"Cinzel",serif;font-weight:700;font-size:clamp(2.2em,5vw,4em);color:var(--cm);line-height:1.05;letter-spacing:0.08em;text-transform:uppercase;text-shadow:3px 4px 0 rgba(0,0,0,0.92);}
+.ph-sub{font-family:"Special Elite",serif;font-size:0.9em;color:var(--ck);margin-top:14px;font-style:italic;max-width:620px;line-height:1.65;}
+section{padding:52px 68px;border-bottom:1px solid rgba(100,25,25,0.22);}
+.sh{display:flex;align-items:center;gap:16px;margin-bottom:38px;padding-bottom:12px;border-bottom:1px solid var(--bg);position:relative;}
+.sh::before{content:"⚜";font-size:0.78em;color:rgba(200,168,64,0.3);position:absolute;left:64px;bottom:-12px;}
+.sn{font-family:"Share Tech Mono",monospace;font-size:0.58em;color:var(--ck);letter-spacing:0.2em;opacity:0.6;}
+.st{font-family:"Cinzel",serif;font-weight:700;font-size:1.7em;color:var(--cm);letter-spacing:0.1em;text-transform:uppercase;}
+.sl{flex:1;height:1px;background:linear-gradient(90deg,var(--gd) 0%,rgba(200,168,64,0.08) 60%,transparent 100%);}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:3px;}
+.card{background:linear-gradient(160deg,var(--wm),var(--w));border:1px solid rgba(130,30,30,0.3);padding:24px 22px;position:relative;overflow:hidden;transition:all 0.3s;}
+.card::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--go);transform:scaleY(0);transform-origin:bottom;transition:transform 0.3s;}
+.card:hover{background:linear-gradient(160deg,var(--wl),var(--wm));}
+.card:hover::before{transform:scaleY(1);}
+.ctag{display:inline-flex;align-items:center;gap:5px;font-family:"Share Tech Mono",monospace;font-size:0.5em;letter-spacing:0.16em;text-transform:uppercase;padding:2px 8px;border:1px solid;margin-bottom:9px;}
+.t7{border-color:rgba(200,114,26,0.5);color:var(--a);}
+.tv{border-color:rgba(200,168,64,0.5);color:var(--go);}
+.tb{border-color:rgba(140,70,30,0.5);color:#c8a060;}
+.tl{border-color:rgba(80,40,120,0.5);color:#a070d0;}
+.td{border-color:rgba(40,100,160,0.5);color:#60a0d0;}
+.te{border-color:rgba(40,130,70,0.5);color:#60c080;}
+.card h3{font-family:"Cinzel",serif;font-weight:600;font-size:0.98em;color:var(--cm);margin-bottom:10px;letter-spacing:0.03em;}
+.card p{font-size:0.83em;color:var(--ck);line-height:1.78;}
+.card p strong{color:var(--cd);}
+.card p em{color:var(--go);font-style:normal;}
+
+/* Wide card */
+.card.wide{grid-column:span 2;}
+@media(max-width:1100px){.card.wide{grid-column:span 1;}}
+
+/* Ranking list */
+.rlist{display:flex;flex-direction:column;gap:3px;}
+.ri{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;background:linear-gradient(160deg,var(--wm),var(--w));border:1px solid rgba(130,30,30,0.28);padding:16px 20px;transition:all 0.25s;}
+.ri:hover{background:linear-gradient(160deg,var(--wl),var(--wm));}
+.rn{font-family:"Cinzel",serif;font-weight:700;font-size:1.6em;color:var(--go);opacity:0.5;line-height:1;text-align:center;}
+.rt{font-family:"Cinzel",serif;font-weight:600;font-size:0.9em;color:var(--cm);margin-bottom:5px;}
+.rd{font-size:0.8em;color:var(--ck);line-height:1.65;}
+
+/* Timeline */
+.tl-wrap{display:flex;flex-direction:column;}
+.tli{display:grid;grid-template-columns:72px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid rgba(100,25,25,0.18);}
+.tli:last-child{border-bottom:none;}
+.tly{font-family:"Cinzel",serif;font-weight:700;font-size:0.82em;color:var(--go);text-align:right;padding-top:2px;line-height:1.3;}
+.tlb h4{font-family:"Cinzel",serif;font-weight:600;font-size:0.88em;color:var(--cm);margin-bottom:5px;}
+.tlb p{font-size:0.8em;color:var(--ck);line-height:1.7;}
+
+/* Comparison */
+.ctbl{width:100%;border-collapse:collapse;font-size:0.8em;}
+.ctbl thead tr{background:rgba(18,6,8,0.7);}
+.ctbl th{font-family:"Cinzel",serif;font-weight:600;color:var(--cm);padding:10px 14px;text-align:left;border-bottom:1px solid var(--bg);}
+.ctbl th:first-child{color:var(--ck);font-size:0.82em;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;}
+.ctbl td{padding:10px 14px;border-bottom:1px solid rgba(100,25,25,0.15);vertical-align:top;line-height:1.6;}
+.ctbl td:first-child{font-family:"Share Tech Mono",monospace;font-size:0.75em;color:var(--ck);white-space:nowrap;}
+.ctbl td:nth-child(2){color:rgba(200,114,26,0.9);}
+.ctbl td:nth-child(3){color:var(--cd);}
+.ctbl tbody tr:hover{background:rgba(25,8,10,0.5);}
+
+footer{padding:20px 68px;display:flex;justify-content:space-between;align-items:center;font-family:"Share Tech Mono",monospace;font-size:0.53em;letter-spacing:0.14em;color:var(--ck);border-top:1px solid var(--bg);background:linear-gradient(160deg,#100608,#1a0a08);opacity:0.82;}
+footer .fr{color:var(--gd);}
+</style>
+</head>
+<body>
+<nav class="sidebar">
+  <div class="game-switcher">
+    <a href="index.html" class="re7">RE7 · Biohazard</a>
+    <a href="village-index.html" class="re8">RE8 · Village</a>
+  </div>
+  <div class="sidebar-logo">
+    <div class="logo-dual">
+      <svg width="22" height="44" viewBox="0 0 22 44" xmlns="http://www.w3.org/2000/svg"><defs><style>.cf{transform-origin:11px 18px;animation:ca 1.6s ease-in-out infinite alternate;}@keyframes ca{0%{transform:rotate(-5deg);}100%{transform:rotate(5deg) scaleY(1.1);}}</style></defs><g class="cf"><path d="M11 4 Q17 11 15 19 Q13 23 11 24 Q9 23 7 19 Q5 11 11 4Z" fill="#e27f24" opacity="0.88"/><path d="M11 8 Q15 13 13.5 19 Q12.5 22 11 22 Q9.5 22 8.5 19 Q7 13 11 8Z" fill="#f5c842" opacity="0.9"/></g><rect x="7" y="23" width="8" height="17" rx="1.5" fill="#c8a870"/></svg>
+      <span class="logo-sep">&amp;</span>
+      <img src="https://www.creativeuncut.com/gallery-40/art/rev-crests-of-the-four-lords.jpg" alt="crest" style="width:30px;height:auto;opacity:0.85;" loading="lazy" onerror="this.style.display='none'"/>
+    </div>
+    <div class="ltxt">RE7 &amp; Village</div>
+    <div class="lsub">Extras</div>
+  </div>
+  <div class="menu">
+    <div class="msec">RE7 — Biohazard</div>
+    <a href="index.html" data-num="01">Inicio</a>
+    <a href="historia.html" data-num="02">Historia</a>
+    <a href="armas.html" data-num="03">Arsenal</a>
+    <div class="msec">RE Village</div>
+    <a href="village-index.html" data-num="01">Inicio</a>
+    <a href="village-historia.html" data-num="02">Historia</a>
+    <a href="village-armas.html" data-num="03">Arsenal</a>
+    <div class="msec">Extras</div>
+    <a href="extras.html" data-num="★" class="active">Extras</a>
+  </div>
+  <div class="sf">CAPCOM &copy; 2017 &amp; 2021 &middot; FAN PAGE</div>
+</nav>
+
+<main class="content">
+<div class="ph">
+  <div class="ey">// Detalles, teorías, curiosidades y secretos de RE7 y Village</div>
+  <h1>Extras</h1>
+  <p class="ph-sub">No la guía de siempre. Aquí van los detalles que más me gustan de ambos juegos: los que casi nadie menciona, los que tardan en entenderse, y los que hacen que estos dos juegos sean algo más que terror con munición limitada.</p>
+</div>
+
+<!-- ═══ DETALLES QUE CASI NADIE NOTA ═══ -->
+<section>
+<div class="sh"><span class="sn">01 /</span><h2 class="st">Detalles que Casi Nadie Nota</h2><div class="sl"></div></div>
+<div class="grid">
+
+<div class="card">
+  <span class="ctag t7">RE7</span>
+  <h3>Jack Baker tiene los horarios de una familia real</h3>
+  <p>En el diario de Jack Baker se puede leer que cada miembro de la familia tiene un "rol" asignado en la mansión para cazar a Ethan. Lo que no dice el diario, pero sí el diseño del juego, es que Jack patrulla rutas muy específicas según la hora del juego. Los diseñadores programaron sus movimientos como si siguiera una rutina diaria. No es agresión aleatoria: es un padre que "trabaja" para proteger su hogar a su manera retorcida.</p>
+</div>
+
+<div class="card">
+  <span class="ctag t7">RE7</span>
+  <h3>La cinta VHS de la Casa en Ruinas es jugable antes del flashback</h3>
+  <p>La primera cinta VHS del juego, "Derelict House Footage", no es solo un tutorial: si el jugador abre el cajón de la cocina siendo Clancy y coloca la ganzúa que encuentra en el exterior, ese cajón aparece <strong>ya abierto</strong> cuando Ethan llegue más tarde. El pasado y el presente del juego están literalmente conectados por el inventario. Capcom lo planteó como un puzzle de causalidad temporal dentro de una cinta de vídeo.</p>
+</div>
+
+<div class="card">
+  <span class="ctag t7">RE7</span>
+  <h3>El cuadro familiar cambia según tu progreso</h3>
+  <p>En el comedor Baker hay un cuadro de familia colgado en la pared. Al inicio del juego muestra a Jack, Marguerite, Lucas y la anciana (Eveline disfrazada). Cada vez que derrotes a un miembro de la familia Baker, el cuadro cambia sutilmente — el miembro derrotado desaparece del cuadro. Es un detalle tan discreto que la mayoría de los jugadores no lo descubren hasta su segunda partida.</p>
+</div>
+
+<div class="card">
+  <span class="ctag tv">Village</span>
+  <h3>El castillo tiene una economía de vino funcional</h3>
+  <p>En los archivos y notas repartidos por el Castillo Dimitrescu se describe con detalle cómo Alcina gestiona el castillo como una empresa familiar: produce vino de la sangre de los prisioneros, lo vende al pueblo como "vino tinto especial de la familia Dimitrescu" y usa los beneficios para mantener el castillo operativo. Hay un archivo con la lista de precios. El castillo no es solo una locación de terror — es una organización feudal con contabilidad.</p>
+</div>
+
+<div class="card">
+  <span class="ctag tv">Village</span>
+  <h3>Las hijas de Dimitrescu son insectos, no vampiros</h3>
+  <p>Bela, Cassandra y Daniela no son criaturas vampíricas en sentido estricto. Los archivos del castillo revelan que son literalmente <strong>enjambres de insectos</strong> con forma humana, mantenidos cohesionados por el Cadou. Su "muerte" cuando las expones al frío no es por el frío en sí, sino porque los insectos que las componen no pueden sobrevivir a bajas temperaturas. Por eso el frío de las ventanas rotas funciona: disuelve la cohesión del enjambre.</p>
+</div>
+
+<div class="card">
+  <span class="ctag tv">Village</span>
+  <h3>El Duque conoce a Miranda y finge no saberlo</h3>
+  <p>En ningún momento del juego el Duque le cuenta a Ethan la verdad sobre Miranda, aunque claramente sabe lo que está pasando. Hay un archivo en el laboratorio de Miranda que menciona a "un hombre gordo que viene al pueblo desde hace décadas y lo observa todo". El Duque lleva en ese pueblo tanto tiempo como Miranda, posiblemente siglos. Su neutralidad no es ignorancia: es elección. La pregunta de qué es exactamente el Duque sigue sin respuesta oficial.</p>
+</div>
+
+<div class="card">
+  <span class="ctag tb">Ambos</span>
+  <h3>Ethan tiene el cuerpo de Moho más avanzado de la saga</h3>
+  <p>En RE7, Eveline puede regenerar a los Baker y controlar su comportamiento. Ethan, sin embargo, regenera sus propias extremidades <strong>sin ayuda de Eveline</strong>, lo que según los archivos de Village es una capacidad que Miranda nunca logró reproducir artificialmente. La regeneración de Ethan no es controlada por ningún parásito externo — viene de dentro, como si el Moho hubiera aprendido a ser él. Es la forma más perfecta del organismo jamás documentada.</p>
+</div>
+
+<div class="card">
+  <span class="ctag tl">Lore</span>
+  <h3>El apellido "Baker" no es casual</h3>
+  <p>En inglés, "baker" significa panadero. La familia Baker "fermenta" a las personas con el Moho igual que un panadero fermenta masa. Es un apellido parlante que Capcom eligió deliberadamente. Del mismo modo, "Winters" (la familia protagonista) hace referencia al invierno, la estación de muerte y hibernación — apropiado para una familia que vive constantemente al borde de la extinción. Y "Miranda", el nombre de la antagonista principal de Village, es el nombre latino para "la que debe ser admirada".</p>
+</div>
+
+<div class="card">
+  <span class="ctag td">Desarrollo</span>
+  <h3>Jack Baker fue diseñado para generar empatía, no solo miedo</h3>
+  <p>El director Koshi Nakanishi declaró que Jack Baker fue el personaje más difícil de diseñar porque el equipo quería que los jugadores <em>sintieran lástima</em> por él. Antes de la infección, Jack era un veterano de guerra amable y trabajador. Los diarios de la mansión lo describen así. El diseño de la persecución de sótano fue ajustado específicamente para que Jack no resulte solo un monstruo, sino algo más perturbador: un padre que no puede dejar de proteger a su familia aunque su familia haya dejado de existir tal como la conocía.</p>
+</div>
+
+<div class="card">
+  <span class="ctag t7">RE7</span>
+  <h3>El juego tiene una pantalla de carga diferente según cómo moriste</h3>
+  <p>Cuando Ethan muere, la pantalla de carga muestra una imagen diferente según el tipo de muerte: si Jack te mata aparece el hacha, si Marguerite te atrapa aparece la linterna, si un Molded te liquida aparece un símbolo del Moho. Es un detalle de pulido que la mayoría no ve nunca porque generalmente cargas rápido y no te fijas. Pero está ahí, en cada muerte, recordándote exactamente quién te mató.</p>
+</div>
+
+<div class="card">
+  <span class="ctag tv">Village</span>
+  <h3>Casa Beneviento está llena de pistas sobre la historia de Donna</h3>
+  <p>Las fotos en la Casa Beneviento muestran a una Donna niña jugando con Angie en lo que parece una infancia bastante normal. En los archivos se confirma que el cadou no fue plantado en ella voluntariamente — Miranda la eligió porque era huérfana y nadie reclamaría su desaparición. La Donna adulta que controla el polvo alucinógeno es el resultado de décadas de aislamiento impuesto, no una malicia inherente. Es el personaje más trágico de todos los señores, y el juego te lo dice sin decírtelo directamente.</p>
+</div>
+
+<div class="card">
+  <span class="ctag te">Easter Egg</span>
+  <h3>RE7 contiene una referencia a Resident Evil 1 completamente oculta</h3>
+  <p>En la sala del gramófono de la Casa Principal de RE7 hay un disco de vinilo en el suelo. Si lo miras de cerca, la carátula muestra el logo del Departamento de Policía de Raccoon City (RPD). Es un easter egg tan discreto que requiere literalmente agacharse y acercarse al objeto para verlo. No tiene ningún efecto en el juego — solo le dice al jugador que RE7 y la saga clásica existen en el mismo universo, algo que en 2017 no estaba nada claro.</p>
+</div>
+
+<div class="card">
+  <span class="ctag te">Easter Egg</span>
+  <h3>Village tiene un homenaje a RE4 en el pueblo</h3>
+  <p>En el pueblo de Village, entre las casas de los aldeanos, hay una campana de iglesia idéntica a la que usa el aldeano de RE4 para llamar a los Ganados. En RE4, esa campana es un momento icónico de horror coordinado. En Village, la campana está ahí, colgada en el mismo tipo de campanario, pero ya no sirve para llamar a nadie — el pueblo está desierto. Es un homenaje silencioso: el mismo icono de terror, ahora en un escenario donde el terror ya ocurrió antes de que llegaras.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ═══ LOS MEJORES MOMENTOS ═══ -->
+<section>
+<div class="sh"><span class="sn">02 /</span><h2 class="st">Los Mejores Momentos de Cada Juego</h2><div class="sl"></div></div>
+<div class="grid">
+
+<div class="rlist" style="grid-column:span 1">
+  <div style="font-family:'Cinzel',serif;font-size:0.82em;color:var(--a);letter-spacing:0.1em;text-transform:uppercase;padding:0 0 10px;border-bottom:1px solid rgba(200,114,26,0.25);margin-bottom:3px;">RE7 — Momentos</div>
+  <div class="ri"><div class="rn">1</div><div><div class="rt">La cena con los Baker</div><p class="rd">La primera escena del juego. Sentado a la mesa, sin armas, con una familia sonriente que come carne de dudosa procedencia. El juego te está diciendo todo lo que va a ser.</p></div></div>
+  <div class="ri"><div class="rn">2</div><div><div class="rt">El sótano sin munición</div><p class="rd">La persecución de Jack en el sótano inundado con un hacha gigante y tú sin balas suficientes para matarlo. El momento más desesperante del juego.</p></div></div>
+  <div class="ri"><div class="rn">3</div><div><div class="rt">La revelación de la anciana</div><p class="rd">Cuando el juego confirma que la anciana de la silla de ruedas era Eveline todo el tiempo. La respuesta estaba ahí desde la primera escena.</p></div></div>
+  <div class="ri"><div class="rn">4</div><div><div class="rt">La cinta VHS del barco</div><p class="rd">Jugar como Mia y descubrir la verdad del pasado a través de una grabación. Cambio de protagonista, cambio de tono, cambio de perspectiva. El juego dentro del juego.</p></div></div>
+  <div class="ri"><div class="rn">5</div><div><div class="rt">Marguerite en el invernadero</div><p class="rd">Perseguida por una madre-araña que controla insectos y trepa paredes, en un invernadero lleno de flores y cadáveres. El momento más visualmente grotesco del juego.</p></div></div>
+</div>
+
+<div class="rlist" style="grid-column:span 1">
+  <div style="font-family:'Cinzel',serif;font-size:0.82em;color:var(--go);letter-spacing:0.1em;text-transform:uppercase;padding:0 0 10px;border-bottom:1px solid rgba(200,168,64,0.25);margin-bottom:3px;">Village — Momentos</div>
+  <div class="ri"><div class="rn">1</div><div><div class="rt">La secuencia del feto en Beneviento</div><p class="rd">Sin armas, en el sótano inundado, perseguido por una criatura imposible. El momento más perturbador de Village — y posiblemente de toda la saga en primera persona.</p></div></div>
+  <div class="ri"><div class="rn">2</div><div><div class="rt">La primera vista del castillo</div><p class="rd">Subir por el camino nevado y ver la silueta del Castillo Dimitrescu iluminado por la luna. La promesa visual de todo lo que viene después.</p></div></div>
+  <div class="ri"><div class="rn">3</div><div><div class="rt">Heisenberg te revela la verdad</div><p class="rd">Antes de su combate, Karl Heisenberg te cuenta más sobre la historia del juego que todo lo anterior. Es el villano que más tiene que decir — y que más razón tiene.</p></div></div>
+  <div class="ri"><div class="rn">4</div><div><div class="rt">La revelación de Ethan</div><p class="rd">La visión de Eveline confirmando que Ethan murió en RE7 y que todo lo que ha estado haciendo en Village es técnicamente imposible. El mejor giro de la saga moderna.</p></div></div>
+  <div class="ri"><div class="rn">5</div><div><div class="rt">El sacrificio final</div><p class="rd">Ethan en el campo de flores amarillas, sabiendo que no hay vuelta atrás, caminando hacia la explosión. Capcom convirtió a un protagonista sin cara en uno de los más memorables de la saga.</p></div></div>
+</div>
+
+</div>
+</section>
+
+<!-- ═══ CRONOLOGÍA LORE ═══ -->
+<section>
+<div class="sh"><span class="sn">03 /</span><h2 class="st">Cronología del Lore</h2><div class="sl"></div></div>
+<div class="tl-wrap">
+  <div class="tli"><div class="tly">1909</div><div class="tlb"><h4>Nace Eva</h4><p>Eva, hija de Miranda, nace en el pueblo de Europa del Este. Crece en un entorno rural aislado. Miranda, entonces una científica, lleva una vida normal hasta este punto.</p></div></div>
+  <div class="tli"><div class="tly">1919</div><div class="tlb"><h4>La Gripe Española y el Megamiceto</h4><p>Eva muere de gripe española con 10 años. Miranda, destrozada, entra en una cueva para quitarse la vida. Descubre el Megamiceto. La consciencia del organismo le muestra las "almas" de los muertos absorbidos, incluyendo algo que reconoce como Eva. Miranda decide que puede revivirla. Empieza a experimentar.</p></div></div>
+  <div class="tli"><div class="tly">~1940s</div><div class="tlb"><h4>Contacto con Spencer / Umbrella</h4><p>Oswald E. Spencer (cofundador de Umbrella) visita el pueblo buscando el origen del virus Progenitor. Miranda y Spencer intercambian conocimientos. La tecnología del Moho influirá directamente en los experimentos de Umbrella que llevarán al primer Resident Evil.</p></div></div>
+  <div class="tli"><div class="tly">1950–2010</div><div class="tlb"><h4>Los Cuatro Señores</h4><p>Miranda experimenta con los descendientes de las cuatro familias nobles del pueblo: Dimitrescu, Beneviento, Moreau y Heisenberg. Todos sobreviven con mutaciones únicas pero ninguno es apto para albergar el alma de Eva. Miranda les asigna territorios y finge adoptarlos como "hijos".</p></div></div>
+  <div class="tli"><div class="tly">2014</div><div class="tlb"><h4>El Incidente del Barco — Mia y Eveline</h4><p>Mia Winters trabaja como agente de transporte para Las Conexiones, la organización criminal que creó a Eveline usando tecnología derivada del Moho de Miranda. El barco que transporta a Eveline encalla en Dulvey, Louisiana, en la finca Baker. Eveline infecta a Mia y a toda la familia Baker.</p></div></div>
+  <div class="tli"><div class="tly">2017</div><div class="tlb"><h4>Resident Evil 7 — El Incidente Baker</h4><p>Ethan Winters llega a Dulvey buscando a Mia. Sobrevive a los Baker. Ethan muere en algún punto del incidente y el Moho lo reconstituye completamente. Destruye a Eveline con la Albert-01. Chris Redfield llega con Blue Umbrella. Nadie, incluido Ethan, sabe que ya no es humano en sentido estricto.</p></div></div>
+  <div class="tli"><div class="tly">2021</div><div class="tlb"><h4>Resident Evil Village — El Pueblo</h4><p>Miranda rapta a Rose Winters, perfecta por sus poderes del Moho heredados de Ethan. Ethan enfrenta a los Cuatro Señores, descubre su propia naturaleza y se sacrifica destruyendo el Megamiceto. Mia y Rose sobreviven. Chris lidera la operación de limpieza.</p></div></div>
+  <div class="tli"><div class="tly">2037</div><div class="tlb"><h4>Shadows of Rose — El Cierre</h4><p>Rose Winters, con 16 años y trabajando con Chris, entra en el Realm of Consciousness del Megamiceto para eliminar sus poderes. Dentro enfrenta versiones de todos los personajes que marcaron la historia de sus padres. Es el final definitivo de la saga Winters — y una carta de amor a todo lo que RE7 y Village construyeron.</p></div></div>
+</div>
+</section>
+
+<!-- ═══ COMPARATIVA ═══ -->
+<section>
+<div class="sh"><span class="sn">04 /</span><h2 class="st">RE7 vs Village — La Comparativa Honesta</h2><div class="sl"></div></div>
+<div style="overflow-x:auto;margin-bottom:28px;">
+<table class="ctbl">
+  <thead><tr><th>Aspecto</th><th>RE7 Biohazard</th><th>RE Village</th></tr></thead>
+  <tbody>
+    <tr><td>Premisa</td><td>Un hombre busca a su esposa en una mansión de pesadilla.</td><td>Un padre busca a su hija recién nacida en un pueblo de monstruos.</td></tr>
+    <tr><td>¿Cuándo da más miedo?</td><td>Constantemente. La tensión no baja en todo el juego.</td><td>Solo en Casa Beneviento. El resto es más acción que terror.</td></tr>
+    <tr><td>Mejor enemigo</td><td>Jack Baker. Regenera, es listo, y no para nunca.</td><td>Lady Dimitrescu. Elegante, imponente, difícil de olvidar.</td></tr>
+    <tr><td>Mejor zona</td><td>La mansión Baker. Un laberinto que aprendes a temer.</td><td>Casa Beneviento. Un nivel que no necesita ni una sola bala.</td></tr>
+    <tr><td>Mejor arma</td><td>La Sierra Circular. Sin munición. Sin piedad. Pura locura.</td><td>El S.T.A.K.E. Porque hay que ganársela y cuando la tienes, el juego cambia.</td></tr>
+    <tr><td>Historia más sólida</td><td>Más íntima. Un padre/esposo contra el horror.</td><td>Más épica. El cierre de una saga con capas de lore.</td></tr>
+    <tr><td>Variedad de entornos</td><td>Una sola propiedad con diferentes edificios. Muy cohesionado.</td><td>Cuatro zonas radicalmente distintas. Nunca te aburres.</td></tr>
+    <tr><td>Dificultad en Manicomio / VoS</td><td>Manicomio es genuinamente brutal. Guardado limitado.</td><td>Village of Shadows es duro pero manejable con la Stake.</td></tr>
+    <tr><td>Duración media</td><td>~10–12 horas en primera partida</td><td>~12–15 horas en primera partida</td></tr>
+    <tr><td>Jugabilidad hoy</td><td>Envejece perfectamente. El terror no caduca.</td><td>Idem, con mejor sistema de progresión económica.</td></tr>
+    <tr><td>Necesidad del otro</td><td>Se puede jugar solo, pero Village tiene más sentido con RE7.</td><td>Sin RE7, el final de Ethan pierde la mitad de su peso emocional.</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="grid">
+  <div class="card">
+    <span class="ctag t7">Veredicto RE7</span>
+    <h3>El mejor juego de terror de la generación</h3>
+    <p>RE7 hace algo que los juegos de terror de acción han olvidado hacer: te pone en una situación donde el miedo viene de <strong>no poder controlar lo que pasa</strong>. Jack Baker no sigue un script predecible. La mansión es un laberinto hostil. Y cuando por fin consigues la Magnum y el Grenade Launcher, el alivio es real porque el juego te lo había ganado. Es el survival horror más puro de la saga moderna y es difícil ver cómo se supera a sí mismo.</p>
+  </div>
+  <div class="card">
+    <span class="ctag tv">Veredicto Village</span>
+    <h3>La experiencia más completa de la saga Winters</h3>
+    <p>Village es el Resident Evil 4 de su generación: más variado, más espectacular, con más personalidad en cada zona. Sacrifica algo de terror por variedad, y eso es un intercambio honesto. Donde brilla más es en su historia — <strong>el sacrificio de Ethan</strong> es uno de los mejores finales de la saga, y funciona exactamente porque RE7 lo estableció todo. No es tan aterrador como RE7 pero sí es más rico. Son inseparables.</p>
+  </div>
+</div>
+</section>
+
+<footer>
+  <span>RE7 &amp; Village Fan Archive &middot; Extras &middot; Non-Commercial</span>
+  <span class="fr">Capcom &copy; 2017 &amp; 2021</span>
+</footer>
+</main>
+</body>
+</html>

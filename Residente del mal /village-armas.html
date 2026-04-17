@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE Village — Arsenal</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='47' fill='%231a0608' stroke='%23c8a840' stroke-width='3'/%3E%3Cpolygon points='50,28 55,44 72,50 55,56 50,72 45,56 28,50 45,44' fill='%23c8a840' opacity='0.88'/%3E%3Cline x1='50' y1='4' x2='50' y2='96' stroke='%23c8a840' stroke-width='1.5' opacity='0.45'/%3E%3Cline x1='4' y1='50' x2='96' y2='50' stroke='%23c8a840' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Special+Elite&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--w:#1e0a0c;--wm:#2a1012;--wl:#361418;--cm:#f0e6c8;--cd:#c8a868;--ck:#886840;--go:#c8a840;--gd:#7a6220;--bg:rgba(200,168,64,0.22);--sb:262px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:"Special Elite",serif;display:flex;min-height:100vh;overflow-x:hidden;background-color:#160a0c;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90'%3E%3Crect x='1' y='1' width='118' height='43' fill='rgba(35,10,12,0.5)' stroke='rgba(100,30,30,0.2)' stroke-width='1'/%3E%3Crect x='61' y='46' width='58' height='43' fill='rgba(30,8,10,0.45)' stroke='rgba(90,25,25,0.18)' stroke-width='1'/%3E%3Crect x='1' y='46' width='58' height='43' fill='rgba(32,9,11,0.48)' stroke='rgba(95,27,27,0.18)' stroke-width='1'/%3E%3C/svg%3E"),linear-gradient(160deg,#1e0c0e 0%,#160a0c 50%,#1c0c10 100%);color:var(--cd);}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 50% 40% at 12% 10%,rgba(200,90,20,0.12) 0%,transparent 52%),radial-gradient(ellipse 45% 35% at 88% 12%,rgba(160,40,20,0.1) 0%,transparent 48%),radial-gradient(ellipse 100% 100% at 50% 50%,transparent 30%,rgba(0,0,0,0.68) 100%);pointer-events:none;z-index:9998;}
+body::after{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.022'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.sidebar{width:var(--sb);position:fixed;top:0;left:0;height:100vh;display:flex;flex-direction:column;z-index:100;background-color:#120608;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90'%3E%3Crect x='1' y='1' width='118' height='43' fill='none' stroke='rgba(100,30,30,0.22)' stroke-width='1'/%3E%3Crect x='1' y='46' width='118' height='43' fill='none' stroke='rgba(90,25,25,0.18)' stroke-width='1'/%3E%3C/svg%3E"),linear-gradient(90deg,#0e0406 0%,#1c0a0c 45%,#140608 100%);border-right:1px solid var(--bg);box-shadow:3px 0 0 rgba(200,168,64,0.06),5px 0 22px rgba(0,0,0,0.85);}
+.sidebar::before{content:"";position:absolute;top:0;left:0;right:0;height:42%;background:radial-gradient(ellipse 88% 72% at 50% 0%,rgba(180,60,20,0.28) 0%,transparent 65%);pointer-events:none;}
+.sidebar::after{content:"";position:absolute;bottom:0;left:0;right:0;height:38%;background:radial-gradient(ellipse 90% 72% at 50% 100%,rgba(6,2,3,0.75) 0%,transparent 68%);pointer-events:none;}
+.game-switcher{display:flex;border-bottom:1px solid rgba(200,168,64,0.2);}
+.game-switcher a{flex:1;padding:10px 6px;font-family:"Share Tech Mono",monospace;font-size:0.56em;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;text-align:center;transition:all 0.25s;}
+.game-switcher a.re7{color:var(--ck);border-bottom:2px solid transparent;}
+.game-switcher a.re7:hover{color:var(--go);}
+.game-switcher a.re8{color:var(--go);background:rgba(200,168,64,0.08);border-bottom:2px solid var(--go);}
+.sidebar-logo{padding:16px 22px 14px;border-bottom:1px solid rgba(200,168,64,0.2);}
+.crw{display:flex;justify-content:center;margin-bottom:10px;}
+.ltxt{font-family:"Cinzel",serif;font-weight:700;font-size:0.96em;color:var(--go);letter-spacing:0.1em;line-height:1.45;text-transform:uppercase;text-align:center;text-shadow:0 0 28px rgba(200,168,64,0.42);}
+.lsub{font-family:"Share Tech Mono",monospace;font-size:0.54em;color:var(--ck);letter-spacing:0.28em;margin-top:4px;opacity:0.58;text-align:center;}
+.menu{padding:14px 0;flex:1;}
+.menu a{display:flex;align-items:center;color:var(--ck);text-decoration:none;font-family:"Share Tech Mono",monospace;font-size:0.67em;letter-spacing:0.14em;text-transform:uppercase;padding:11px 22px;border-left:3px solid transparent;transition:all 0.28s;}
+.menu a::before{content:attr(data-num);font-size:0.66em;color:rgba(200,168,64,0.28);margin-right:9px;}
+.menu a:hover,.menu a.active{color:var(--cm);border-left-color:var(--go);background:linear-gradient(90deg,rgba(200,168,64,0.09),transparent);padding-left:28px;}
+.menu a:hover::before,.menu a.active::before{color:var(--go);}
+.sf{padding:13px 22px;border-top:1px solid rgba(200,168,64,0.15);font-family:"Share Tech Mono",monospace;font-size:0.49em;color:var(--ck);opacity:0.5;text-align:center;}
+.content{margin-left:var(--sb);width:calc(100% - var(--sb));min-height:100vh;}
+.ph{padding:60px 68px 46px;border-bottom:1px solid var(--bg);background:linear-gradient(160deg,#2a1010 0%,#320e12 30%,#1e0c0e 65%,#28101a 100%);position:relative;overflow:hidden;}
+.ph::before{content:"";position:absolute;top:-80px;left:-60px;width:520px;height:440px;background:radial-gradient(ellipse at 22% 28%,rgba(200,90,20,0.2) 0%,transparent 52%);pointer-events:none;}
+.ph::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent 0%,rgba(200,168,64,0.6) 15%,rgba(200,168,64,0.35) 50%,rgba(200,168,64,0.6) 85%,transparent 100%);}
+.ph .ey{font-family:"Share Tech Mono",monospace;font-size:0.61em;letter-spacing:0.36em;color:var(--ck);text-transform:uppercase;margin-bottom:20px;opacity:0.72;}
+.ph h1{font-family:"Cinzel",serif;font-weight:700;font-size:clamp(2.6em,5.5vw,5em);color:var(--cm);line-height:1.05;letter-spacing:0.08em;text-transform:uppercase;text-shadow:3px 4px 0 rgba(0,0,0,0.92);position:relative;z-index:1;}
+section{padding:52px 68px;border-bottom:1px solid rgba(110,28,28,0.28);position:relative;}
+section::before{content:"";position:absolute;top:0;left:0;width:200px;height:120px;background:radial-gradient(ellipse at 0% 0%,rgba(120,20,22,0.1) 0%,transparent 65%);pointer-events:none;}
+section::after{content:"";position:absolute;bottom:0;right:0;width:200px;height:120px;background:radial-gradient(ellipse at 100% 100%,rgba(90,15,18,0.1) 0%,transparent 65%);pointer-events:none;}
+.sh{display:flex;align-items:center;gap:16px;margin-bottom:36px;padding-bottom:12px;border-bottom:1px solid var(--bg);position:relative;}
+.sh::before{content:"⚜";font-size:0.78em;color:rgba(200,168,64,0.3);position:absolute;left:-4px;bottom:-12px;}
+.sn{font-family:"Share Tech Mono",monospace;font-size:0.58em;color:var(--ck);letter-spacing:0.2em;opacity:0.6;}
+.st{font-family:"Cinzel",serif;font-weight:700;font-size:1.8em;color:var(--cm);letter-spacing:0.1em;text-transform:uppercase;text-shadow:2px 2px 0 rgba(0,0,0,0.8);}
+.sl{flex:1;height:1px;background:linear-gradient(90deg,var(--gd) 0%,rgba(200,168,64,0.1) 55%,transparent 100%);}
+footer{padding:20px 68px;display:flex;justify-content:space-between;align-items:center;font-family:"Share Tech Mono",monospace;font-size:0.53em;letter-spacing:0.14em;color:var(--ck);border-top:1px solid var(--bg);background:linear-gradient(160deg,#100608,#1c0a0c);opacity:0.82;}
+footer .fr{color:var(--gd);}
+
+/* ── WEAPON CARDS ── */
+.wg{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:3px;}
+.wc{padding:22px 20px;border:1px solid rgba(200,168,64,0.18);position:relative;overflow:hidden;transition:all 0.3s;background:linear-gradient(160deg,var(--wm),var(--w));}
+.wc::before{content:"";position:absolute;top:0;right:0;width:80px;height:64px;background:radial-gradient(ellipse at 100% 0%,rgba(160,35,25,0.2) 0%,transparent 65%);pointer-events:none;}
+.wc::after{content:"";position:absolute;bottom:0;left:0;width:0;height:2px;background:linear-gradient(90deg,rgba(160,30,20,0.7),rgba(200,168,64,0.6),transparent);transition:width 0.42s;}
+.wc:hover{background:linear-gradient(160deg,var(--wl),var(--wm));}
+.wc:hover::after{width:100%;}
+.wc.hi{border-color:rgba(200,168,64,0.45);}
+
+.wtype{font-family:"Share Tech Mono",monospace;font-size:0.54em;letter-spacing:0.18em;color:var(--ck);text-transform:uppercase;margin-bottom:5px;opacity:0.65;}
+.wname{font-family:"Cinzel",serif;font-weight:700;font-size:1.05em;color:var(--cm);margin-bottom:12px;letter-spacing:0.04em;}
+.wbadge{display:inline-block;font-family:"Share Tech Mono",monospace;font-size:0.5em;padding:2px 7px;border:1px solid;margin-bottom:8px;letter-spacing:0.08em;text-transform:uppercase;}
+.bn{border-color:#7a2030;color:#c04050;}
+.bg{border-color:rgba(200,168,64,0.5);color:var(--go);}
+
+/* Stats table - fully responsive */
+.wsw{overflow-x:auto;margin-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(200,168,64,0.3) transparent;}
+.wsw::-webkit-scrollbar{height:3px;}
+.wsw::-webkit-scrollbar-track{background:transparent;}
+.wsw::-webkit-scrollbar-thumb{background:rgba(200,168,64,0.3);border-radius:2px;}
+.wst{width:100%;border-collapse:collapse;font-size:0.76em;min-width:max-content;}
+.wst thead tr{background:rgba(18,6,8,0.7);}
+.wst th{font-family:"Share Tech Mono",monospace;font-size:0.8em;letter-spacing:0.06em;text-transform:uppercase;color:var(--ck);padding:6px 10px;text-align:center;border-bottom:1px solid rgba(200,168,64,0.2);border-right:1px solid rgba(200,168,64,0.1);font-weight:400;white-space:nowrap;}
+.wst th:last-child{border-right:none;}
+.wst td{font-family:"Cinzel",serif;font-weight:700;font-size:0.92em;color:var(--go);padding:6px 10px;text-align:center;border-right:1px solid rgba(200,168,64,0.1);border-bottom:1px solid rgba(200,168,64,0.06);white-space:nowrap;}
+.wst td:last-child{border-right:none;}
+.wst td.lbl{font-family:"Share Tech Mono",monospace;font-size:0.78em;color:var(--ck);text-align:left;font-weight:400;position:sticky;left:0;background:rgba(20,8,10,0.95);z-index:1;}
+.wst td.hi{color:var(--cm);font-size:1em;}
+.wst tr:last-child td{border-bottom:none;}
+
+.wdesc{font-size:0.81em;color:var(--ck);line-height:1.72;margin-bottom:10px;}
+.wloc{font-family:"Share Tech Mono",monospace;font-size:0.6em;color:var(--ck);padding:7px 11px;border-left:2px solid rgba(160,30,20,0.55);background:rgba(14,4,6,0.4);line-height:1.5;margin-top:6px;}
+.wunl{font-family:"Share Tech Mono",monospace;font-size:0.59em;color:#4a8c3c;padding:5px 11px;border-left:2px solid rgba(42,80,20,0.5);background:rgba(8,14,4,0.38);margin-top:5px;line-height:1.5;}
+.wnote{font-family:"Share Tech Mono",monospace;font-size:0.59em;color:var(--go);padding:5px 11px;border-left:2px solid rgba(200,168,64,0.38);background:rgba(20,10,4,0.35);margin-top:5px;line-height:1.5;}
+
+/* Gothic arch decoration header */
+.arch{position:absolute;top:-15px;right:60px;opacity:0.07;pointer-events:none;}
+
+/* ── RESPONSIVE FIXES ── */
+/* Cards that span 2 cols only when the grid has space for it */
+@media (max-width: 1300px) {
+  [style*="grid-column:span 2"],
+  [style*="grid-column: span 2"] {
+    grid-column: span 1 !important;
+  }
+}
+/* On very wide layouts, let 6-level tables breathe */
+.wst th, .wst td {
+  min-width: 52px;
+}
+.wst td.lbl {
+  min-width: 70px;
+}
+/* Remove sticky on small cards to avoid z-index issues */
+@media (max-width: 900px) {
+  .wst td.lbl { position: static; background: transparent; }
+  .content { margin-left: 0; width: 100%; }
+  .sidebar { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="game-switcher">
+    <a href="index.html" class="re7">RE7 · Biohazard</a>
+    <a href="village-index.html" class="re8">RE8 · Village</a>
+  </div>
+  <div class="sidebar-logo">
+    <div class="crw"><img src="https://www.creativeuncut.com/gallery-40/art/rev-crests-of-the-four-lords.jpg" alt="Four Houses Crest" style="width:72px;height:auto;opacity:0.88;filter:sepia(0.2) saturate(1.2) brightness(0.95);display:block;border-radius:2px;" loading="lazy" onerror="this.style.display='none'"/></div>
+    <div class="ltxt">Resident Evil<br>Village</div>
+    <div class="lsub">Fan Archive</div>
+  </div>
+  <div class="menu">
+    <a href="village-index.html" data-num="01">Inicio</a>
+    <a href="village-historia.html" data-num="02">Historia</a>
+    <a href="village-armas.html" data-num="03" class="active">Arsenal</a>
+    <a href="village-galeria.html" data-num="04">Galería</a><a href="extras.html" data-num="★">Extras &amp; Lore</a>
+  </div>
+  <div class="sf">CAPCOM &copy; 2021 &middot; FAN PAGE</div>
+</nav>
+
+<main class="content">
+<div class="ph">
+  <svg class="arch" width="130" height="210" viewBox="0 0 130 210" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 210 L10 80 Q10 10 65 10 Q120 10 120 80 L120 210" stroke="rgba(200,168,64,1)" stroke-width="2" fill="none"/><path d="M28 210 L28 90 Q28 40 65 40 Q102 40 102 90 L102 210" stroke="rgba(200,168,64,0.45)" stroke-width="1" fill="none"/><path d="M38 65 Q65 35 92 65 Q65 55 38 65Z" stroke="rgba(200,168,64,0.65)" stroke-width="1" fill="none"/><circle cx="65" cy="56" r="12" stroke="rgba(200,168,64,0.5)" stroke-width="1" fill="none"/></svg>
+  <div class="ey">// Estadísticas verificadas game8.co &middot; Todas las armas con stats completos</div>
+  <h1>Arsenal &mdash; Village</h1>
+</div>
+
+<!-- PISTOLAS -->
+<section>
+<div class="sh"><span class="sn">01 /</span><h2 class="st">Pistolas</h2><div class="sl"></div></div>
+<div class="wg">
+
+<div class="wc">
+  <div class="wtype">Pistola &middot; Arma inicial</div><div class="wname">LEMI</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Stat</th><th>Niv. 1</th><th>Niv. 2</th><th>Niv. 3</th><th>Niv. 4 MAX</th></tr></thead><tbody>
+  <tr><td class="lbl">Daño</td><td>130</td><td>140</td><td>150</td><td class="hi">160</td></tr>
+  <tr><td class="lbl">Cadencia</td><td>0.45</td><td>0.42</td><td>0.39</td><td class="hi">0.36</td></tr>
+  <tr><td class="lbl">Recarga</td><td>2.7s</td><td>2.5s</td><td>2.3s</td><td class="hi">2.2s</td></tr>
+  <tr><td class="lbl">Cargador</td><td>10</td><td>12</td><td>14</td><td class="hi">16</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">La pistola de inicio. Cuatro niveles de mejora. Completamente superada por la M1911 pero vale la pena mejorar cadencia en el Castillo Dimitrescu.</p>
+  <div class="wloc">Historia: entregada automáticamente al inicio por el anciano Grigori Stan.</div>
+  <div class="wunl">Munición infinita: 10.000 CP en Tienda de Contenido Extra.</div>
+</div>
+
+<div class="wc">
+  <div class="wtype">Pistola automática &middot; East Old Town</div><div class="wname">M1911</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Stat</th><th>Niv. 1</th><th>Niv. 3</th><th>Niv. 5 MAX</th><th>+High-Cap Mag</th></tr></thead><tbody>
+  <tr><td class="lbl">Daño</td><td>160</td><td>180</td><td class="hi">200</td><td>—</td></tr>
+  <tr><td class="lbl">Cadencia</td><td>0.27</td><td>0.24</td><td class="hi">0.20</td><td>—</td></tr>
+  <tr><td class="lbl">Recarga</td><td>2.9s</td><td>2.6s</td><td class="hi">2.3s</td><td>—</td></tr>
+  <tr><td class="lbl">Cargador</td><td>7</td><td>10</td><td>7–14 base</td><td class="hi">14 total</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">Primera pistola automática. Alta cadencia. High-Capacity Mag se encuentra justo antes del boss de Moreau (maletín plateado). Cinco niveles de mejora.</p>
+  <div class="wloc">East Old Town — combinación de cerrojo 070408 (tras devolver el frasco al Duque).</div>
+  <div class="wunl">Munición infinita: 40.000 CP.</div>
+</div>
+
+<div class="wc">
+  <div class="wtype">Machine Pistol &middot; Fábrica Heisenberg</div><div class="wname">V61 Custom</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Stat</th><th>Niv. 1</th><th>Niv. 6 MAX</th><th>+Long Barrel (NG+)</th><th>+Drum Mag (NG+)</th></tr></thead><tbody>
+  <tr><td class="lbl">Daño</td><td>120</td><td class="hi">185</td><td>+25</td><td>—</td></tr>
+  <tr><td class="lbl">Cadencia</td><td>0.20</td><td>0.20</td><td>mejora</td><td>—</td></tr>
+  <tr><td class="lbl">Recarga</td><td>3.5s</td><td class="hi">1.8s</td><td>—</td><td>—</td></tr>
+  <tr><td class="lbl">Cargador</td><td>12</td><td class="hi">27</td><td>—</td><td class="hi">+30 = 57</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">La mejor pistola del juego. Automática con altísima cadencia. Con el Drum Magazine en NG+ alcanza 57 balas por cargador. 3 ranuras de accesorio. Seis niveles de mejora.</p>
+  <div class="wloc">Comprar al Duque desde la Fábrica Heisenberg: 120.000 Lei.</div>
+  <div class="wunl">NG+ Long Barrel: 56.000 Lei &middot; Drum Mag: 70.000 Lei &middot; Munición infinita: 50.000 CP.</div>
+</div>
+
+<div class="wc">
+  <span class="wbadge bn">No mejorable &middot; 0 ranuras</span>
+  <div class="wtype">Pistola DLC &middot; Trauma Pack</div><div class="wname">Samurai Edge AW Model-01</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Daño</th><th>Cadencia</th><th>Recarga</th><th>Cargador</th><th>Munición</th></tr></thead><tbody>
+  <tr><td class="hi">110</td><td class="hi">0.40</td><td class="hi">2.6s</td><td class="hi">9</td><td>Handgun</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">Pistola anti-biohazard de Albert Wesker fabricada por Blue Umbrella. No admite ninguna mejora ni accesorio. Mejores estadísticas base que la LEMI. Ocupa 8 huecos de inventario.</p>
+  <div class="wloc">Gratis al inicio con el DLC Trauma Pack instalado. Sin coste adicional en el Duque.</div>
+</div>
+
+<div class="wc">
+  <span class="wbadge bn">No mejorable &middot; 0 ranuras</span>
+  <div class="wtype">Pistola silenciada &middot; NG+ Extra Content Shop</div><div class="wname">USM-AI</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Tipo</th><th>Potencia</th><th>Recarga</th><th>Cargador</th><th>Munición</th></tr></thead><tbody>
+  <tr><td>Semiautomática</td><td class="hi">Alta</td><td class="hi">Rápida</td><td class="hi">8</td><td>Handgun</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">Pistola semiautomática silenciada de estadísticas elevadas. No admite mejoras ni accesorios del Duque. Exclusiva de Nueva Partida+.</p>
+  <div class="wunl">Tienda de Contenido Extra: 20.000 CP &rarr; compra al Duque en NG+ por 350 Lei.</div>
+</div>
+
+<div class="wc">
+  <div class="wtype">Revólver especial &middot; Munición Sniper &middot; Hardcore</div><div class="wname">Handcannon PZ</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Stat</th><th>Niv. 1</th><th>Niv. 3</th><th>Niv. 6 MAX</th></tr></thead><tbody>
+  <tr><td class="lbl">Daño</td><td>1400</td><td>1900</td><td class="hi">3200</td></tr>
+  <tr><td class="lbl">Cadencia</td><td>1.6</td><td>1.4</td><td class="hi">0.9</td></tr>
+  <tr><td class="lbl">Recarga</td><td>2.8s</td><td>2.4s</td><td class="hi">1.8s</td></tr>
+  <tr><td class="lbl">Cargador</td><td colspan="3">5 balas (fijo) &middot; Usa munición de Sniper Rifle &middot; 0 ranuras</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">Revólver gigante que usa munición de rifle de francotirador. Daño máximo 3200 supera a la Wolfsbane totalmente mejorada. Cargador fijo de 5 balas. Sin ranuras de accesorio.</p>
+  <div class="wunl">Completa Hardcore (o superior) &rarr; 60.000 CP &rarr; Duque 1.100 Lei.</div>
+</div>
+
+</div>
+</section>
+
+<!-- ESCOPETAS -->
+<section>
+<div class="sh"><span class="sn">02 /</span><h2 class="st">Escopetas</h2><div class="sl"></div></div>
+<div class="wg">
+
+<div class="wc">
+  <div class="wtype">Escopeta pump-action &middot; Primera escopeta</div><div class="wname">M1897</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Stat</th><th>Niv. 1</th><th>Niv. 2</th><th>Niv. 3</th><th>Niv. 4 MAX</th></tr></thead><tbody>
+  <tr><td class="lbl">Daño</td><td>560</td><td>640</td><td>720</td><td class="hi">800</td></tr>
+  <tr><td class="lbl">Cadencia</td><td colspan="4">1.5 &nbsp;(fija en todos los niveles)</td></tr>
+  <tr><td class="lbl">Recarga</td><td>2.8s</td><td>2.6s</td><td>2.4s</td><td class="hi">2.2s</td></tr>
+  <tr><td class="lbl">Cargador</td><td>5</td><td>7</td><td>9</td><td class="hi">11</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">La primera escopeta del juego. Cuatro niveles de mejora. La W870 TAC tiene 760 de daño base (superior a este arma al máximo, 800), por lo que conviene reemplazarla tan pronto como sea posible.</p>
+  <div class="wloc">El Pueblo — mesa de cocina de la primera casa tras la cinemática con los Licántropos. Imposible perderse.</div>
+  <div class="wunl">Munición infinita: 20.000 CP.</div>
+</div>
+
+<div class="wc">
+  <div class="wtype">Escopeta táctica &middot; Post-Casa Beneviento</div><div class="wname">W870 TAC</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Stat</th><th>Niv. 1</th><th>Niv. 2</th><th>Niv. 3</th><th>Niv. 4 MAX</th></tr></thead><tbody>
+  <tr><td class="lbl">Daño</td><td>760</td><td>800</td><td>880</td><td class="hi">960</td></tr>
+  <tr><td class="lbl">Recarga</td><td>2.8s</td><td>2.6s</td><td>2.4s</td><td class="hi">2.2s</td></tr>
+  <tr><td class="lbl">Cargador</td><td>4</td><td>5</td><td>6</td><td class="hi">8</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">La escopeta principal del juego. Su daño base (760) ya supera la M1897 al nivel 3 (720). Spread amplio ideal contra grupos de Licántropos. La escopeta de referencia hasta la SYG-12.</p>
+  <div class="wloc">Al regresar de Casa Beneviento: cabaña a la izquierda del sendero. También vendida por el Duque.</div>
+  <div class="wunl">Munición infinita: 30.000 CP.</div>
+</div>
+
+<div class="wc">
+  <div class="wtype">Escopeta semiautomática &middot; Fábrica &middot; La mejor escopeta</div><div class="wname">SYG-12</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Stat</th><th>Niv. 1</th><th>Niv. MAX</th></tr></thead><tbody>
+  <tr><td class="lbl">Daño</td><td>820</td><td class="hi">1000</td></tr>
+  <tr><td class="lbl">Tipo</td><td colspan="2">Semiautomática (disparos consecutivos sin bombeo)</td></tr>
+  <tr><td class="lbl">Recarga</td><td>2.0s</td><td class="hi">1.5s</td></tr>
+  <tr><td class="lbl">Cargador</td><td>5</td><td class="hi">9</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">La mejor escopeta. Semiautomática: disparos continuos sin recarga manual entre cada tiro. Ideal para hordas. Solo disponible en la fase final del juego.</p>
+  <div class="wloc">Comprar al Duque desde la Fábrica Heisenberg: 180.000 Lei.</div>
+  <div class="wunl">Munición infinita: 40.000 CP.</div>
+</div>
+
+</div>
+</section>
+
+<!-- RIFLE -->
+<section>
+<div class="sh"><span class="sn">03 /</span><h2 class="st">Rifle de Francotirador</h2><div class="sl"></div></div>
+<div class="wg">
+
+<div class="wc hi" style="grid-column:span 2;min-width:0;">
+  <div class="wtype">Bolt-action &middot; Castillo Dimitrescu &middot; Único rifle del juego</div><div class="wname">F2 Rifle</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Stat</th><th>Niv. 1</th><th>Niv. 2</th><th>Niv. 3</th><th>Niv. 4</th><th>Niv. 5</th><th>Niv. 6 MAX</th></tr></thead><tbody>
+  <tr><td class="lbl">Daño</td><td>600</td><td>750</td><td>900</td><td>1100</td><td>1300</td><td class="hi">1500</td></tr>
+  <tr><td class="lbl">Cadencia</td><td>2.0</td><td>1.8</td><td>1.6</td><td>1.4</td><td>1.3</td><td class="hi">1.2</td></tr>
+  <tr><td class="lbl">Recarga</td><td>3.7s</td><td>3.4s</td><td>3.1s</td><td>2.9s</td><td>2.8s</td><td class="hi">2.7s</td></tr>
+  <tr><td class="lbl">Cargador</td><td>4</td><td>7</td><td>10</td><td>12</td><td>13</td><td class="hi">15</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">El único rifle del juego. Seis niveles de mejora. Con daño máximo de 1500, imprescindible para puntos débiles de jefes. Totalmente mejorado es letal incluso a media distancia.</p>
+  <div class="wloc">Castillo Dimitrescu RF Ático — puzzle de las cinco campanas del salón de música.</div>
+  <div class="wunl">Munición infinita: 60.000 CP.</div>
+</div>
+
+</div>
+</section>
+
+<!-- RIFLES DE ASALTO -->
+<section>
+<div class="sh"><span class="sn">04 /</span><h2 class="st">Rifles de Asalto</h2><div class="sl"></div></div>
+<div class="wg">
+
+<div class="wc">
+  <span class="wbadge bn">No mejorable &middot; 0 ranuras</span>
+  <div class="wtype">Rifle de asalto automático &middot; Extra Content Shop</div><div class="wname">Dragoon</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Daño</th><th>Cadencia</th><th>Recarga</th><th>Cargador</th><th>Munición</th></tr></thead><tbody>
+  <tr><td class="hi">350</td><td class="hi">0.11</td><td class="hi">2.9s</td><td class="hi">30</td><td>Rifle Ammo</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">El rifle de asalto favorito de Chris Redfield. Automático con cadencia excepcional (0.11s) y cargador de 30 rondas. No admite ninguna mejora ni accesorio, pero sus estadísticas base son directamente competitivas sin inversión. Chris también lo usa en su misión.</p>
+  <div class="wunl">Tienda de Contenido Extra: 30.000 CP &rarr; compra al Duque por 400 Lei &middot; Munición infinita: 60.000 CP.</div>
+</div>
+
+<div class="wc">
+  <span class="wbadge bg">2 ranuras de accesorio (NG+)</span>
+  <div class="wtype">Rifle de asalto mejorable &middot; Extra Content Shop</div><div class="wname">WCX</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Stat</th><th>Niv. 1</th><th>Niv. 3</th><th>Niv. 6 MAX</th></tr></thead><tbody>
+  <tr><td class="lbl">Daño</td><td>250</td><td>290</td><td class="hi">370</td></tr>
+  <tr><td class="lbl">Cadencia</td><td colspan="3">0.15 (fija sin Red Dot)</td></tr>
+  <tr><td class="lbl">Recarga</td><td>3.2s</td><td>3.0s</td><td class="hi">2.6s</td></tr>
+  <tr><td class="lbl">Cargador</td><td>20</td><td>40</td><td class="hi">80</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">Inferior al Dragoon en cadencia y daño base, pero escala enormemente: cargador máximo de 80 rondas. En NG+ el Red Dot Sight mejora potencia y cadencia, y el Foregrip reduce retroceso.</p>
+  <div class="wunl">30.000 CP &rarr; Duque 200 Lei &middot; NG+: Red Dot Sight 140.000 Lei &middot; Foregrip 80.000 Lei &middot; Inf. ammo: 60.000 CP.</div>
+</div>
+
+</div>
+</section>
+
+<!-- MAGNUMS -->
+<section>
+<div class="sh"><span class="sn">05 /</span><h2 class="st">Magnums</h2><div class="sl"></div></div>
+<div class="wg">
+
+<div class="wc">
+  <div class="wtype">Revólver magnum &middot; Tras derrotar a Moreau</div><div class="wname">M1851 Wolfsbane</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Stat</th><th>Niv. 1</th><th>Niv. 3</th><th>Niv. 6 MAX</th><th>+Incr. Cylinder</th></tr></thead><tbody>
+  <tr><td class="lbl">Daño</td><td>1200</td><td>1700</td><td class="hi">2900</td><td>—</td></tr>
+  <tr><td class="lbl">Recarga</td><td>3.5s</td><td>2.9s</td><td class="hi">2.5s</td><td>—</td></tr>
+  <tr><td class="lbl">Cargador</td><td>6</td><td>6</td><td>6 base</td><td class="hi">14 total</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">Revólver magnum. Daño máximo 2900 con seis niveles. Buff oculto: x2 daño contra Licántropos (descrito en el juego como "efectivo contra hombres lobo"). Accesorios: Long Barrel y Increased Capacity Cylinder (+8 balas = 14 total).</p>
+  <div class="wloc">Tras Moreau: usa la Manivela &rarr; sigue el camino a cabañas marcado "Moreau's Hidden Weapon" &rarr; entra por agujero trasero de la última cabaña.</div>
+  <div class="wunl">Munición infinita: 95.000 CP.</div>
+</div>
+
+<!-- S.T.A.K.E. — The Big One -->
+<div class="wc hi" style="grid-column: span 2; min-width: 0;">
+  <span class="wbadge bg">El arma definitiva &middot; NG+ exclusivo</span>
+  <div class="wtype">Magnum semiautomática "Piledriver"</div><div class="wname">S.T.A.K.E.</div>
+  <div class="wsw"><table class="wst">
+    <thead><tr><th>Stat</th><th>Niv.1</th><th>Niv.2</th><th>Niv.3</th><th>Niv.4</th><th>Niv.5</th><th>Niv.6</th><th style="color:#f0e6c8;background:rgba(200,168,64,0.08);">+High-Cap Mag</th></tr></thead>
+    <tbody>
+      <tr><td class="lbl">Daño</td><td>2000</td><td>2500</td><td>3000</td><td>3500</td><td>4000</td><td class="hi">4500</td><td style="color:var(--ck);font-size:0.7em;">no cambia</td></tr>
+      <tr><td class="lbl">Cadencia</td><td>1.3</td><td>1.2</td><td>1.1</td><td>1.0</td><td>0.9</td><td class="hi">0.8</td><td style="color:var(--ck);font-size:0.7em;">no cambia</td></tr>
+      <tr><td class="lbl">Recarga</td><td>2.7s</td><td>2.5s</td><td>2.3s</td><td>2.1s</td><td>1.9s</td><td class="hi">1.7s</td><td style="color:var(--ck);font-size:0.7em;">no cambia</td></tr>
+      <tr><td class="lbl">Cargador</td><td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>20</td><td class="hi" style="font-size:1em;">20+8 = <b>28</b></td></tr>
+    </tbody>
+  </table></div>
+  <div class="wnote">Cargador máximo total: 20 (Nivel 6) + 8 del High-Capacity Mag = <strong>28 balas</strong> &nbsp;|&nbsp; Daño máximo nivel 6: <strong>4500</strong> (fuente: game8.co, NamuWiki)</div>
+  <p class="wdesc">La magnum definitiva del juego. Seis niveles de mejora. Daño máximo 4500 en nivel 6. Con High-Capacity Mag el cargador total es 28 balas. Coste total de mejoras: más de 1.500.000 Lei. Accesorios NG+: Improved Grip (reduce retroceso, 120.000 Lei) y High-Capacity Mag (+8 balas, 180.000 Lei).</p>
+  <div class="wloc">Solo NG+. Comprar al Duque nada más encontrarlo antes del Castillo Dimitrescu: 300.000 Lei.</div>
+  <div class="wunl">Munición infinita: 120.000 CP (requiere mejora completa a nivel 6 primero).</div>
+</div>
+
+</div>
+</section>
+
+<!-- LANZAGRANADAS Y ESPECIALES -->
+<section>
+<div class="sh"><span class="sn">06 /</span><h2 class="st">Lanzagranadas y Armas Especiales</h2><div class="sl"></div></div>
+<div class="wg">
+
+<div class="wc">
+  <span class="wbadge bn">No mejorable &middot; 0 ranuras</span>
+  <div class="wtype">Lanzagranadas break-action &middot; East Old Town</div><div class="wname">GM 79</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Potencia Explos.</th><th>Recarga</th><th>Cargador</th><th>Munición</th></tr></thead><tbody>
+  <tr><td class="hi">1200</td><td class="hi">2.7s</td><td class="hi">1</td><td>Explosiva / Flash</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">Lanzagranadas de acción por quiebre. Potencia fija de 1200, no mejorable y sin ranuras de accesorio. Las granadas explosivas generan daño en área. Las flash paralizan temporalmente incluso a jefes. Excelente para cualquier fase del juego.</p>
+  <div class="wloc">East Old Town — edificio junto a la Fuente. Necesitas Iron Insignia Key. Encima de una mesa al entrar.</div>
+  <div class="wnote">Vendido por el Duque a 100.000 Lei si se pierde &middot; Munición infinita: 80.000 CP.</div>
+</div>
+
+<div class="wc">
+  <span class="wbadge bn">No mejorable &middot; 0 ranuras</span>
+  <div class="wtype">Pistola explosiva &middot; Village of Shadows</div><div class="wname">Rocket Pistol</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Tipo</th><th>Potencia</th><th>Cargador</th><th>Área de efecto</th></tr></thead><tbody>
+  <tr><td>Pistola cohete</td><td class="hi">Máxima</td><td class="hi">1</td><td>Grande</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">Una pistola que dispara cohetes explosivos. Daño masivo por impacto y área. No mejorable ni admite accesorios. La recompensa de superar la dificultad máxima del juego.</p>
+  <div class="wunl">Completa la historia en Village of Shadows (dificultad máxima) &rarr; Tienda de Contenido Extra.</div>
+</div>
+
+</div>
+</section>
+
+<!-- CUERPO A CUERPO -->
+<section>
+<div class="sh"><span class="sn">07 /</span><h2 class="st">Cuerpo a Cuerpo</h2><div class="sl"></div></div>
+<div class="wg">
+
+<div class="wc">
+  <span class="wbadge bn">No mejorable</span>
+  <div class="wtype">Cuchillo &middot; Arma inicial</div><div class="wname">Knife</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Potencia</th><th>Usos</th><th>Especial</th></tr></thead><tbody>
+  <tr><td>Baja</td><td class="hi">Ilimitados</td><td>Guardia · Contraataque</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">A diferencia de RE7, en Village tiene mecánica de guardia (reduce daño recibido) y contraataque al bloquear en el momento exacto. Útil para cajas sin gastar munición.</p>
+  <div class="wloc">Disponible desde el inicio de la partida.</div>
+</div>
+
+<div class="wc">
+  <span class="wbadge bn">No mejorable &middot; 0 ranuras</span>
+  <div class="wtype">Karambit &middot; Extra Content Shop</div><div class="wname">Karambit Knife</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Potencia</th><th>Coste CP</th><th>Precio Duke</th></tr></thead><tbody>
+  <tr><td class="hi">Media-alta</td><td>10.000</td><td>100 Lei</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">Cuchillo karambit de hoja curvada. Mayor daño base que el cuchillo estándar. No admite mejoras. Ahorra munición contra enemigos más débiles.</p>
+  <div class="wunl">Tienda de Contenido Extra: 10.000 CP &rarr; Duque 100 Lei.</div>
+</div>
+
+<div class="wc hi">
+  <span class="wbadge bg">Recompensa Mercenarios SS Rank</span>
+  <div class="wtype">Sable de energía &middot; La mayor recompensa del juego</div><div class="wname">LZ Answerer</div>
+  <div class="wsw"><table class="wst"><thead><tr><th>Potencia</th><th>Modos hoja</th><th>Colores</th><th>Coste CP</th><th>Precio Duke</th></tr></thead><tbody>
+  <tr><td class="hi">Máxima</td><td>Simple / Doble</td><td>Rojo · Azul · Verde</td><td>70.000</td><td>200 Lei</td></tr>
+  </tbody></table></div>
+  <p class="wdesc">Sable de energía de ciencia ficción. El arma cuerpo a cuerpo más poderosa del juego. Dos modos de hoja y tres colores seleccionables. En modo defensivo bloquea y contraataca ataques enemigos.</p>
+  <div class="wunl">Completa la historia &rarr; desbloquea Mercenarios &rarr; consigue SS en TODOS los niveles base &rarr; 70.000 CP &rarr; Duque 200 Lei.</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+  <span>Resident Evil Village &middot; Fan Page &middot; Non-Commercial &middot; Stats: game8.co &amp; wiki fandom</span>
+  <span class="fr">Capcom &copy; 2021</span>
+</footer>
+</main>
+</body>
+</html>

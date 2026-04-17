@@ -10,16 +10,12 @@
       padding: 0;
       overflow: hidden;
       background-color: #000;
-      /* traje negro */
       cursor: pointer;
     }
 
     canvas {
       display: block;
     }
-
-
-    
   </style>
 </head>
 
@@ -40,7 +36,6 @@
       initSquares();
     });
 
-    // Paleta de colores inspirada en Rei: pelo azul/lila y detalles
     const reiColors = ['#00BFFF', '#1E90FF', '#87CEFA', '#9370DB', '#BA55D3'];
     const grayColor = '#333';
 
@@ -50,7 +45,7 @@
         this.y = y;
         this.size = size;
         this.color = grayColor;
-        this.isActive = false; // está en efecto de color
+        this.isActive = false;
         this.timeoutId = null;
       }
 
@@ -60,21 +55,19 @@
       }
 
       activate() {
-        if (this.isActive) return; // ya está activo, no reiniciar
+        if (this.isActive) return;
         this.color = reiColors[Math.floor(Math.random() * reiColors.length)];
         this.isActive = true;
 
-        // Después de 500ms vuelve al gris original
-        this.timeoutId = setTimeout(() => {
+        setTimeout(() => {
           this.color = grayColor;
           this.isActive = false;
-          this.timeoutId = null;
         }, 500);
       }
 
       checkHover(mx, my) {
         if (mx > this.x && mx < this.x + this.size &&
-          my > this.y && my < this.y + this.size) {
+            my > this.y && my < this.y + this.size) {
           this.activate();
         }
       }
@@ -112,10 +105,8 @@
       const my = e.clientY;
       squares.forEach(sq => sq.checkHover(mx, my));
     });
-    
 
   </script>
 
 </body>
-
 </html>

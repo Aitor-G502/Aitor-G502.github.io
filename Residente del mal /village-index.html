@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>RE Village — Inicio</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='47' fill='%231a0608' stroke='%23c8a840' stroke-width='3'/%3E%3Cpolygon points='50,28 55,44 72,50 55,56 50,72 45,56 28,50 45,44' fill='%23c8a840' opacity='0.88'/%3E%3Cline x1='50' y1='4' x2='50' y2='96' stroke='%23c8a840' stroke-width='1.5' opacity='0.45'/%3E%3Cline x1='4' y1='50' x2='96' y2='50' stroke='%23c8a840' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E"><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Special+Elite&family=Share+Tech+Mono&display=swap" rel="stylesheet"><style>:root{--w:#1e0a0c;--wm:#2a1012;--wl:#361418;--cr:#8b1a1a;--cm:#f0e6c8;--cd:#c8a868;--ck:#886840;--go:#c8a840;--gd:#7a6220;--bg:rgba(200,168,64,0.22);--sb:262px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:"Special Elite",serif;display:flex;min-height:100vh;overflow-x:hidden;background-color:#160a0c;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90'%3E%3Crect x='1' y='1' width='118' height='43' fill='rgba(35,10,12,0.5)' stroke='rgba(100,30,30,0.2)' stroke-width='1'/%3E%3Crect x='61' y='46' width='58' height='43' fill='rgba(30,8,10,0.45)' stroke='rgba(90,25,25,0.18)' stroke-width='1'/%3E%3Crect x='1' y='46' width='58' height='43' fill='rgba(32,9,11,0.48)' stroke='rgba(95,27,27,0.18)' stroke-width='1'/%3E%3C/svg%3E"),radial-gradient(ellipse 130% 50% at 50% 0%,rgba(180,80,20,0.05) 0%,transparent 55%),linear-gradient(160deg,#1e0c0e 0%,#160a0c 50%,#1c0c10 100%);color:var(--cd);}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 50% 40% at 12% 10%,rgba(200,90,20,0.12) 0%,transparent 52%),radial-gradient(ellipse 45% 35% at 88% 12%,rgba(160,40,20,0.1) 0%,transparent 48%),radial-gradient(ellipse 100% 100% at 50% 50%,transparent 30%,rgba(0,0,0,0.68) 100%);pointer-events:none;z-index:9998;}
+body::after{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.022'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.sidebar{width:var(--sb);position:fixed;top:0;left:0;height:100vh;display:flex;flex-direction:column;z-index:100;background-color:#120608;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90'%3E%3Crect x='1' y='1' width='118' height='43' fill='none' stroke='rgba(100,30,30,0.22)' stroke-width='1'/%3E%3Crect x='1' y='46' width='118' height='43' fill='none' stroke='rgba(90,25,25,0.18)' stroke-width='1'/%3E%3C/svg%3E"),linear-gradient(90deg,#0e0406 0%,#1c0a0c 45%,#140608 100%);border-right:1px solid var(--bg);box-shadow:3px 0 0 rgba(200,168,64,0.06),5px 0 22px rgba(0,0,0,0.85),inset -3px 0 10px rgba(0,0,0,0.5);}
+.sidebar::before{content:"";position:absolute;top:0;left:0;right:0;height:42%;background:radial-gradient(ellipse 88% 72% at 50% 0%,rgba(180,60,20,0.28) 0%,transparent 65%);pointer-events:none;}
+.sidebar::after{content:"";position:absolute;bottom:0;left:0;right:0;height:38%;background:radial-gradient(ellipse 90% 72% at 50% 100%,rgba(6,2,3,0.75) 0%,transparent 68%);pointer-events:none;}
+.game-switcher{display:flex;border-bottom:1px solid rgba(200,168,64,0.2);}
+.game-switcher a{flex:1;padding:10px 6px;font-family:"Share Tech Mono",monospace;font-size:0.56em;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;text-align:center;transition:all 0.25s;}
+.game-switcher a.re7{color:var(--ck);border-bottom:2px solid transparent;}
+.game-switcher a.re7:hover{color:var(--go);}
+.game-switcher a.re8{color:var(--go);background:rgba(200,168,64,0.08);border-bottom:2px solid var(--go);}
+.sidebar-logo{padding:16px 22px 14px;border-bottom:1px solid rgba(200,168,64,0.2);}
+.crw{display:flex;justify-content:center;margin-bottom:10px;}
+.ltxt{font-family:"Cinzel",serif;font-weight:700;font-size:0.96em;color:var(--go);letter-spacing:0.1em;line-height:1.45;text-transform:uppercase;text-align:center;text-shadow:0 0 28px rgba(200,168,64,0.42),0 2px 8px rgba(0,0,0,0.9);}
+.lsub{font-family:"Share Tech Mono",monospace;font-size:0.54em;color:var(--ck);letter-spacing:0.28em;margin-top:4px;opacity:0.58;text-align:center;}
+.menu{padding:14px 0;flex:1;}
+.menu a{display:flex;align-items:center;color:var(--ck);text-decoration:none;font-family:"Share Tech Mono",monospace;font-size:0.67em;letter-spacing:0.14em;text-transform:uppercase;padding:11px 22px;border-left:3px solid transparent;transition:all 0.28s;}
+.menu a::before{content:attr(data-num);font-size:0.66em;color:rgba(200,168,64,0.28);margin-right:9px;}
+.menu a:hover,.menu a.active{color:var(--cm);border-left-color:var(--go);background:linear-gradient(90deg,rgba(200,168,64,0.09),transparent);padding-left:28px;}
+.menu a:hover::before,.menu a.active::before{color:var(--go);}
+.sf{padding:13px 22px;border-top:1px solid rgba(200,168,64,0.15);font-family:"Share Tech Mono",monospace;font-size:0.49em;color:var(--ck);opacity:0.5;text-align:center;}
+.content{margin-left:var(--sb);width:calc(100% - var(--sb));min-height:100vh;}
+.ph{padding:60px 68px 46px;border-bottom:1px solid var(--bg);background:linear-gradient(160deg,#2a1010 0%,#320e12 30%,#1e0c0e 65%,#28101a 100%);position:relative;overflow:hidden;}
+.ph::before{content:"";position:absolute;top:-80px;left:-60px;width:520px;height:440px;background:radial-gradient(ellipse at 22% 28%,rgba(200,90,20,0.2) 0%,transparent 52%);pointer-events:none;}
+.ph::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent 0%,rgba(200,168,64,0.6) 15%,rgba(200,168,64,0.35) 50%,rgba(200,168,64,0.6) 85%,transparent 100%);}
+.ph .ey{font-family:"Share Tech Mono",monospace;font-size:0.61em;letter-spacing:0.36em;color:var(--ck);text-transform:uppercase;margin-bottom:20px;opacity:0.72;}
+.ph h1{font-family:"Cinzel",serif;font-weight:700;font-size:clamp(2.6em,5.5vw,5em);color:var(--cm);line-height:1.05;letter-spacing:0.08em;text-transform:uppercase;text-shadow:3px 4px 0 rgba(0,0,0,0.92),0 0 60px rgba(160,30,20,0.18);position:relative;z-index:1;}
+section{padding:62px 68px;border-bottom:1px solid rgba(110,28,28,0.28);position:relative;}
+section::before{content:"";position:absolute;top:0;left:0;width:220px;height:140px;background:radial-gradient(ellipse at 0% 0%,rgba(120,20,22,0.1) 0%,transparent 65%);pointer-events:none;}
+section::after{content:"";position:absolute;bottom:0;right:0;width:240px;height:150px;background:radial-gradient(ellipse at 100% 100%,rgba(90,15,18,0.1) 0%,transparent 65%);pointer-events:none;}
+.sh{display:flex;align-items:center;gap:16px;margin-bottom:44px;padding-bottom:14px;border-bottom:1px solid var(--bg);position:relative;}
+.sh::before{content:"⚜";font-size:0.78em;color:rgba(200,168,64,0.3);position:absolute;left:-4px;bottom:-12px;}
+.sn{font-family:"Share Tech Mono",monospace;font-size:0.58em;color:var(--ck);letter-spacing:0.2em;opacity:0.6;}
+.st{font-family:"Cinzel",serif;font-weight:700;font-size:1.8em;color:var(--cm);letter-spacing:0.1em;text-transform:uppercase;text-shadow:2px 2px 0 rgba(0,0,0,0.8);}
+.sl{flex:1;height:1px;background:linear-gradient(90deg,var(--gd) 0%,rgba(200,168,64,0.1) 55%,transparent 100%);}
+footer{padding:20px 68px;display:flex;justify-content:space-between;align-items:center;font-family:"Share Tech Mono",monospace;font-size:0.53em;letter-spacing:0.14em;color:var(--ck);border-top:1px solid var(--bg);background:linear-gradient(160deg,#100608,#1c0a0c);opacity:0.82;}
+footer .fr{color:var(--gd);}
+.hs{position:relative;padding:80px 68px 80px;overflow:hidden;border-bottom:1px solid var(--bg);background:linear-gradient(160deg,#2a1010 0%,#320e12 30%,#1e0c0e 65%,#28101a 100%);}
+.hs::before{content:"";position:absolute;top:-80px;left:-60px;width:520px;height:440px;background:radial-gradient(ellipse at 22% 28%,rgba(200,90,20,0.2) 0%,transparent 52%);pointer-events:none;}
+.hs::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent 0%,rgba(200,168,64,0.6) 15%,rgba(200,168,64,0.35) 50%,rgba(200,168,64,0.6) 85%,transparent 100%);}
+.stkcrk{position:absolute;top:0;right:205px;width:1px;height:65%;background:linear-gradient(180deg,transparent 0%,rgba(200,150,60,0.22) 22%,rgba(200,150,60,0.3) 50%,rgba(200,150,60,0.1) 80%,transparent 100%);pointer-events:none;}
+h1.vbig{font-family:"Cinzel",serif;font-weight:700;font-size:clamp(2.6em,5.5vw,5em);color:var(--cm);line-height:1.05;letter-spacing:0.08em;text-transform:uppercase;text-shadow:3px 4px 0 rgba(0,0,0,0.92),0 0 60px rgba(160,30,20,0.18);}
+.vsub{font-family:"Special Elite",serif;font-size:0.95em;color:rgba(200,140,80,0.82);letter-spacing:0.07em;margin-top:16px;font-style:italic;}
+.vdesc{max-width:560px;color:var(--cd);line-height:1.92;margin-top:26px;font-size:0.95em;}
+.vtags{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap;}
+.tag{font-family:"Share Tech Mono",monospace;font-size:0.58em;letter-spacing:0.14em;text-transform:uppercase;padding:5px 13px;border:1px solid rgba(200,168,64,0.28);color:var(--ck);background:rgba(18,6,8,0.55);}
+.vstats{display:flex;align-items:stretch;margin-top:54px;border:1px solid var(--bg);background:rgba(10,3,5,0.6);position:relative;}
+.vstats::before{content:"";position:absolute;top:-1px;left:6%;right:6%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,64,0.35),transparent);}
+.vst{flex:1;padding:20px 22px;border-right:1px solid rgba(200,168,64,0.14);}
+.vst:last-child{border-right:none;}
+.vsv{font-family:"Cinzel",serif;font-weight:700;font-size:1.7em;color:var(--go);line-height:1;margin-bottom:6px;}
+.vsl{font-family:"Share Tech Mono",monospace;font-size:0.53em;letter-spacing:0.18em;color:var(--ck);text-transform:uppercase;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.vcard{background:linear-gradient(160deg,var(--wm),var(--w));border:1px solid rgba(120,30,30,0.35);padding:28px 24px;position:relative;overflow:hidden;transition:all 0.3s;text-decoration:none;display:block;}
+.vcard::before{content:"";position:absolute;top:0;right:0;width:85px;height:68px;background:radial-gradient(ellipse at 100% 0%,rgba(160,35,25,0.22) 0%,transparent 65%);pointer-events:none;}
+.vcard::after{content:"";position:absolute;bottom:0;left:0;width:0;height:2px;background:linear-gradient(90deg,rgba(160,30,20,0.7),rgba(200,168,64,0.6),transparent);transition:width 0.42s;}
+.vcard:hover{background:linear-gradient(160deg,var(--wl),var(--wm));}
+.vcard:hover::after{width:100%;}
+.vcn{font-family:"Share Tech Mono",monospace;font-size:0.56em;letter-spacing:0.22em;color:var(--ck);margin-bottom:12px;opacity:0.65;}
+.vct{font-family:"Cinzel",serif;font-weight:700;font-size:1.18em;letter-spacing:0.06em;color:var(--cm);margin-bottom:10px;}
+.vcd{font-size:0.8em;color:var(--ck);line-height:1.78;}
+.vca{font-family:"Share Tech Mono",monospace;font-size:0.6em;color:var(--go);margin-top:18px;letter-spacing:0.2em;opacity:0;transform:translateX(-6px);transition:all 0.3s;}
+.vcard:hover .vca{opacity:1;transform:translateX(0);}
+.lords{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:3px;}
+.lc{background:linear-gradient(160deg,var(--wm),var(--w));border:1px solid rgba(120,30,30,0.35);padding:22px 18px;position:relative;overflow:hidden;transition:all 0.3s;box-shadow:inset 0 0 28px rgba(0,0,0,0.32);}
+.lc::after{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--go);transform:scaleY(0);transform-origin:bottom;transition:transform 0.3s;}
+.lc:hover{background:linear-gradient(160deg,var(--wl),var(--wm));}
+.lc:hover::after{transform:scaleY(1);}
+.ln{font-family:"Cinzel",serif;font-weight:700;font-size:0.96em;color:var(--cm);margin-bottom:4px;}
+.lt{font-family:"Share Tech Mono",monospace;font-size:0.58em;letter-spacing:0.18em;text-transform:uppercase;color:var(--go);margin-bottom:10px;opacity:0.85;}
+.ld{font-size:0.78em;color:var(--ck);line-height:1.65;}
+.lst{position:absolute;top:10px;right:10px;font-family:"Share Tech Mono",monospace;font-size:0.5em;padding:2px 6px;border:1px solid;}
+.sl2{border-color:var(--gd);color:var(--go);}
+.sd2{border-color:#3d1618;color:#7a2830;}
+.sh2{border-color:#5a2a14;color:#c07848;}
+.g2f{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;}
+.fi2{background:linear-gradient(160deg,var(--wm),var(--w));border:1px solid rgba(110,28,28,0.3);padding:26px 24px;display:flex;gap:18px;align-items:flex-start;}
+.fin{font-family:"Special Elite",serif;font-size:1.7em;color:rgba(200,168,64,0.28);line-height:1;flex-shrink:0;width:36px;font-style:italic;}
+.fit{font-family:"Cinzel",serif;font-weight:600;font-size:0.9em;text-transform:uppercase;letter-spacing:0.1em;color:var(--cm);margin-bottom:7px;}
+.fid{font-size:0.8em;color:var(--ck);line-height:1.78;}</style></head><body><nav class="sidebar"><div class="game-switcher"><a href="index.html" class="re7">RE7 · Biohazard</a><a href="village-index.html" class="re8">RE8 · Village</a></div><div class="sidebar-logo">
+    <div class="crw"><img src="https://www.creativeuncut.com/gallery-40/art/rev-crests-of-the-four-lords.jpg" alt="Four Houses Crest" style="width:72px;height:auto;opacity:0.88;filter:sepia(0.2) saturate(1.2) brightness(0.95);display:block;border-radius:2px;" loading="lazy" onerror="this.style.display='none'"/></div>
+    <div class="ltxt">Resident Evil<br>Village</div>
+    <div class="lsub">Fan Archive</div>
+  </div>
+  <div class="menu"><a href="village-index.html" data-num="01" class="active">Inicio</a><a href="village-historia.html" data-num="02">Historia</a><a href="village-armas.html" data-num="03">Arsenal</a><a href="village-galeria.html" data-num="04">Galería</a></div><div class="sf">CAPCOM &#169; 2021 &middot; FAN PAGE</div></nav><main class="content"><div class="ph"><svg style="position:absolute;top:-15px;right:60px;opacity:0.07;pointer-events:none;" width="130" height="210" viewBox="0 0 130 210" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 210 L10 80 Q10 10 65 10 Q120 10 120 80 L120 210" stroke="rgba(200,168,64,1)" stroke-width="2" fill="none"/><path d="M28 210 L28 90 Q28 40 65 40 Q102 40 102 90 L102 210" stroke="rgba(200,168,64,0.45)" stroke-width="1" fill="none"/><path d="M38 65 Q65 35 92 65 Q65 55 38 65Z" stroke="rgba(200,168,64,0.65)" stroke-width="1" fill="rgba(200,168,64,0.04)"/><circle cx="65" cy="56" r="12" stroke="rgba(200,168,64,0.5)" stroke-width="1" fill="none"/></svg><div class="ey"></div><h1></h1></div><section class="hs" style="padding:80px 68px 80px;">
+  <div class="stkcrk"></div>
+  <div class="ey" style="font-family:'Share Tech Mono',monospace;font-size:0.61em;letter-spacing:0.36em;color:var(--ck);text-transform:uppercase;margin-bottom:20px;opacity:0.72;">// Europa del Este &nbsp;&middot;&nbsp; 2021 &nbsp;&middot;&nbsp; Survival Horror</div>
+  <h1 class="vbig">Resident Evil<br>Village</h1>
+  <div class="vsub">"Ha sido un placer hacer negocios contigo." &mdash; El Duque</div>
+  <p class="vdesc">Cuatro años después de Dulvey. Ethan Winters cree que el horror ha quedado atrás. Una noche, hombres armados irrumpen en su hogar y su hija desaparece. Ethan despierta en un pueblo olvidado de Europa del Este, rodeado de criaturas que no deberían existir.</p>
+  <div class="vtags"><span class="tag">First-Person Horror</span><span class="tag">PC &middot; PS4/5 &middot; Xbox &middot; Switch</span><span class="tag">PSVR2 Compatible</span></div>
+  <div class="vstats">
+    <div class="vst"><div class="vsv">2021</div><div class="vsl">Año</div></div>
+    <div class="vst"><div class="vsv">84</div><div class="vsl">Metacritic</div></div>
+    <div class="vst"><div class="vsv">9M+</div><div class="vsl">Ventas</div></div>
+    <div class="vst"><div class="vsv">RE Engine</div><div class="vsl">Motor</div></div>
+  </div>
+</section>
+<section><div class="sh"><span class="sn">Explorar /</span><h2 class="st">Contenido</h2><div class="sl"></div></div>
+<div class="g3">
+  <a class="vcard" href="village-historia.html"><div class="vcn">02 / Historia</div><div class="vct">Historia y Personajes</div><p class="vcd">Argumento completo, los Cuatro Señores, Madre Miranda y la guía de coleccionables.</p><div class="vca">Ver Historia</div></a>
+  <a class="vcard" href="village-armas.html"><div class="vcn">03 / Arsenal</div><div class="vct">Arsenal Completo</div><p class="vcd">Todas las armas con estadísticas verificadas, ubicaciones y desbloqueos.</p><div class="vca">Ver Arsenal</div></a>
+  <a class="vcard" href="village-galeria.html"><div class="vcn">04 / Galería</div><div class="vct">Galería</div><p class="vcd">Castillo Dimitrescu, Casa Beneviento, Embalse de Moreau y la Fábrica.</p><div class="vca">Ver Galería</div></a>
+</div></section>
+<section><div class="sh"><span class="sn">02 /</span><h2 class="st">Los Cuatro Señores</h2><div class="sl"></div></div>
+<div class="lords">
+  <div class="lc"><span class="lst sd2">DERROTADA</span><div class="ln">Lady Alcina Dimitrescu</div><div class="lt">Castillo Dimitrescu</div><p class="ld">Condesa vampírica de 2,9m. El cadou agravó una condición médica que la obliga a consumir sangre. Sus hijas Bela, Cassandra y Daniela son criaturas de enjambres de insectos. Emblema: flores ocultando dagas cruzadas.</p></div>
+  <div class="lc"><span class="lst sd2">DERROTADA</span><div class="ln">Donna Beneviento</div><div class="lt">Casa Beneviento</div><p class="ld">Induce alucinaciones devastadoras con su polvo del cadou. Opera a través de Angie, su marioneta. La zona más psicológicamente perturbadora. Emblema: sol y luna divididos.</p></div>
+  <div class="lc"><span class="lst sd2">DERROTADO</span><div class="ln">Salvatore Moreau</div><div class="lt">Embalse de Moreau</div><p class="ld">Hunchback grotesco cuya transformación en criatura pisciforme es involuntaria. Obsesionado con la aprobación de Miranda. Inundó el embalse para moverse por él. Emblema: sirena.</p></div>
+  <div class="lc"><span class="lst sd2">DERROTADO</span><div class="ln">Karl Heisenberg</div><div class="lt">Fábrica Heisenberg</div><p class="ld">Controla campos electromagnéticos. Lleva años planeando matar a Miranda en secreto construyendo un ejército de soldados mecánicos. El señor más complejo. Emblema: caballo y herradura.</p></div>
+  <div class="lc"><span class="lst sh2">ANTAGONISTA</span><div class="ln">Madre Miranda</div><div class="lt">Gobernante del Pueblo</div><p class="ld">Científica que perdió a su hija Eva en 1919. Descubrió el Megamiceto y experimentó durante un siglo. Puede cambiar de forma. El emblema combinado de los cuatro señores lleva su estrella de 8 puntas (sus 8 alas) en el centro.</p></div>
+</div></section>
+<section><div class="sh"><span class="sn">03 /</span><h2 class="st">Características</h2><div class="sl"></div></div>
+<div class="g2f">
+  <div class="fi2"><div class="fin">I</div><div><div class="fit">Múltiples Entornos</div><p class="fid">El castillo gótico de Dimitrescu, la mansión de las muñecas, el embalse y la fábrica industrial. Cuatro zonas radicalmente distintas con su propio tono y mecánicas.</p></div></div>
+  <div class="fi2"><div class="fin">II</div><div><div class="fit">El Duque</div><p class="fid">El misterioso comerciante del pueblo. Vende armas, mejoras y cocina ingredientes a cambio de materiales. Su origen sigue siendo un misterio total dentro del lore.</p></div></div>
+  <div class="fi2"><div class="fin">III</div><div><div class="fit">Sistema de Mejoras</div><p class="fid">Todas las armas mejorables en potencia, cadencia, recarga y capacidad. Completar las mejoras desbloquea munición infinita en la Tienda de Contenido Extra.</p></div></div>
+  <div class="fi2"><div class="fin">IV</div><div><div class="fit">Cocina del Duque</div><p class="fid">Los animales del pueblo son ingredientes. El Duque cocina platos que aumentan permanentemente la salud máxima, la velocidad o la potencia de bloqueo de Ethan.</p></div></div>
+  <div class="fi2"><div class="fin">V</div><div><div class="fit">The Mercenaries</div><p class="fid">Modo de puntuación independiente. SS en todos los niveles desbloquea el LZ Answerer. El DLC Winters' Expansion añade a Chris, Heisenberg y Lady Dimitrescu como personajes jugables.</p></div></div>
+  <div class="fi2"><div class="fin">VI</div><div><div class="fit">Winters' Expansion (DLC)</div><p class="fid">Octubre 2022: Shadows of Rose (campaña con Rose de 16 años, ~4h, tercera persona), Mercenarios Additional Orders (3 nuevos personajes), y Modo Tercera Persona para la campaña principal completa.</p></div></div>
+</div></section><footer><span>Resident Evil Village &middot; Fan Page &middot; Non-Commercial</span><span class="fr">Capcom &copy; 2021</span></footer></main></body></html>
