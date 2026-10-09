@@ -12,5 +12,5 @@ while contador < len(frase):
     contador += 1
 
 while contador2 < len(fraseinv):
-    print(" ".join(frase[contador2:]))
+    print(" ".join(fraseinv[contador2:]))
     contador2 += 1
