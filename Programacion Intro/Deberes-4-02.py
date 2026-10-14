@@ -43,24 +43,24 @@ menu = ''' Introduce una de las siguientes opciones:
 
 opciones = input(menu)
 
-while True:
-    match opciones:
-        case '1':
-            resultado = num1 + num2
-            print(f'La suma de {num1} y {num2} es de {resultado}')
-        case '2':
-            resultado = num1 - num2
-            print(f'La resta de {num1} y {num2} es de {resultado}')
-        case '3':
-            resultado = num1 * num2
-            print(f'El resultado de multiplicar {num1} y {num2} es de {resultado}')
-        case '4':
-            print(f'Gracias por usar nuestro programa')
-            break
-        case _: 
-            print("No has introducido un valor valido")
-    print()
-    opciones = input(menu)
+#while True:
+    #match opciones:
+        #case '1':
+        #    resultado = num1 + num2
+        #    print(f'La suma de {num1} y {num2} es de {resultado}')
+        #case '2':
+        #    resultado = num1 - num2
+        #    print(f'La resta de {num1} y {num2} es de {resultado}')
+        #case '3':
+        #    resultado = num1 * num2
+        #    print(f'El resultado de multiplicar {num1} y {num2} es de {resultado}')
+        #case '4':
+        #    print(f'Gracias por usar nuestro programa')
+        #    break
+        #case _: 
+        #    print("No has introducido un valor valido")
+    #print()
+    #opciones = input(menu)
     
 
 # 4 Realitza un programa que llegeixi un nombre imparell per teclat. Si l'usuari no introdueix un nombre imparell, 
@@ -100,28 +100,28 @@ nument = int(input("Introduce un numero entero entre el 0 y el 9: "))
 
 listanument = [1, 3, 6, 9]
 
-while True:
-    match nument:
-        case 2:
-            print("No has conseguido acertar un numero dentro de la lista")
-            print(nument)
-        case 4:
-            print("No has conseguido acertar un numero dentro de la lista")
-            print(nument)
-        case 5:
-            print("No has conseguido acertar un numero dentro de la lista")
-            print(nument)
-        case 7:
-            print("No has conseguido acertar un numero dentro de la lista")
-            print(nument)
-        case 8:
-            print("No has conseguido acertar un numero dentro de la lista")
-            print(nument)
-        case _:
-            print("Enhorabuena, has conseguido acertar un numero en la lista")
-            break
-    print()
-    nument = int(input("Introduce un numero entero entre el 0 y el 9: "))
+#while True:
+    #match nument:
+       #####################case 2:
+          ####################  print("No has conseguido acertar un numero dentro de la lista")
+      ##################      print(nument)
+   ###################     case 4:
+     ################       print("No has conseguido acertar un numero dentro de la lista")
+     #################       print(nument)
+     ##############   case 5:
+   ###############         print("No has conseguido acertar un numero dentro de la lista")
+     ############       print(nument)
+    #############    case 7:
+     ###########       print("No has conseguido acertar un numero dentro de la lista")
+      #########      print(nument)
+     ##########   case 8:
+      ########      print("No has conseguido acertar un numero dentro de la lista")
+      #######      print(nument)
+     ######   case _:
+      #######      print("Enhorabuena, has conseguido acertar un numero en la lista")
+      ###      break
+   ##print()
+   # nument = int(input("Introduce un numero entero entre el 0 y el 9: "))
 
 
 # 7 Donades dues llistes, has de generar una tercera amb tots els elements que s'hi repeteixin en cada una d’elles 
@@ -131,14 +131,6 @@ while True:
 #lista1 = [1,1,2,3,4,5,5,6,7,7,8,9,9,1,11,12,13,14,15,16,15,1,2]
 #lista2 = [1,2,2,3,3,4,5,6,7,7,8,8,9,9]
 
-#listarep1 = []
-
-#listarep2 = []
-
-#listarepdev = []
-
-
+#lista3 = []
 
 #contador = 1
-
-# while contador < 

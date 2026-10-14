@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+</head>
+<body>
+    <img id="foto-perfil" src="" alt="">
+    <button id="btn-desactivar">pulsame</button>
+    <script>
+        const imagen = document.getElementById("foto-perfil");
+        /*me ha faltado cambiar la imagen */
+        imagen.scr = "nueva-foto.png" /*<-- correccion*/
+
+        function verificarEdad(){
+            let edad = prompt("Que edad tienes?: ");
+            if(edad >= 18){
+                alert("Eres mayor de edad");
+            } else {
+                alert("Eres menor de edad");
+            }
+        }
+verificarEdad(); /*<-- (correcion)me faltaba llamar a la funcion*/
+
+        const boton = document.getElementById("btn-desactivar");
+        boton.addEventListener("click", function(){
+            boton.innerText = "Desactivado";
+            boton.setAttribute("disabled", ""); /*<-- correcion*/
+
+        }) /*<-- (correcion) me ha faltado cerrar este parentesis*/
+
+    </script>
+</body>
+</html>
