@@ -1,9 +1,9 @@
-fruta_ver = input("Introduce el nombre de una fruta: ")
+numero = int(input("Introduce un numero entero: "))
+indice = 1
 
-match fruta_ver:
-    case 'manzana':
-      print("Tu fruta es una manzana")
-    case "platano":
-      print('Tu fruta es un platano')
-    case _:
-        print("Tu fruta es otro tipo de fruta")
+while indice <= numero:
+    print(indice)
+    if numero != int:
+        print("El numero introducido no es un numero entero")
+    indice += 1
+    
