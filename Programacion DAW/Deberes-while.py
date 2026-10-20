@@ -122,3 +122,35 @@ while indice <= numero:
     if numero != int:
         print("El numero introducido no es un numero entero")
     indice += 1
+
+''' 8º 
+Es col·loca un capital C, a un interès I (que oscil·la entre 0 i 100), durant M anys i es vol saber quan s'hi haurà convertit aquest capital en “M” anys, 
+sabent que és acumulatiu (se refiere al interés, es decir, que cuando se calcule el interés en un año determinado, 
+se calculará respecto a la cantidad original más las cantidades de los intereses de los años anteriores). 
+Crea un programa utilitzant el bucle for que ens calculi l’interés acumulat d’aquest capital. El capital C i l'interès I s'hauran d’introduir per teclat.
+'''
+
+capital = float(input("Introduce tu capital: "))
+intereses = float(input("Introduce el tipo de interes: "))
+años = int(input("Introduce un numero de años: "))
+indice = 0
+
+while indice <= años:
+    capital = capital * (intereses / 100)
+    indice += 1
+print(f'Tu capital despues de {años} años con un interes acumulativo de {intereses} es de {capital}')
+
+
+''' 9º
+Crea un programa que calculi la suma de tots els divisors (sencers) d’un nombre sencer introduït per teclat 
+(recorda que els divisors poden ser com a molt grans fins a la meitat del nombre introduït).
+'''
+numero_entero = int(input("Introduce un numero entero: "))
+divisor = 1
+indice = 0
+
+while numero_entero >= indice:
+    if numero_entero % divisor == 0:
+        print(f'{divisor} es divisor de {numero_entero}')
+    divisor += 1
+    indice += 1
