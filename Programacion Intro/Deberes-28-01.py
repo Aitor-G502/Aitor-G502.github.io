@@ -42,7 +42,7 @@ numactual = numero1
 
 while numactual <= numero2:
     suma += numactual
-    numactual += 1
+    numactual += 1 
 
 print(f'La suma de los numeros entre {numero1} y {numero2} incluyendolos, es de {suma}.')
 

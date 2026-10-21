@@ -1,10 +1,26 @@
-numero_entero = int(input("Introduce un numero entero: "))
-divisor = 1
-indice = 0
+nument = int(input("Introduce un numero entero entre el 0 y el 9: "))
 
-while numero_entero >= indice:
-    if numero_entero % divisor == 0:
-        print(f'{divisor} es divisor de {numero_entero}')
-    divisor += 1
-    indice += 1
+listanument = [1, 3, 6, 9]
 
+while True:
+    match nument:
+       case 2:
+            print("No has conseguido acertar un numero dentro de la lista")
+            print(nument)
+       case 4:
+            print("No has conseguido acertar un numero dentro de la lista")
+            print(nument)
+       case 5:
+            print("No has conseguido acertar un numero dentro de la lista")
+            print(nument)
+       case 7:
+            print("No has conseguido acertar un numero dentro de la lista")
+            print(nument)
+       case 8:
+            print("No has conseguido acertar un numero dentro de la lista")
+            print(nument)
+       case _:
+            print("Enhorabuena, has conseguido acertar un numero en la lista")
+            break
+    print()
+    nument = int(input("Introduce un numero entero entre el 0 y el 9: "))

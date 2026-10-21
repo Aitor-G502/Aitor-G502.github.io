@@ -32,10 +32,6 @@ while n <=  2*num-1:
 
 
 
-
-    
-
-
 # 12 Crea un programa utilitzant el bucle for que compti el nombre de xifres que té un número sencer introduït per teclat.
 
 nument = input("Introduce un numero entero: ")
@@ -45,7 +41,7 @@ contador = 1
 while contador < len(nument):
     contador = contador + 1
 
-print(f'El numero tiene {contador} cifras')
+print(f'El numero tiene {contador} cifras') 
 
 
 #13 Escriu un programa que pregunti quants números s'introduiran, demaneu aquests números,
