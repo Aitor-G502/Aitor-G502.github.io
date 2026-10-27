@@ -1,0 +1,6 @@
+01Alice     Smith          02
+02Bob       Sanders        04
+03Carol     Miller         06
+04David     Simpson        -1
+05Eve       Adams          -1
+06Maria     Moore          -1
