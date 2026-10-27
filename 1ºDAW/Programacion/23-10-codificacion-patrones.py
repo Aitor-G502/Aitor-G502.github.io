@@ -18,7 +18,8 @@
 numero = int(input("Introduce un numero entero: "))
 indice = 1
 num = numero
-linea = []
+linea = ""
+
 while numero >= indice:
     if indice >= 1:
         linea = str(indice) + " - "
@@ -31,19 +32,15 @@ while numero >= indice:
         print(f'{indice} - ')
     indice += 1
     if num > 2:
-        print("\n"f'{(num *'* ')} ')
-    elif num == numero - 1:
-        print(end="")
+        print("\n"f'{(num *'* ')}')
+        
     else:
         print("\n"f'{(num *'* ')}' ) 
         num -= 1
     num -= 1
     
 
-indice = numero - 1
-num = numero - indice + 1
-
-while indice >= 1:
+while indice >= numero*2-1:
     if num > 2:
         print(f'{(num *'* ')} ')
     else:
