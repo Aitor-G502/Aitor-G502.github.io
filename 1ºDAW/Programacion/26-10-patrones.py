@@ -73,19 +73,19 @@ indice = 1
 while numero  >= indice:
     if indice % 2 != 0:
         espacios =" "  * (numero - indice)
-        linea = str(indice) + "-"
+        linea = str(indice)
         i = 2
         while i <= indice:
-            linea = linea + str(indice) + "-"
+            linea = linea + "-" + str(indice)
             i += 1
         print(espacios,linea)
         
     elif indice % 2 == 0:
         espacios =" " * (numero - indice)
-        linea = str(indice) + "*"
+        linea = str(indice)
         i = 2
         while i <= indice:
-            linea = linea + str(indice) + "*"
+            linea = linea  + "*" + str(indice)
             i += 1
         print(espacios,linea)
     indice += 1
@@ -95,19 +95,19 @@ indice = numero - 1
 while indice >= 1:
     if indice % 2 != 0:
         espacios =" "  * (numero - indice)
-        linea = str(indice) + "-"
+        linea = str(indice)
         i = 2
         while i <= indice:
-            linea = linea + str(indice) + "-"
+            linea = linea + "-" + str(indice) 
             i += 1
         print(espacios,linea)
         
     elif indice % 2 == 0:
         espacios =" " * (numero - indice)
-        linea = str(indice) + "*"
+        linea = str(indice)
         i = 2
         while i <= indice:
-            linea = linea + str(indice) + "*"
+            linea = linea + "*"  + str(indice)
             i += 1
         print(espacios,linea)
     indice -= 1
