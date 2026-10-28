@@ -52,7 +52,8 @@ while indice <= numero_2:
             i -= 1
         print(linea)
     indice += 1
-
+print()
+print()
 '''
     1        
    2*2       
@@ -67,21 +68,46 @@ while indice <= numero_2:
 '''
 numero = int(input("Introduce un numero entero: "))
 indice = 1
-espacios = " "
+
+
 while numero  >= indice:
     if indice % 2 != 0:
+        espacios =" "  * (numero - indice)
         linea = str(indice) + "-"
         i = 2
         while i <= indice:
-            linea = espacios + linea + str(indice) + "-"
+            linea = linea + str(indice) + "-"
             i += 1
-        espacios += ""
-        print(linea)
-    else:
+        print(espacios,linea)
+        
+    elif indice % 2 == 0:
+        espacios =" " * (numero - indice)
         linea = str(indice) + "*"
         i = 2
         while i <= indice:
-            linea = espacios + linea + str(indice) + "*"
+            linea = linea + str(indice) + "*"
             i += 1
-        print(linea)
+        print(espacios,linea)
     indice += 1
+    
+indice = numero - 1
+
+while indice >= 1:
+    if indice % 2 != 0:
+        espacios =" "  * (numero - indice)
+        linea = str(indice) + "-"
+        i = 2
+        while i <= indice:
+            linea = linea + str(indice) + "-"
+            i += 1
+        print(espacios,linea)
+        
+    elif indice % 2 == 0:
+        espacios =" " * (numero - indice)
+        linea = str(indice) + "*"
+        i = 2
+        while i <= indice:
+            linea = linea + str(indice) + "*"
+            i += 1
+        print(espacios,linea)
+    indice -= 1
