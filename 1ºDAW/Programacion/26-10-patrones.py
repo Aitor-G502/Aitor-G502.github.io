@@ -67,7 +67,21 @@ while indice <= numero_2:
 '''
 numero = int(input("Introduce un numero entero: "))
 indice = 1
-
+espacios = " "
 while numero  >= indice:
-    print(indice)
+    if indice % 2 != 0:
+        linea = str(indice) + "-"
+        i = 2
+        while i <= indice:
+            linea = espacios + linea + str(indice) + "-"
+            i += 1
+        espacios += ""
+        print(linea)
+    else:
+        linea = str(indice) + "*"
+        i = 2
+        while i <= indice:
+            linea = espacios + linea + str(indice) + "*"
+            i += 1
+        print(linea)
     indice += 1
