@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Emisor 2</title>
+</head>
+<body>
+    <form action="receptor2.html" method="get" target="iframe_receptor">
+        <fieldset name="datos">
+        <legend>Datos Personales</legend>
+        <label for="nombre">Nombre: </label>
+        <br>
+        <input type="text" id="nombre" name="nombre" maxlength="30" required>
+        <br><br>
+        <label for="apellido">Apellido</label>
+        <br>
+        <input type="text" name="apellido" id="apellido" maxlength="30" required>
+        <br><br>
+        <label for="nacimiento">Fecha de nacimiento: </label>
+        <br>
+        <input type="date" name="nacimiento" id="nacimiento">
+        <br><br>
+        </fieldset>
+        <br><br>
+        <fieldset name="observaciones">
+            <legend>Observaciones</legend>
+        <textarea name="observaciones" id="observaciones" maxlength="250" rows="5" cols="6"></textarea>
+        </fieldset>
+        <br>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit">
+    </form>
+    <br><br>
+    <iframe name="iframe_receptor" width="500" height="600"></iframe>
+</body>
+</html>
