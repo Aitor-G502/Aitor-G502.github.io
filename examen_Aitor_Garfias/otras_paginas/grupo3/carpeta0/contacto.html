@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--Aitor Garfias Guasch - Es un formulario de contacto que recoge nombres apellidos y color y los envia a receptor por GET -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Aitor Garfias Guasch">
+    <meta name="descrption" content="Un pequeño indice">
+    <meta name="keywords" content="html, css, js">
+    <link rel="icon" href="/examen_Aitor_Garfias/recursos/imagenes/favicon.png">
+    <title>Contacto</title>
+    <style>
+        fieldset{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contacto</h1>
+    <a href="/examen_Aitor_Garfias/index.html">Index</a>
+    <fieldset><form action="receptor.html">
+        <label for="sr-sra">Sr./Sra: </label>
+        <br>
+        <select name="sr-sra" id="sr-sra">
+            <option value="Sr">Sr.</option>
+            <option value="Sra">Sra.</option>
+        </select>
+        <br><br>
+        <label for="nombre">Nombre</label>
+        <br>
+        <input type="text" name="nombre" id="nombre">
+        <br><br>
+        <label for="apellido">Apellido</label>
+        <br>
+        <input type="text" name="apellido" id="apellido">
+        <br><br>
+        <label for="color">Color: </label>
+        <input type="color" name="color" id="color">
+        <br><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</fieldset>
+    
+</body>
+</html>

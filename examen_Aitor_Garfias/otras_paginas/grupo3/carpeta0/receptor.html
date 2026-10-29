@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--Aitor Garfias Guasch - Es el receptor de contactos que nos muestra la informacion introducida en contacto-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Aitor Garfias Guasch">
+    <meta name="descrption" content="Un pequeño indice">
+    <meta name="keywords" content="index, html, css, js">
+    <link rel="icon" href="/examen_Aitor_Garfias/recursos/imagenes/favicon.png">
+    <title>Receptor</title>
+</head>
+<body>
+    <h1>Receptor</h1>
+    <a href="/examen_Aitor_Garfias/index.html">Index</a>
+    <div class="result-container">
+        <h1>Datos Recibidos por GET</h1>
+        <p>Los siguientes datos fueron enviados desde el formulario:</p>
+        
+        <div id="datos-recibidos">
+            <!-- Los datos se mostrarán aquí mediante JavaScript -->
+        </div>
+
+        <div class="url-info">
+            <strong>URL completa con parámetros:</strong><br>
+            <span id="url-completa"></span>
+        </div>
+
+        <a href="contacto.html" class="back-button">Volver al Formulario</a>
+    </div>
+
+    <script>
+        // Función para obtener los parámetros de la URL
+        function obtenerParametrosURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const datos = {};
+            
+            // Obtener todos los parámetros
+            for (const [key, value] of urlParams.entries()) {
+                if (key === 'intereses') {
+                    if (!datos[key]) {
+                        datos[key] = [];
+                    }
+                    datos[key].push(value);
+                } else {
+                    datos[key] = value;
+                }
+            }
+            
+            return datos;
+        }
+
+        // Función para mostrar los datos en la página
+        function mostrarDatos() {
+            const datos = obtenerParametrosURL();
+            const contenedor = document.getElementById('datos-recibidos');
+            const urlCompleta = document.getElementById('url-completa');
+            
+            // Mostrar URL completa
+            urlCompleta.textContent = window.location.href;
+            
+            let html = '';
+            
+            for (const [key, value] of Object.entries(datos)) {
+                let valorMostrar = value;
+                
+                if (Array.isArray(value)) {
+                    valorMostrar = value.join(', ');
+                } else if (value === '') {
+                    valorMostrar = '<em>No especificado</em>';
+                }
+                
+                html += `
+                    <div class="data-item">
+                        <span class="data-label">${key}:</span>
+                        <span class="data-value"> ${valorMostrar}</span>
+                    </div>
+                `;
+            }
+            
+            contenedor.innerHTML = html;
+        }
+
+        // Ejecutar cuando se cargue la página
+        document.addEventListener('DOMContentLoaded', mostrarDatos);
+    </script>
+</body>
+</html>
