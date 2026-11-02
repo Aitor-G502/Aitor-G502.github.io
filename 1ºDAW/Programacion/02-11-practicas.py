@@ -59,3 +59,11 @@ while index <= 6:
         index += 1
     index += 1
 time.sleep(1)
+os.system('clear')
+while index <= 11:
+    print(simbolo1 , end="")
+    print(simbolo2 * len(palabra) + simbolo1)
+    while index == 8:
+        print(simbolo1 + palabra + simbolo1)
+        index += 1
+    index += 1
