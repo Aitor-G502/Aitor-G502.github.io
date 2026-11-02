@@ -34,7 +34,7 @@ while indice >= 1:
 
 
 '''
-   1 2 2 2 2 2 2 2 2 2 2 1
+    1 2 2 2 2 2 2 2 2 2 2 1
     1 2 3 3 3 3 3 3 3 3 2 1
     1 2 3 4 4 4 4 4 4 3 2 1
     1 2 3 4 palabra 4 3 2 1
@@ -57,7 +57,7 @@ while fila <= 2 * numero - 1:
         i = fila
     else:
         i = 2 * numero - fila
-    linea = ""
+    linea = " "
     n = 1
     while n <= i:
         linea = linea + str(n) + " "
