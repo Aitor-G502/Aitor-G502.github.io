@@ -3,47 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>Emisor 3</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        iframe{
+            height: 75%;
+            width: 75%;
+        }
+        #sofa:hover{
+            content: url("isthatyourosemary.png");
+        }
+
+    </style>
 </head>
 <body>
-    <form action="receptor3" target="iframe_3"></form>
-    <fieldset>
-            <label for="modelos">Escoje el modelo: </label>
+    <img src="Superofertes-en-sofàs.png" alt="sofas" id="sofa" width="500px" height="300px">
+    <form action="receptor3.html" method="get" target="iframe_3">
+        <fieldset>
+                <label for="modelos">Escoje el modelo: </label>
+                <br><br>
+                <select name="modelos" id="modelos">
+                    <option value="everest">Everest</option>
+                    <option value="kilimanjaro">Kilimanjaro</option>
+                    <option value="Aneto">Aneto</option>
+                </select>
+            
+        </fieldset>
+        <fieldset>
+                <label for="medidas">Escoje tus medidas: </label>
+                <br><br>
+                <select name="medidas" id="medidas">
+                    <option value="2.40">2.40</option>
+                    <option value="2.60">2.60</option>
+                    <option value="2.80">2.80</option>
+                    <option value="3.00">3.00</option>
+                </select>
+            
+        </fieldset>
+        <fieldset>
+                <label for="chaise_longue">Escoje el chaise longue: </label>
+                <br><br>
+                <select name="chaise_longue" id="chaise_longue">
+                    <option value="Sin">Sin Chaise Longue</option>
+                    <option value="Izq">Izquierda</option>
+                    <option value="Derecha">Derecha</option>
+                </select>
+                
+        </fieldset>
+        <fieldset>
+            
+                <label for="color">Escoje un color:</label>
+                <br><br>
+                <input type="color" name="color" id="color">
+            
+        </fieldset>
+        <fieldset>
+            <label for="opciones">Escoje una opcion:</label>
             <br><br>
-            <select name="modelos" id="modelos">
-                <option value="everest">Everest</option>
-                <option value="kilimanjaro">Kilimanjaro</option>
-                <option value="Aneto">Aneto</option>
+            <select name="opciones" id="opciones">
+                <option value="antitanques">Anti-manchas</option>
+                <option value="animal">A prueba de animales</option>
+                <option value="electrico">Electrificado</option>
+                <option value="baul">Baul</option>
             </select>
-        
-    </fieldset>
-    <fieldset>
-            <label for="medidas">Escoje tus medidas: </label>
-            <br><br>
-            <select name="medidas" id="medidas">
-                <option value="2.40">2.40</option>
-                <option value="2.60">2.60</option>
-                <option value="2.80">2.80</option>
-                <option value="3.00">3.00</option>
-            </select>
-        </form>
-    </fieldset>
-    <fieldset>
-            <label for="chaise_longue">Escoje el chaise longue: </label>
-            <br><br>
-            <select name="chaise_longue" id="chaise_longue">
-                <option value="Sin">Sin Chaise Longue</option>
-                <option value="Izq">Izquierda</option>
-                <option value="Derecha">Derecha</option>
-            </select>
-        </form>
-    </fieldset>
-    <fieldset>
-        
-            <label for="color">Escoje un color:</label>
-            <br><br>
-            <input type="color" name="color" id="color">
-        
-    </fieldset>
+        </fieldset>
+        <br>
+        <input type="submit" value="Envio Urgente">
+        <input type="reset" value="Reinicio">
+        <br><br>
     </form>
     <iframe name="iframe_3"></iframe>
 </body>
