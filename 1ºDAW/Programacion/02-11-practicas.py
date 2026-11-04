@@ -21,7 +21,7 @@
 *           *  --> -           -
 *-----------*      -***********-
 
-print("\033[2J\033[H", end="") == os.system('clear')(win) / os.system('clear)(linux)
+print("\033[2J\033[H", end="") == os.system('cls')(win) / os.system('clear)(linux)
 '''
 import os
 import time
