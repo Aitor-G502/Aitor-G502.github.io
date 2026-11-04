@@ -39,7 +39,8 @@ while len(simbolo2) > 1:
     simbolo2 = input("Otra vez? Introduce solo 1 simbolo: ")
 
 index = 1
-os.system('clear')
+saltos = " "
+os.system('cls')
 
 while index <= 3:
     print(simbolo1 , end="")
@@ -49,7 +50,7 @@ while index <= 3:
         index += 1
     index += 1
 time.sleep(1)
-os.system('clear')
+os.system('cls')
 
 while index <= 6:
     print(simbolo2 , end="")
@@ -59,11 +60,39 @@ while index <= 6:
         index += 1
     index += 1
 time.sleep(1)
-os.system('clear')
+os.system('cls')
 while index <= 11:
     print(simbolo1 , end="")
-    print(simbolo2 * len(palabra) + simbolo1)
+    print(simbolo2 * (len(palabra) + 2) + simbolo1)
     while index == 8:
-        print(simbolo1 + palabra + simbolo1)
+        print(simbolo1 + saltos + palabra + saltos + simbolo1)
+        index += 1
+    index += 1
+time.sleep(1)
+os.system('cls')
+while index <= 16:
+    print(simbolo2 , end="")
+    print(simbolo1 * (len(palabra) + 2) + simbolo2)
+    while index == 13:
+        print(simbolo2 + saltos + palabra + saltos + simbolo2)
+        index += 1
+    index += 1
+time.sleep(1)
+os.system('cls')
+saltos = "  "
+while index <= 23:
+    print(simbolo1 , end="")
+    print(simbolo2 * (len(palabra) + 4) + simbolo1)
+    while index == 19:
+        print(simbolo1 + saltos + palabra + saltos + simbolo1)
+        index += 1
+    index += 1
+time.sleep(1)
+os.system('cls')
+while index <= 30:
+    print(simbolo2 , end="")
+    print(simbolo1 * (len(palabra) + 4) + simbolo2)
+    while index == 26:
+        print(simbolo2 + saltos + palabra + saltos + simbolo2)
         index += 1
     index += 1
