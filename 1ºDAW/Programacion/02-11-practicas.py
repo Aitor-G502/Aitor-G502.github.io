@@ -51,48 +51,76 @@ while index <= 3:
     index += 1
 time.sleep(1)
 os.system('clear') 
+index = 1
 
-while index <= 6:
+while index <= 3:
     print(simbolo2 , end="")
     print(simbolo1 * len(palabra) + simbolo2)
-    while index == 4:
+    while index == 1:
         print(simbolo2 + palabra + simbolo2)
         index += 1
     index += 1
 time.sleep(1)
 os.system('clear')
-while index <= 11:
+index = 1
+'''A partir de aqui, se añaden mas lineas y no se deja un espacio vacio'''
+
+while index <= 5:
     print(simbolo1 , end="")
     print(simbolo2 * (len(palabra) + 2) + simbolo1)
-    while index == 8:
+    if index == 1:
+        print(simbolo1 + (saltos * (len(palabra) + 2)) + simbolo1)
+        index += 1
+    while index == 2:
         print(simbolo1 + saltos + palabra + saltos + simbolo1)
+        index += 1
+    if index == 3:
+        print(simbolo1 + (saltos * (len(palabra) + 2)) + simbolo1)
         index += 1
     index += 1
 time.sleep(1)
 os.system('clear')
-while index <= 16:
+index = 1
+
+while index <= 5:
     print(simbolo2 , end="")
     print(simbolo1 * (len(palabra) + 2) + simbolo2)
-    while index == 13:
+    if index == 1:
+        print(simbolo2 + (saltos * (len(palabra) + 2)) + simbolo2)
+        index += 1
+    while index == 2:
         print(simbolo2 + saltos + palabra + saltos + simbolo2)
+        index += 1
+    if index == 3:
+        print(simbolo2 + (saltos * (len(palabra) + 2)) + simbolo2)
         index += 1
     index += 1
 time.sleep(1)
 os.system('clear')
 saltos = "  "
-while index <= 23:
+index = 1
+
+while index <= 7:
     print(simbolo1 , end="")
     print(simbolo2 * (len(palabra) + 4) + simbolo1)
-    while index == 19:
+    if index == 1 or index == 2:
+        print(simbolo1 + (saltos * len(palabra)) + simbolo1)
+        index += 1
+    while index == 3:
         print(simbolo1 + saltos + palabra + saltos + simbolo1)
         index += 1
+    if index == 4:
+        print(simbolo1 + (saltos * (len(palabra))) + simbolo1)
+        index += 1
     index += 1
-time.sleep(1)
+time.sleep(100)
 os.system('clear')
-while index <= 30:
+index = 1
+
+while index <= 7:
     print(simbolo2 , end="")
     print(simbolo1 * (len(palabra) + 4) + simbolo2)
-    while index == 26:
+    while index == 3:
         print(simbolo2 + saltos + palabra + saltos + simbolo2)
         index += 1
     index += 1
