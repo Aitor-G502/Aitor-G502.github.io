@@ -103,17 +103,20 @@ index = 1
 while index <= 7:
     print(simbolo1 , end="")
     print(simbolo2 * (len(palabra) + 4) + simbolo1)
-    if index == 1 or index == 2:
-        print(simbolo1 + (saltos * len(palabra)) + simbolo1)
-        index += 1
+    #if index == 1 or index == 2:
+        #print(simbolo1 + (saltos * len(palabra)) + simbolo1)
+        #index += 1
     while index == 3:
         print(simbolo1 + saltos + palabra + saltos + simbolo1)
         index += 1
-    if index == 4:
+    if index == 1:
+        print(simbolo1 + (saltos * (len(palabra))) + simbolo1)
+        index += 1
+    elif index == 2:
         print(simbolo1 + (saltos * (len(palabra))) + simbolo1)
         index += 1
     index += 1
-time.sleep(100)
+time.sleep(1)
 os.system('clear')
 index = 1
 
