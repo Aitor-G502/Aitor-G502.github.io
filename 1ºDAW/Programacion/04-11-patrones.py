@@ -18,14 +18,17 @@ palabra = input("Escribe una palabra: ")
 numero = int(input("Introduce un numero entero: "))
 salto = " "
 index = 0
-mayus = 1
+palabra.split()
+print(palabra[index])
 
 while numero >= index:
-    print((palabra + salto) * index)
+    print((palabra.upper() + salto) * index)
     index += 1
 
 index = numero - 1
 
 while index >= 1:
-    print((palabra + salto) * index)
+    print((palabra.upper() + salto) * index)
     index -= 1
+
+
