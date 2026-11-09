@@ -22,7 +22,7 @@ palabra.split()
 print(palabra[index])
 
 while numero >= index:
-    print((palabra.upper() + salto) * index)
+    print(((palabra[0]).upper() + salto) * index)
     index += 1
 
 index = numero - 1
