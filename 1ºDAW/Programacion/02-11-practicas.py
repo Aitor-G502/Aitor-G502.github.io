@@ -116,7 +116,7 @@ while index <= 7:
         index += 1
     index += 1
 
-time.sleep(100)
+time.sleep(1)
 os.system('clear')
 index = 1
 
@@ -127,3 +127,5 @@ while index <= 7:
         print(simbolo2 + saltos + palabra + saltos + simbolo2)
         index += 1
     index += 1
+
+

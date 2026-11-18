@@ -76,3 +76,4 @@ while fila <= 2 * numero - 1:
 
     print(linea)
     fila += 1
+
