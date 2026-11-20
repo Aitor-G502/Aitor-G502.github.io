@@ -55,10 +55,37 @@ def genFillerLine(num: int) -> str:
     Arg:
     - num = Number revieved from the user
     '''
-    return 
+    index = 1
+    filler = ""
+    while index <= num:
+        filler += (genSingleFill(index) + " " )
+        index += 1
+    return filler
+
 
 print(genFillerLine(7))
 
-#def mergeLines()
+def mergeLines(num: int) -> str:
+    ''' Merge the line of numbers and the line of fillers
+    
+    Arg: 
+    - num = Number recieved from the user
+    '''
+    index = 0
+    num1 = 1
+    merge = ""
+    while index <= num:
+        if index < num:
+            merge += (genNumsLine(num1, num)[index] + " " + genSingleFill(index + 1) + " ")
+            
+        else:
+            merge += genNumsLine(num1, num)[index]
+        index += 1 
+    return merge
+
+print(mergeLines(7))
+
+
+
 
 
