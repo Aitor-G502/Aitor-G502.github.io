@@ -55,8 +55,10 @@ def genFillerLine(num: int) -> str:
     Arg:
     - num = Number revieved from the user
     '''
-    return num * genSingleFill(num)
+    return 
 
 print(genFillerLine(7))
+
+#def mergeLines()
 
 
