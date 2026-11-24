@@ -87,3 +87,8 @@ div {
 p {
   margin: 10px 10px 10px 10px;
 }
+
+.iframe{
+  text-align: center;
+  clear: both;
+}
