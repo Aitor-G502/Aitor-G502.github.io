@@ -45,6 +45,7 @@ footer {
 }
 
 img {
+  margin: 0px 10px 0px 0px;
   position: relative;
   height: 15vh;
 }
@@ -54,6 +55,7 @@ img {
 }
 .right{
   float: right;
+  text-align: right;
 }
 
 
@@ -85,7 +87,7 @@ div {
 }
 
 p {
-  margin: 10px 10px 10px 10px;
+  margin: 10px ;
 }
 
 .iframe{
